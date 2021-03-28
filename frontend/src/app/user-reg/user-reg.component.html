@@ -1,1 +1,104 @@
-<p>user-reg works!</p>
+<form>
+    <div class="container register">
+        <div class="row">
+            
+            <div class="col-md-3 register-left">
+                <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                <h3>Welcome</h3>
+                <p>You are 30 seconds away from earning your own money!</p>             
+            </div>
+
+            <div class="col-md-9 register-right">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" ifade show actived="home" role="tabpanel" aria-labelledby="home-tab">
+                        <h3 class="register-heading">Organ Donation Registraion</h3>
+                        <div class="row register-form">
+                            
+                            <div class="col-md-6">
+                                <h4>Donor Details</h4>
+                                <div class="form-group mb-3  mt-n1">
+                                    <input type="text" class="form-control" name="first_name_name" id="first_name_id" placeholder="First Name *" value="" />
+                                </div>
+
+                                <div class="form-group mb-3  mt-n1">
+                                    <input type="text" class="form-control" name="last_name_name" id="last_name_id" placeholder="Last Name *" value="" />
+                                </div>
+                                <div class="form-group mb-3  mt-n1">
+                                    <input type="email" class="form-control" name="email_name" id="email_id" placeholder="Email *" value="" />
+                                </div>
+                                
+                                <div class="form-group mb-3 mt-n1 was-validated">
+                                    <!-- <label for="validationServerUsername" class="form-label">Username</label>-->
+                                    <div class="input-group has-validation">
+                                       <span class="input-group-text" id="inputGroupPrepend3">+91</span>
+                                       <input type="tel" pattern="[0-9]{10}" class="form-control" id="validationServerUsername phone_id" aria-describedby="inputGroupPrepend3 " placeholder="Phone number*"  value="" required>
+                                       <div id="validationServerUsernameFeedback" class="invalid-feedback">
+         
+                                       </div>
+                                     </div>
+                                </div>
+
+                                <div class="form-group mb-3  mt-n1">
+                                    <textarea class="form-control mb-3  mt-n1" name="address_name" id="address_id" rows="3" placeholder="Address" ></textarea>
+                                </div>
+
+                                <div class="form-group mb-3 mt-n1">
+                                    <input type="text" class="form-control"  name="aadhar_name" id="aadhar_id" placeholder="Aadhar Number*" value="" />
+                                </div>
+
+                                <div class="form-group mb-3 mt-n1">
+                                    <input type="date" class="form-control"  name="dob_name" id="dob_id" placeholder="date of birth*" value="" />
+                                </div>
+
+                                <div class="px-2 mb-3 mt-n1 ml-10">
+                                    <fieldset id="group1">
+                                        <input class="ml-10 px-5" type="radio" value="gender" name="group1_gender_name" id="group2_gender_id"> <span class="px-2"> Male </span>
+                                        <input class="ml-10 px-5" type="radio" value="gender" name="group1_gender_name" id="group2_gender_id"> <span class="px-2"> Female </span>
+                                    </fieldset>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <h4>Secondary User Details</h4>
+                                <div class="form-group mb-3  mt-n1">
+                                    <input type="text" class="form-control" name="secondary_first_name_name" id="secondary_first_name_id" placeholder="First Name *" value="" />
+                                </div>
+
+                                <div class="form-group mb-3  mt-n1">
+                                    <input type="text" class="form-control" name="secondary_last_name_name" id="secondary_last_name_id" placeholder="Last Name *" value="" />
+                                </div>
+                                <div class="form-group mb-3  mt-n1">
+                                    <input type="email" class="form-control" name="secondary_email_name" id="secondary_email_id" placeholder="Email *" value="" />
+                                </div>
+                                <div class="form-group mb-3 mt-n1">
+                                    <input type="text" class="form-control"  name="secondary_phone_name" id="secondary_phone_id" placeholder="Phone number*" value="" />
+                                </div>
+                                <div class="form-group mb-3  mt-n1">
+                                    <textarea class="form-control mb-3  mt-n1" name="secondary_address_name" id="secondary_address_id" rows="3" placeholder="Address" ></textarea>
+                                </div>
+
+                                <div class="form-group mb-3 mt-n1">
+                                    <input type="text" class="form-control"  name="secondary_aadhar_name" id="secondary_aadhar_id" placeholder="Aadhar Number*" value="" />
+                                </div>
+
+                                <div class="form-group mb-3 mt-n1">
+                                    <input type="date" class="form-control"  name="secondary_dob_name" id="secondary_dob_id" placeholder="date of birth*" value="" />
+                                </div>
+
+                                <div class="px-2 mb-3 mt-n1 ml-10">
+                                    <fieldset id="group2">
+                                        <input class="ml-10 px-5" type="radio" value="gender" name="group2_gender_name" id="group2_gender_id"> <span class="px-2"> Male </span>
+                                        <input class="ml-10 px-5" type="radio" value="gender" name="group2_gender_name" id="group2_gender_id"> <span class="px-2"> Female </span>
+                                    </fieldset>
+                                </div>
+                            </div>
+
+                            <button type="button" routerLink="/organList" id="register" name="register" class="btn btn-primary register_button">Register</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

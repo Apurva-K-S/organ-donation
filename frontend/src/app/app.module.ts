@@ -7,12 +7,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { UserRegComponent } from './user-reg/user-reg.component';
+import { OrganListComponent } from './organ-list/organ-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    UserRegComponent
+    UserRegComponent,
+    OrganListComponent
   ],
   imports: [
     BrowserModule,

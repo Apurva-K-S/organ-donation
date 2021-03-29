@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrganListComponent implements OnInit {
 
+  organHeart = 'Heart';
+  organKidney = 'Kidney';
+  organLiver = 'Liver';
+  organLungs = 'Lungs';
+  organPancreas = 'Pancreas';
+  organBoneMarrow = 'Bone Marrow';
+  organBones = 'Bones';
+  organEyes= 'Eyes';
+  organPlasma = 'Plasma';
+  organSkin = 'Skin';
+  organResearch = 'Research';
+
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
 
 }

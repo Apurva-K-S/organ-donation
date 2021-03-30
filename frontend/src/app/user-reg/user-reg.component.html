@@ -18,7 +18,8 @@
                             <div class="col-md-6">
                                 <p style="font-size:17px; padding-bottom: 2%;"><b>Primary User</b></p>
                                 <div class="form-group mb-3  mt-n1">
-                                    <input type="text" class="form-control" name="first_name_name" id="first_name_id" placeholder="First Name *" value="" />
+                                    <input type="text" class="form-control" [(ngModel)]="userName" name="first_name_name" id="first_name_id" placeholder="First Name *" value="" />
+                                    <p> usernmae:::::: {{userName}} </p>
                                 </div>
 
                                 <div class="form-group mb-3  mt-n1">
@@ -36,17 +37,13 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group mb-3  mt-n1">
-                                    <textarea class="form-control mb-3  mt-n1" name="address_name" id="address_id" rows="3" placeholder="Address" ></textarea>
-                                </div>
-
                                 <div class="form-group mb-3 mt-n1">
                                     <input type="text" class="form-control"  name="aadhar_name" id="aadhar_id" placeholder="Aadhar Number*" value="" />
                                 </div>
 
                                 
                                 <div class="form-group mb-3 mt-n1">
-                                    <input type="date" class="form-control"  name="dob_name" id="dob_id" placeholder="date of birth*" value="" />
+                                    <input type="number" class="form-control"  name="age_name" id="age_id" min="20" max="100" placeholder="Age" value="" />
                                 </div>
 
                                 <div class="form-group mb-3 mt-n1">
@@ -63,6 +60,10 @@
                                 <div class="form-group mb-3 mt-n1">
                                     <p style="font-size:16px; padding: 3%;"><b>Password</b></p>
                                     <input type="password" class="form-control"  name="pass_name" id="pass_id" placeholder="Password*" value="" />
+                                </div>
+                                <div class="form-group mb-3 mt-n1">
+                                    <p style="font-size:16px; padding: 3%;"><b>Confirm Password</b></p>
+                                    <input type="password" class="form-control"  name="confirm_pass_name" id="confirm_pass_id" placeholder="Password*" value="" />
                                 </div>
 
                             </div>
@@ -89,16 +90,8 @@
                                      </div>
                                 </div>
 
-                                <div class="form-group mb-3  mt-n1">
-                                    <textarea class="form-control mb-3  mt-n1" name="secondary_address_name" id="secondary_address_id" rows="3" placeholder="Address" ></textarea>
-                                </div>
-
                                 <div class="form-group mb-3 mt-n1">
                                     <input type="text" class="form-control"  name="secondary_aadhar_name" id="secondary_aadhar_id" placeholder="Aadhar Number*" value="" />
-                                </div>
-
-                                <div class="form-group mb-3 mt-n1">
-                                    <input type="date" class="form-control"  name="secondary_dob_name" id="secondary_dob_id" placeholder="date of birth*" value="" />
                                 </div>
 
                                 <div class="form-group mb-3 mt-n1">
@@ -112,10 +105,6 @@
                                     </fieldset>
                                 </div>
 
-                                <div class="form-group mb-3 mt-n1">
-                                    <p style="font-size:16px; padding: 3%;"><b>Confirm Password</b></p>
-                                    <input type="password" class="form-control"  name="confirm_pass_name" id="confirm_pass_id" placeholder="Password*" value="" />
-                                </div>
                             </div>
 
                             <h2 style="margin-top: 1cm"><b>Terms and Conditions</b></h2>

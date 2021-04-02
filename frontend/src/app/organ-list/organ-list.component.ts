@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Validators } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-organ-list',
@@ -7,22 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrganListComponent implements OnInit {
 
+  formGroup! : FormGroup;
+
   organHeart = 'Heart';
   organKidney = 'Kidney';
   organLiver = 'Liver';
   organLungs = 'Lungs';
-  organPancreas = 'Pancreas';
-  organBoneMarrow = 'Bone Marrow';
-  organBones = 'Bones';
   organEyes= 'Eyes';
   organPlasma = 'Plasma';
-  organSkin = 'Skin';
-  organResearch = 'Research';
 
 
   constructor() { }
 
   ngOnInit(): void {
+
+    this.formGroup = new FormGroup({
+      heart_name: new FormControl('', [Validators.required])
+    })
   }
 
 

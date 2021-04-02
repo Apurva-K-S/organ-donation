@@ -1,4 +1,4 @@
-<form>
+<form [formGroup]="formGroup">
     <div class="container register">
         <div class="row">
             
@@ -17,7 +17,7 @@
                             <div>
                                 <h3 style="font-size: 20px;"> I <b> GIVE </b> authorization for the following organs to be donated:</h3> <h4>(check all that apply)</h4>
                                 <div>
-                                    <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="heart_id" name="heart_name">
+                                    <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="heart_id" name="heart_name" formControlName="heart_name">
                                     <label class="form-check-label checkbox_label" >{{organHeart}}</label>
                                 </div>
                                 <div>
@@ -32,18 +32,7 @@
                                     <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="lungs_id" name="lungs_name">
                                     <label class="form-check-label checkbox_label" >{{organLungs}}</label>
                                 </div>
-                                <div>
-                                    <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="pancreas_id" name="pancreas_name">
-                                    <label class="form-check-label checkbox_label" >{{organPancreas}}</label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="intestine_id" name="intestine_name">
-                                    <label class="form-check-label checkbox_label" >{{organBoneMarrow}}</label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="bones_id" name="bones_name">
-                                    <label class="form-check-label checkbox_label">{{organBones}}</label>
-                                </div>
+                               
                                 <div>
                                     <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="eyes_id" name="eyes_name">
                                     <label class="form-check-label checkbox_label">{{organEyes}}</label>
@@ -51,14 +40,6 @@
                                 <div>
                                     <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="skin_id" name="skin_name">
                                     <label class="form-check-label checkbox_label">{{organPlasma}}</label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="plasma_id" name="plasma_name">
-                                    <label class="form-check-label checkbox_label" >{{organSkin}}</label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="research_id" name="research_name">
-                                    <label class="form-check-label checkbox_label" >{{organResearch}}</label>
                                 </div>
                                 
                                 <div>

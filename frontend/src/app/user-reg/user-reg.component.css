@@ -101,3 +101,15 @@
     margin-left: 7cm;
     margin-top: 1cm;
 }
+
+.message{
+    border: 2px solid red;
+}
+
+/*
+.main-div mat-card {
+    padding: 0px;
+}
+.login-form {
+    padding: 20px;
+}*/

@@ -10,7 +10,12 @@ import { UserRegComponent } from './user-reg/user-reg.component';
 import { OrganListComponent } from './organ-list/organ-list.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserHomepageComponent } from './user-homepage/user-homepage.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HospitalsListComponent } from './hospitals-list/hospitals-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DonatePageComponent } from './donate-page/donate-page.component';
+import { ConfirmEqualValidatorDirective } from './custom-directives/confirm-equal-validator.directive';
+import { ListOfOrgansComponent } from './list-of-organs/list-of-organs.component';
 
 
 @NgModule({
@@ -20,13 +25,20 @@ import { FormsModule } from '@angular/forms';
     UserRegComponent,
     OrganListComponent,
     UserLoginComponent,
-    UserHomepageComponent
+    UserHomepageComponent,
+    HospitalsListComponent,
+    DonatePageComponent,
+    ConfirmEqualValidatorDirective,
+    ListOfOrgansComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

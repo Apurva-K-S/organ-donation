@@ -13,35 +13,10 @@
                     <div class="tab-pane fade show active" ifade show actived="home" role="tabpanel" aria-labelledby="home-tab">
                         <p class="register-heading" style="font-size:26px;"> <b>Organ Donation</b></p>
                         <div class="row register-form">
-                            <div style="margin-left:2cm;">
-
-                                <div style="padding: 0.25cm;">
-                                    <p style="font-size:22px; margin-top: 0cm; margin-left: 14px;"> You have registered to donate the following organs </p>
-                                    <br>
-                                    <!--  LIST FROM BACK END -->
-                                    <br>
-                                    <p style="font-size:20px; margin-top: 1cm; margin-left: 2cm;"> <b> Please select a hospital from the below list </b></p>
-                                    <br>
-                                    <select class="dropdwn" name="hospitals" id="hospitals">
-                                        <option style="height: 20px;" *ngFor="let hospitalVal of hospitals" [value]="hospitalVal.value">{{hospitalVal.viewValue}}</option>
-                                    </select>
-                                    
-                                    <!--<div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                          Dropdown button
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                          <li><a class="dropdown-item" href="#">Action</a></li>
-                                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                                          <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                        </ul>
-                                      </div>-->
-                                    
-                                </div>
-                                
-                                <button type="button" routerLink="/thankyou" id="donate" name="donate" class="btn btn-primary register_button">Donate</button>
+                            <div style="margin-left:2cm; padding: 0.25cm;">
+                                <button type="button" routerLink="/organList" id="chooseOrgans" name="chooseOrgans" class="btn btn-primary register_button">choose Organs</button>
+                                <button type="button" routerLink="/donatePage" id="donate" name="donate" class="btn btn-primary register_button">Donate</button>
                             </div>
-                            
                         </div>
                     </div>
                 </div>

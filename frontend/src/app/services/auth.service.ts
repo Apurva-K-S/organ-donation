@@ -14,16 +14,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  login(credentials: any):Observable<any> {
-
-//    console.log("Inside AUthService: ",credentials.firstName)
-//    console.log("Inside AUthService: ",credentials.PASSWORD)
-
-    // if(credentials.password !== credentials.confirmPassword)
-       
-
-    // if
-    // else 
-    return this.http.post(`${baseUrl}login`,credentials)
+  login(credentials: any): Observable<any> {
+    return this.http.post(`${baseUrl}login`, credentials);
   }
 }

@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomePageComponent } from './home-page/home-page.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { UserRegComponent } from './user-reg/user-reg.component';
 import { OrganListComponent } from './organ-list/organ-list.component';
 import { UserLoginComponent } from './user-login/user-login.component';
@@ -16,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DonatePageComponent } from './donate-page/donate-page.component';
 import { ConfirmEqualValidatorDirective } from './custom-directives/confirm-equal-validator.directive';
 import { ListOfOrgansComponent } from './list-of-organs/list-of-organs.component';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 
 
 @NgModule({
@@ -29,7 +29,8 @@ import { ListOfOrgansComponent } from './list-of-organs/list-of-organs.component
     HospitalsListComponent,
     DonatePageComponent,
     ConfirmEqualValidatorDirective,
-    ListOfOrgansComponent
+    ListOfOrgansComponent,
+    NavigationBarComponent
   ],
   imports: [
     BrowserModule,

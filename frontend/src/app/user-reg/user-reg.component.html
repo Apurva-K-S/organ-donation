@@ -1,3 +1,4 @@
+<app-navigation-bar></app-navigation-bar>
 <form class="registration-form" [formGroup]="form" (ngSubmit)="submit()">
     <div class="container register">
         <div class="row">
@@ -18,20 +19,20 @@
                             <div class="col-md-6">
                                 <p style="font-size:17px; padding-bottom: 2%;"><b>Primary User</b></p>
                                 <div class="form-group mb-3  mt-n1" >
-                                    <input type="text" class="form-control" name="firstName" id="firstName" placeholder="First Name *" value="" required formControlName="firstName"/>
+                                    <input type="text" pattern="[a-zA-Z]*" class="form-control" name="firstName" id="firstName" placeholder="First Name *" value="" required formControlName="firstName"/>
                                     <div *ngIf = "f.firstName.touched && f.firstName.invalid" class="alert alert-danger">
                                         <div *ngIf="f.firstName.errors?.required">First name is required</div>
                                     </div>
                                 </div>
                             
                                 <div class="form-group mb-3  mt-n1">
-                                    <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Last Name *" value="" formControlName="lastName"/>
+                                    <input type="text" pattern="[a-zA-Z]*" class="form-control" name="lastName" id="lastName" placeholder="Last Name *" value="" formControlName="lastName"/>
                                     <div *ngIf = "f.lastName.touched && f.lastName.invalid" class="alert alert-danger">
                                         <div *ngIf="f.lastName.errors?.required">Last name is required</div>
                                     </div>
                                 </div>
                                 <div class="form-group mb-3  mt-n1">
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Email *" value="" formControlName="email"/>
+                                    <input type="email" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" class="form-control" name="email" id="email" placeholder="Email *" value="" formControlName="email"/>
                                     <div *ngIf = "f.email.touched && f.email.invalid" class="alert alert-danger">
                                         <div *ngIf="f.email.errors?.required">Email is required</div>
                                     </div>
@@ -45,7 +46,7 @@
                                 </div>
 
                                 <div class="form-group mb-3 mt-n1">
-                                    <input type="text" class="form-control"  name="aadhar" id="aadhar" placeholder="Aadhar Number*" value="" formControlName="aadhar"/>
+                                    <input type="text" class="form-control" pattern="^[2-9]{1}[0-9]{3}-[0-9]{4}-[0-9]{4}$"  name="aadhar" id="aadhar" placeholder="Aadhar Number*" value="" formControlName="aadhar"/>
                                     <div *ngIf = "f.aadhar.touched && f.aadhar.invalid" class="alert alert-danger">
                                         <div *ngIf="f.aadhar.errors?.required">Aadhar number is required</div>
                                     </div>
@@ -60,7 +61,7 @@
                                 </div>
 
                                 <div class="form-group mb-3 mt-n1">
-                                    <input type="text" class="form-control"  name="bloodGroup" id="bloodGroup" placeholder="Blood Group*" value="" formControlName="bloodGroup"/>
+                                    <input type="text" class="form-control" pattern="(A|B|AB|O)[+-]" name="bloodGroup" id="bloodGroup" placeholder="Blood Group*" value="" formControlName="bloodGroup"/>
                                     <div *ngIf = "f.bloodGroup.touched && f.bloodGroup.invalid" class="alert alert-danger">
                                         <div *ngIf="f.bloodGroup.errors?.required">Age is required</div>
                                     </div>
@@ -100,19 +101,19 @@
                             <div class="col-md-6">
                                 <p style="font-size:17px; padding-bottom: 2%;"><b>Secondary User</b></p>
                                 <div class="form-group mb-3  mt-n1">
-                                    <input type="text" class="form-control" name="secondary_firstName" id="secondary_firstName" placeholder="First Name *" value="" formControlName="secondary_firstName"/>
+                                    <input type="text" class="form-control" pattern="[a-zA-Z]*" name="secondary_firstName" id="secondary_firstName" placeholder="First Name *" value="" formControlName="secondary_firstName"/>
                                     <div *ngIf = "f.secondary_firstName.touched && f.secondary_firstName.invalid" class="alert alert-danger">
                                         <div *ngIf="f.secondary_firstName.errors?.required">First name is required</div>
                                     </div>
                                 </div>
                                 <div class="form-group mb-3  mt-n1">
-                                    <input type="text" class="form-control" name="secondary_lastName" id="secondary_lastName" placeholder="Last Name *" value="" formControlName="secondary_lastName"/>
+                                    <input type="text" class="form-control" pattern="[a-zA-Z]*" name="secondary_lastName" id="secondary_lastName" placeholder="Last Name *" value="" formControlName="secondary_lastName"/>
                                     <div *ngIf = "f.secondary_lastName.touched && f.secondary_lastName.invalid" class="alert alert-danger">
                                         <div *ngIf="f.secondary_lastName.errors?.required">Last name is required</div>
                                     </div>
                                 </div>
                                 <div class="form-group mb-3  mt-n1">
-                                    <input type="email" class="form-control" name="secondary_email" id="secondary_email" placeholder="Email *" value="" formControlName="secondary_email"/>
+                                    <input type="email" class="form-control" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" name="secondary_email" id="secondary_email" placeholder="Email *" value="" formControlName="secondary_email"/>
                                     <div *ngIf = "f.secondary_email.touched && f.secondary_email.invalid" class="alert alert-danger">
                                         <div *ngIf="f.secondary_email.errors?.required">Email is required</div>
                                     </div>
@@ -126,14 +127,14 @@
                                     </div>
                                 </div>
                                 <div class="form-group mb-3 mt-n1">
-                                    <input type="text" class="form-control"  name="secondary_aadhar" id="secondary_aadhar" placeholder="Aadhar Number*" value="" formControlName="secondary_aadhar"/>
+                                    <input type="text" class="form-control" pattern="^[2-9]{1}[0-9]{3}-[0-9]{4}-[0-9]{4}$" name="secondary_aadhar" id="secondary_aadhar" placeholder="Aadhar Number*" value="" formControlName="secondary_aadhar"/>
                                     <div *ngIf = "f.secondary_aadhar.touched && f.secondary_aadhar.invalid" class="alert alert-danger">
                                         <div *ngIf="f.secondary_aadhar.errors?.required">Aadhar number is required</div>
                                     </div>
                                 </div>
 
                                 <div class="form-group mb-3 mt-n1">
-                                    <input type="text" class="form-control"  name="secondary_relationship" id="secondary_relationship" placeholder="Relationship with primary user*" value="" formControlName="secondary_relationship"/>
+                                    <input type="text" class="form-control" name="secondary_relationship" id="secondary_relationship" placeholder="Relationship with primary user*" value="" formControlName="secondary_relationship"/>
                                     <div *ngIf = "f.secondary_relationship.touched && f.secondary_relationship.invalid" class="alert alert-danger">
                                         <div *ngIf="f.secondary_relationship.errors?.required">Relationship with donar is required</div>
                                     </div>

@@ -11,10 +11,14 @@ import { baseUrl } from 'src/environments/environment';
 
 export class AuthService {
 
-
   constructor(private http: HttpClient) { }
 
   login(credentials: any): Observable<any> {
-    return this.http.post(`${baseUrl}login`, credentials);
+    
+    console.log("We are in auth service before gng to spring boot.");
+    console.log("type is: ", typeof(credentials));
+    console.log("credentials are: ", credentials);
+    console.log("type is: ", typeof(JSON.stringify(credentials)));
+    return this.http.post(`${baseUrl}add`, credentials);
   }
 }

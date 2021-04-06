@@ -1,4 +1,4 @@
-package com.example.iiitb.OrganDonation.bean;
+package com.example.iiitb.OrganDonation;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

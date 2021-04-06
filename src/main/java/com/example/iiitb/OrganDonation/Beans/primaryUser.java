@@ -1,4 +1,4 @@
-package com.example.iiitb.OrganDonation.bean;
+package com.example.iiitb.OrganDonation.Beans;
 
 import javax.persistence.*;
 

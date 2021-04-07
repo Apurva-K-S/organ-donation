@@ -39,7 +39,7 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule
-
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

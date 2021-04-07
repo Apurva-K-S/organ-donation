@@ -55,14 +55,14 @@ export class UserRegComponent {
       this.authService.login(this.form.value).subscribe(result=>{
 
         console.log("inside: this.authService.login(this.form.value).subscribe(result=>{ ");
-        if(result.success){
-          console.log(result);
-          alert(result.message);
+        //if(result.success){
+        console.log(result);
+        //  alert(result.message);
           
-        }
-        else{
-          alert(result.message);
-        }
+        //}
+        //else{
+        //  alert(result.message);
+        //}
         console.log("coming out of: this.authService.login(this.form.value).subscribe(result=>{ ");
       })
 

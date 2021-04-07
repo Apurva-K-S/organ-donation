@@ -20,7 +20,7 @@ export class AuthService {
     console.log("credentials are: ", credentials);
     console.log("type is: ", typeof(JSON.stringify(credentials)));
     console.log(this.http.post(`${baseUrl}add`, credentials));
-
-    return this.http.post(`${baseUrl}add`, credentials);
+    
+    return this.http.post(`${baseUrl}add`, (credentials));
   }
 }

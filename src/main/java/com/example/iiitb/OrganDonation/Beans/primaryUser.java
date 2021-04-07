@@ -1,8 +1,11 @@
 package com.example.iiitb.OrganDonation.Beans;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 
 @Entity
+@Component
 @Table(name="primaryUser")
 public class primaryUser {
 

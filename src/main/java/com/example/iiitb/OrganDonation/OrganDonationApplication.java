@@ -13,9 +13,11 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-@ComponentScan(basePackageClasses = RegisterController.class)
+@ComponentScan(basePackages = {"com.example.iiitb"})
+
 @EnableAutoConfiguration
-@EnableJpaRepositories("com.example.iiitb.OrganDonation.DAO")
+@EnableJpaRepositories("com.example.iiitb")
+
 
 public class OrganDonationApplication extends SpringBootServletInitializer {
 

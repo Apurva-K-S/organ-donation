@@ -52,6 +52,7 @@ export class UserRegComponent {
     if(this.form.valid)
     {
       console.log("inside this.form.valid");
+      console.log("inside form: ", this.form.value);
       this.authService.login(this.form.value).subscribe(result=>{
 
         console.log("inside: this.authService.login(this.form.value).subscribe(result=>{ ");

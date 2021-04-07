@@ -18,9 +18,9 @@ export class AuthService {
     console.log("We are in auth service before gng to spring boot.");
     console.log("type is: ", typeof(credentials));
     console.log("credentials are: ", credentials);
-    console.log("type is: ", typeof(JSON.stringify(credentials)));
-    console.log(this.http.post(`${baseUrl}add`, credentials));
-    
+    //console.log(this.http.post(`${baseUrl}add`, credentials));
+
     return this.http.post(`${baseUrl}add`, (credentials));
+   // return this.http.post(`${baseUrl}add`, (credentials));
   }
 }

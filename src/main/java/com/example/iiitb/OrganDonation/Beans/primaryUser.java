@@ -1,75 +1,89 @@
 package com.example.iiitb.OrganDonation.Beans;
 
-import org.springframework.stereotype.Component;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import javax.persistence.*;
 
 @Entity
-@Component
 @Table(name="primaryUser")
-public class primaryUser {
+public class primaryUser{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "firstName", nullable = false)
+    @Column(nullable = false)
     private String firstName;
 
-    @Column(name = "secondaryFirstName", nullable = false)
-    private String secondaryFirstName;
 
-    @Column(name = "lastName", nullable = false)
+    @Column(nullable = false)
     private String lastName;
 
-    @Column(name = "secondaryLastName", nullable = false)
-    private String secondaryLastName;
 
-    @Column(name = "email", nullable = false)
+    @Column(nullable = false)
     private String email;
 
-    @Column(name = "secondaryEmail", nullable = false)
-    private String secondaryEmail;
+    @Column(nullable = false)
+    private String secondary_email;
 
-    @Column(name = "aadhar", nullable = false)
-    private String aadhar;
-
-    @Column(name = "secondaryAadhar", nullable = false)
-    private String secondaryAadhar;
-
-    @Column(name = "phone", nullable = false)
+    @Column(nullable = false)
     private String phone;
 
-    @Column(name = "secondaryPhone", nullable = false)
-    private String secondaryPhone;
+    @Column(nullable = false)
+    private String secondary_phone;
 
-    @Column(name = "bloodGroup", nullable = false)
+    @Column(nullable = false)
+    private String aadhar;
+
+    @Column(nullable = false)
+    private String secondary_aadhar;
+
+    @Column(nullable=false)
+    private String termsConditionsCheckbox;
+
+    @Column(nullable=false)
+    private String secondary_relationship;
+
+    @Column(nullable=false)
+    private String age;
+
+    @Column(nullable=false)
     private String bloodGroup;
 
-    @Column(name = "password", nullable = false)
+    @Column(nullable=false)
+    private String gender;
+
+    @Column(nullable=false)
     private String password;
 
     @Column(nullable = false)
-    private Integer age;
+    private String secondary_first_name;
+
+    @Column(nullable = false)
+    private String secondary_last_name;
+
 
     public primaryUser() {
     }
 
-    public primaryUser(Integer id, String firstName, String secondaryFirstName, String lastName, String secondaryLastName, String email, String secondaryEmail, String aadhar, String secondaryAadhar, String phone, String secondaryPhone, String bloodGroup, String password, Integer age) {
+    public primaryUser(Integer id, String firstName, String lastName, String email, String secondary_email, String phone, String secondary_phone, String aadhar, String secondary_aadhar, String termsConditionsCheckbox, String secondary_relationship, String age, String bloodGroup, String gender, String password, String secondary_first_name, String secondary_last_name) {
         this.id = id;
         this.firstName = firstName;
-        this.secondaryFirstName = secondaryFirstName;
         this.lastName = lastName;
-        this.secondaryLastName = secondaryLastName;
         this.email = email;
-        this.secondaryEmail = secondaryEmail;
-        this.aadhar = aadhar;
-        this.secondaryAadhar = secondaryAadhar;
+        this.secondary_email = secondary_email;
         this.phone = phone;
-        this.secondaryPhone = secondaryPhone;
-        this.bloodGroup = bloodGroup;
-        this.password = password;
+        this.secondary_phone = secondary_phone;
+        this.aadhar = aadhar;
+        this.secondary_aadhar = secondary_aadhar;
+        this.termsConditionsCheckbox = termsConditionsCheckbox;
+        this.secondary_relationship = secondary_relationship;
         this.age = age;
+        this.bloodGroup = bloodGroup;
+        this.gender = gender;
+        this.password = password;
+        this.secondary_first_name = secondary_first_name;
+        this.secondary_last_name = secondary_last_name;
     }
 
     public Integer getId() {
@@ -88,28 +102,12 @@ public class primaryUser {
         this.firstName = firstName;
     }
 
-    public String getSecondaryFirstName() {
-        return secondaryFirstName;
-    }
-
-    public void setSecondaryFirstName(String secondaryFirstName) {
-        this.secondaryFirstName = secondaryFirstName;
-    }
-
     public String getLastName() {
         return lastName;
     }
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public String getSecondaryLastName() {
-        return secondaryLastName;
-    }
-
-    public void setSecondaryLastName(String secondaryLastName) {
-        this.secondaryLastName = secondaryLastName;
     }
 
     public String getEmail() {
@@ -120,28 +118,12 @@ public class primaryUser {
         this.email = email;
     }
 
-    public String getSecondaryEmail() {
-        return secondaryEmail;
+    public String getSecondary_email() {
+        return secondary_email;
     }
 
-    public void setSecondaryEmail(String secondaryEmail) {
-        this.secondaryEmail = secondaryEmail;
-    }
-
-    public String getAadhar() {
-        return aadhar;
-    }
-
-    public void setAadhar(String aadhar) {
-        this.aadhar = aadhar;
-    }
-
-    public String getSecondaryAadhar() {
-        return secondaryAadhar;
-    }
-
-    public void setSecondaryAadhar(String secondaryAadhar) {
-        this.secondaryAadhar = secondaryAadhar;
+    public void setSecondary_email(String secondary_email) {
+        this.secondary_email = secondary_email;
     }
 
     public String getPhone() {
@@ -152,12 +134,52 @@ public class primaryUser {
         this.phone = phone;
     }
 
-    public String getSecondaryPhone() {
-        return secondaryPhone;
+    public String getSecondary_phone() {
+        return secondary_phone;
     }
 
-    public void setSecondaryPhone(String secondaryPhone) {
-        this.secondaryPhone = secondaryPhone;
+    public void setSecondary_phone(String secondary_phone) {
+        this.secondary_phone = secondary_phone;
+    }
+
+    public String getAadhar() {
+        return aadhar;
+    }
+
+    public void setAadhar(String aadhar) {
+        this.aadhar = aadhar;
+    }
+
+    public String getSecondary_aadhar() {
+        return secondary_aadhar;
+    }
+
+    public void setSecondary_aadhar(String secondary_aadhar) {
+        this.secondary_aadhar = secondary_aadhar;
+    }
+
+    public String getTermsConditionsCheckbox() {
+        return termsConditionsCheckbox;
+    }
+
+    public void setTermsConditionsCheckbox(String termsConditionsCheckbox) {
+        this.termsConditionsCheckbox = termsConditionsCheckbox;
+    }
+
+    public String getSecondary_relationship() {
+        return secondary_relationship;
+    }
+
+    public void setSecondary_relationship(String secondary_relationship) {
+        this.secondary_relationship = secondary_relationship;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
     }
 
     public String getBloodGroup() {
@@ -168,6 +190,14 @@ public class primaryUser {
         this.bloodGroup = bloodGroup;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
     public String getPassword() {
         return password;
     }
@@ -176,11 +206,19 @@ public class primaryUser {
         this.password = password;
     }
 
-    public Integer getAge() {
-        return age;
+    public String getSecondary_first_name() {
+        return secondary_first_name;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setSecondary_first_name(String secondary_first_name) {
+        this.secondary_first_name = secondary_first_name;
+    }
+
+    public String getSecondary_last_name() {
+        return secondary_last_name;
+    }
+
+    public void setSecondary_last_name(String secondary_last_name) {
+        this.secondary_last_name = secondary_last_name;
     }
 }

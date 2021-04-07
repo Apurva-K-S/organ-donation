@@ -28,8 +28,8 @@ export class UserRegComponent {
       bloodGroup: ['', [Validators.required]],
       gender: ['', [Validators.required]],
 
-      secondary_firstName: ['', [Validators.required]],
-      secondary_lastName: ['', [Validators.required]],
+      secondary_first_name: ['', [Validators.required]],
+      secondary_last_name: ['', [Validators.required]],
       secondary_email: ['', [Validators.required]],
       secondary_phone: ['', [Validators.required]],
       secondary_aadhar: ['', [Validators.required]],
@@ -52,7 +52,6 @@ export class UserRegComponent {
     if(this.form.valid)
     {
       console.log("inside this.form.valid");
-      console.log("inside form: ", this.form.value);
       this.authService.login(this.form.value).subscribe(result=>{
 
         console.log("inside: this.authService.login(this.form.value).subscribe(result=>{ ");

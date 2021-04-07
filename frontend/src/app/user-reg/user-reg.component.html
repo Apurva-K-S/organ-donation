@@ -101,17 +101,19 @@
                             <div class="col-md-6">
                                 <p style="font-size:17px; padding-bottom: 2%;"><b>Secondary User</b></p>
                                 <div class="form-group mb-3  mt-n1">
-                                    <input type="text" class="form-control" pattern="[a-zA-Z]*" name="secondary_firstName" id="secondary_firstName" placeholder="First Name *" value="" formControlName="secondary_firstName"/>
-                                    <div *ngIf = "f.secondary_firstName.touched && f.secondary_firstName.invalid" class="alert alert-danger">
-                                        <div *ngIf="f.secondary_firstName.errors?.required">First name is required</div>
+                                    <input type="text" class="form-control" pattern="[a-zA-Z]*" name="secondary_first_name" id="secondary_first_name" placeholder="Secondary User First Name *" value="" formControlName="secondary_first_name"/>
+                                    <div *ngIf = "f.secondary_first_name.touched && f.secondary_first_name.invalid" class="alert alert-danger">
+                                        <div *ngIf="f.secondary_first_name.errors?.required">First name is required</div>
                                     </div>
                                 </div>
+
                                 <div class="form-group mb-3  mt-n1">
-                                    <input type="text" class="form-control" pattern="[a-zA-Z]*" name="secondary_lastName" id="secondary_lastName" placeholder="Last Name *" value="" formControlName="secondary_lastName"/>
-                                    <div *ngIf = "f.secondary_lastName.touched && f.secondary_lastName.invalid" class="alert alert-danger">
-                                        <div *ngIf="f.secondary_lastName.errors?.required">Last name is required</div>
+                                    <input type="text" class="form-control" pattern="[a-zA-Z]*" name="secondary_last_name" id="secondary_last_name" placeholder="Secondary User Last Name *" value="" formControlName="secondary_last_name"/>
+                                    <div *ngIf = "f.secondary_last_name.touched && f.secondary_last_name.invalid" class="alert alert-danger">
+                                        <div *ngIf="f.secondary_last_name.errors?.required">Last name is required</div>
                                     </div>
                                 </div>
+                                                  
                                 <div class="form-group mb-3  mt-n1">
                                     <input type="email" class="form-control" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" name="secondary_email" id="secondary_email" placeholder="Email *" value="" formControlName="secondary_email"/>
                                     <div *ngIf = "f.secondary_email.touched && f.secondary_email.invalid" class="alert alert-danger">

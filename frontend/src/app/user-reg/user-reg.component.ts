@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
   
 import { ConfirmedValidator } from 'src/app/confirmed.validator';
 import {AuthService} from 'src/app/services/auth.service';
@@ -13,7 +14,7 @@ import {AuthService} from 'src/app/services/auth.service';
 export class UserRegComponent {
   form: FormGroup = new FormGroup({});
   
-  constructor(private fb: FormBuilder, private authService:AuthService) {
+  constructor(private fb: FormBuilder, private authService:AuthService,private router: Router) {
   
     this.form = fb.group({
       
@@ -48,7 +49,7 @@ export class UserRegComponent {
 
   submit(){
     console.log(this.form.value);
-    console.log("inside login process");
+    console.log("inside submit process");
     if(this.form.valid)
     {
       console.log("inside this.form.valid");
@@ -68,7 +69,10 @@ export class UserRegComponent {
 
       console.log("coming out of this.form.valid");
     }
-    console.log("coming out of login process");
+    
+    console.log("coming out of submit process");
+    this.router.navigateByUrl("/"); //need to add registration successful code.
+    
   }
    
 }

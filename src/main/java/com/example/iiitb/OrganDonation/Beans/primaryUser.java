@@ -20,22 +20,22 @@ public class primaryUser{
     private String lastName;
 
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String email;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String secondary_email;
 
-    @Column(nullable = false)
+    @Column(nullable = false,unique = true)
     private String phone;
 
-    @Column(nullable = false)
+    @Column(nullable = false,unique = true)
     private String secondary_phone;
 
-    @Column(nullable = false)
+    @Column(nullable = false,unique = true)
     private String aadhar;
 
-    @Column(nullable = false)
+    @Column(nullable = false,unique = true)
     private String secondary_aadhar;
 
     @Column(nullable=false)

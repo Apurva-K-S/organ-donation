@@ -1,5 +1,5 @@
 <app-navigation-bar></app-navigation-bar>
-<form>
+<form [formGroup]="loginForm" (ngSubmit)="login()">
     <div class="container register">
         <div class="row">
             
@@ -18,14 +18,14 @@
                             <div style="padding: 1cm;">
                                 <div style="margin-left: 5cm;">
                                     <h3 style="font-size: 18px; padding-top:1%;"> <b> Email </b> </h3> 
-                                    <input type="text" style="width: 10cm; height: 1cm;" class="form-control" name="email" id="email" placeholder="Please enter your email id or donor's email id" value="" />
+                                    <input type="text" style="width: 10cm; height: 1cm;" class="form-control" name="email" id="email" required placeholder="Please enter your email id or donor's email id" value="" formControlName="loginEmail"/>
                                 </div>
                                 <div style="margin-left: 5cm;">
                                     <h3 style="font-size: 18px;  padding-top: 1cm;"> <b> Password </b> </h3> 
-                                    <input type="password" style="width: 10cm; height: 1cm;" class="form-control" name="password" id="password" placeholder="Please enter your password" value="" />
+                                    <input type="password" style="width: 10cm; height: 1cm;" class="form-control" name="password" id="password" required placeholder="Please enter your password" value="" formControlName="loginPassword"/>
                                 </div>
 
-                                <button type="button" routerLink="/usrHomepage" id="usrlogin" name="usrlogin" class="btn btn-primary register_button">Login</button>
+                                <button type="submit" routerLink="/usrHomepage" id="usrlogin" name="usrlogin" class="btn btn-primary register_button">Login</button>
                             </div>
                         </div>
                     </div>

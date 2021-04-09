@@ -20,17 +20,37 @@ public class LoginService {
 
     public boolean authenticateUser(String loginEmail,String loginPassword)
     {
+        System.out.println("Inside authenticateUser");
+        System.out.println("loginEmail: " + loginEmail);
+        System.out.println("loginPassword: " + loginPassword);
+
         List<primaryUser> loginCredentials, lgn1;
-       loginCredentials= loginRepo.findByEmail(loginEmail);
-      // lgn1 = loginRepo.findBySecondary_email(loginEmail);
 
-       Iterator itr = loginCredentials.iterator();
+        loginCredentials= loginRepo.findByEmail(loginEmail);
+        lgn1 = loginRepo.findBySecondary_email(loginEmail);
 
-       while(itr.hasNext())
-            System.out.println("Inside login service iterator: "+itr.next());
+        System.out.println("loginCredentials are: "+ lgn1.get(0).getEmail());
+        System.out.println("loginCredentials are: "+ lgn1.get(0).getSecondary_email());
+        System.out.println("loginCredentials are: "+ lgn1.get(0).getPassword());
+        System.out.println((loginEmail.equals(loginCredentials.get(0).getEmail())));
+        System.out.println(loginEmail.equals(lgn1.get(0).getSecondary_email()));
+        /*
+        //System.out.println("loginCredentials are: "+ loginCredentials.get(0).getEmail());
+        // lgn1 = loginRepo.findBySecondary_email(loginEmail);
+        // Iterator itr = loginCredentials.iterator();
+        // while(itr.hasNext())
+        // System.out.println("Inside login service iterator: "+itr.hasNext()); */
 
-        return true;
+        if( (loginEmail.equals(loginCredentials.get(0).getEmail())) ||  (loginEmail.equals(lgn1.get(0).getSecondary_email())) )
+        {
+            //System.out.println("inside loginEmail.. first if");
+            if( (loginPassword.equals(lgn1.get(0).getPassword())) || (loginPassword.equals(loginCredentials.get(0).getPassword())))
+            {
+                //System.out.println("inside loginPassword... second if");
+                return true;
+            }
+            return false;
+        }
+        return false;
     }
-
-
 }

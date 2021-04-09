@@ -9,6 +9,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.ws.rs.core.Response;
+
 @RestController
 @RequestMapping(path="/api")
 public class LoginController {
@@ -23,14 +25,20 @@ public class LoginController {
 
     @PostMapping(path="/login", consumes = {MediaType.APPLICATION_JSON_VALUE})
     public @ResponseBody
-    ResponseEntity addUserData(@RequestBody final LoginDetails logDetails)
+    Response addUserData(@RequestBody final LoginDetails logDetails)
     {
 
+        System.out.println("Inside /api/login");
+        System.out.println("login details are: Email: = " + logDetails.getLoginEmail() + " Password: = " + logDetails.getLoginPassword());
+        System.out.println("gng to loginService.authenticateUser");
         boolean result = loginService.authenticateUser(logDetails.getLoginEmail(),logDetails.getLoginPassword());
-        if(result == false)
-            return ResponseEntity.status(401).build();
+        System.out.println("Came back from loginService.authenticateUser");
+        System.out.println("result is: " + result);
 
-        return ResponseEntity.ok().build();
+        if(result == false)
+            return Response.status(401).build();
+
+        return Response.ok().build();
     }
 
 }

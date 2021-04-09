@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
-  
 import { ConfirmedValidator } from 'src/app/confirmed.validator';
 import {AuthService} from 'src/app/services/auth.service';
 
@@ -45,8 +44,6 @@ export class UserRegComponent {
     return this.form.controls;
   }
    
- 
-
   submit(){
     console.log(this.form.value);
     console.log("inside submit process");

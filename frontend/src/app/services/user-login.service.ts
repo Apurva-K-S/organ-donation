@@ -20,7 +20,6 @@ export class UserLoginService {
     console.log("login credentials are: ", loginCredentials);
     //console.log(this.http.post(`${baseUrl}add`, credentials));
 
-    return this.http.post(`${baseUrl}login`, (loginCredentials));
-   
+    return this.http.post(`${baseUrl}login`, (loginCredentials), {responseType:"text"});
   }
 }

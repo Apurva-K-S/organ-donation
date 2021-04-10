@@ -98,8 +98,7 @@
 .register_button{
     width: 200px;
     height: 40px;
-    margin-left: 7cm;
-    margin-top: 1cm;
+    text-align: center;
 }
 
 

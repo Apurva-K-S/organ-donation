@@ -19,10 +19,16 @@
                                 <div style="margin-left: 5cm;">
                                     <h3 style="font-size: 18px; padding-top:1%;"> <b> Email </b> </h3> 
                                     <input type="text" style="width: 10cm; height: 1cm;" class="form-control" name="email" id="email" required placeholder="Please enter your email id or donor's email id" value="" formControlName="loginEmail"/>
+                                    <div *ngIf = "f.loginEmail.touched && f.loginEmail.invalid" class="alert alert-danger">
+                                        <div *ngIf="f.loginEmail.errors?.required">Email is required</div>
+                                    </div>
                                 </div>
                                 <div style="margin-left: 5cm;">
                                     <h3 style="font-size: 18px;  padding-top: 1cm;"> <b> Password </b> </h3> 
                                     <input type="password" style="width: 10cm; height: 1cm;" class="form-control" name="password" id="password" required placeholder="Please enter your password" value="" formControlName="loginPassword"/>
+                                    <div *ngIf = "f.loginPassword.touched && f.loginPassword.invalid" class="alert alert-danger">
+                                        <div *ngIf="f.loginPassword.errors?.required">Password is required</div>
+                                    </div>
                                 </div>
 
                                 <!--<button type="submit" routerLink="/usrHomepage" id="usrlogin" name="usrlogin" class="btn btn-primary register_button">Login</button>-->

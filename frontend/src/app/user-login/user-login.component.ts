@@ -19,6 +19,10 @@ export class UserLoginComponent implements OnInit {
     this.initLoginForm()
   }
 
+  get f(){
+    return this.loginForm.controls;
+  }
+
   initLoginForm()
   {
     console.log("inside initLoginform");
@@ -41,17 +45,31 @@ export class UserLoginComponent implements OnInit {
 
         console.log("inside: this.authService.login(this.form.value).subscribe(result=>{ ");
         console.log("Result is: ", result);
-        if(result['status'] == 200){
+        console.log("type of result: ", typeof(result));
+        
+        console.log("---------------------");
+        
+        if(result==="one"){
           console.log(result);
-          alert("all working!!");  
+          alert("all working!! Primary user");
+          this.router.navigateByUrl("/prmUserHomepage");
+        }
+        else if(result === "two")
+        {
+          alert("all working!! Secondary user");
+          this.router.navigateByUrl("/secUserHomepage");
         }
         else{
           alert("please enter correct credentials!!");
         }
         console.log("coming out of: this.authService.login(this.form.value).subscribe(result=>{ ");
       })
+      
       console.log("coming out of this.form.valid");
     }
-    this.router.navigateByUrl("/usrHomepage"); //need to add registration successful code
+    else
+    {
+      alert("please enter valid details");
+    }
   }
 }

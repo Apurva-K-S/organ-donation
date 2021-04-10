@@ -28,6 +28,18 @@ public class LoginController {
     Response addUserData(@RequestBody final LoginDetails logDetails)
     {
 
+        /*System.out.println("Inside /api/login");
+        System.out.println("login details are: Email: = " + logDetails.getLoginEmail() + " Password: = " + logDetails.getLoginPassword());
+        System.out.println("gng to loginService.authenticateUser");
+        String result = loginService.authenticateUser(logDetails.getLoginEmail(),logDetails.getLoginPassword());
+        System.out.println("Came back from loginService.authenticateUser");
+        System.out.println("result is: " + result);
+
+        if(result.equals("three"))
+            return "invalid";
+
+        return result; */
+
         System.out.println("Inside /api/login");
         System.out.println("login details are: Email: = " + logDetails.getLoginEmail() + " Password: = " + logDetails.getLoginPassword());
         System.out.println("gng to loginService.authenticateUser");
@@ -40,5 +52,4 @@ public class LoginController {
 
         return Response.ok().build();
     }
-
 }

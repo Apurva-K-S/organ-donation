@@ -16,6 +16,9 @@ import { DonatePageComponent } from './donate-page/donate-page.component';
 import { ConfirmEqualValidatorDirective } from './custom-directives/confirm-equal-validator.directive';
 import { ListOfOrgansComponent } from './list-of-organs/list-of-organs.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { PrmUserHomepageComponent } from './prm-user-homepage/prm-user-homepage.component';
+import { SecUserHomepageComponent } from './sec-user-homepage/sec-user-homepage.component';
+import { ThankyouComponent } from './thankyou/thankyou.component';
 
 
 @NgModule({
@@ -30,7 +33,10 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
     DonatePageComponent,
     ConfirmEqualValidatorDirective,
     ListOfOrgansComponent,
-    NavigationBarComponent
+    NavigationBarComponent,
+    PrmUserHomepageComponent,
+    SecUserHomepageComponent,
+    ThankyouComponent
   ],
   imports: [
     BrowserModule,

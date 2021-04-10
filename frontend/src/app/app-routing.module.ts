@@ -5,6 +5,9 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { HospitalsListComponent } from './hospitals-list/hospitals-list.component';
 import { ListOfOrgansComponent } from './list-of-organs/list-of-organs.component';
 import { OrganListComponent } from './organ-list/organ-list.component';
+import { PrmUserHomepageComponent } from './prm-user-homepage/prm-user-homepage.component';
+import { SecUserHomepageComponent } from './sec-user-homepage/sec-user-homepage.component';
+import { ThankyouComponent } from './thankyou/thankyou.component';
 import { UserHomepageComponent } from './user-homepage/user-homepage.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserRegComponent } from './user-reg/user-reg.component';
@@ -18,7 +21,10 @@ const routes: Routes = [
   {path: 'usrHomepage', component:UserHomepageComponent},
   {path: 'hospitalsList', component:HospitalsListComponent},
   {path: 'donatePage', component: DonatePageComponent},
-  {path: 'listOfOrgans', component: ListOfOrgansComponent}
+  {path: 'listOfOrgans', component: ListOfOrgansComponent},
+  {path: 'thankyou', component: ThankyouComponent},
+  {path: 'prmUserHomepage', component: PrmUserHomepageComponent},
+  {path: 'secUserHomepage', component: SecUserHomepageComponent}
 ];
 
 @NgModule({

@@ -52,7 +52,6 @@ export class UserLoginComponent implements OnInit {
       })
       console.log("coming out of this.form.valid");
     }
-
     this.router.navigateByUrl("/usrHomepage"); //need to add registration successful code
   }
 }

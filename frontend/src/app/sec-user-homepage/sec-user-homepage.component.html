@@ -1,0 +1,60 @@
+<app-navigation-bar></app-navigation-bar>
+
+<form [formGroup]="formGroup">
+    <div class="container register">
+        <div class="row">
+            
+            <div class="col-md-3 register-left">
+                <img src="assets/images/heart_medical.png"  alt=""/>
+                <p style="font-size:22px; font-style: oblique;"><b>Welcome!!</b></p>
+                <p style="font-size:22px; font-style: italic; padding:2%"><b>You are 30 seconds away from saving a life!</b></p>            
+            </div>
+
+            <div class="col-md-9 register-right">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" ifade show actived="home" role="tabpanel" aria-labelledby="home-tab">
+                        <p class="register-heading" style="font-size:26px;"> <b>Welcome user <!-- Add user's name here. --></b></p>
+                        <div class="row register-form">
+                            <div>
+                                <p style="font-size:18px;" style="padding-top: 20px;"> <b>Select Primary User status!! <!-- Add user's name here. --></b></p>
+                                <!--<input name="options" [(ngModel)]="options" type="radio" [value]="true" [checked]="options"/> Yes
+
+                                <input name="options"[(ngModel)]="options" type="radio" [value]="false" [checked]="!options"/> No
+                            
+                                <h2 *ngIf="options">Supply</h2>
+                                <h2 *ngIf="!options">Demand</h2>-->
+
+                                <!--<button (click)="toggleTag()">
+                                    Toggle h2 tag
+                                </button>
+                                <h2 *ngIf="showMe">Toggle me on button click</h2>-->
+                                
+                                <div class="px-2 mb-3 mt-n1 ml-10" style="padding-top: 1cm;">
+                                    <fieldset id="group1">
+                                        <input class="ml-10 px-5" (click)="toggleTag1()" type="radio" value="dead" name="priUserStatus" id="dead" formControlName="priUserStatus"> <span class="px-2"> Dead </span>
+                                        <input class="ml-10 px-5" (click)="toggleTag2()" checked="checked" type="radio" value="alive" name="priUserStatus" id="alive" formControlName="priUserStatus"> <span class="px-2"> Alive </span>
+                                    </fieldset>
+                                </div>
+                                
+                                <p style="padding-top: 1cm;"> Here organs list will be displayed. </p>
+
+                                <!--<p *ngIf="showMe" style="padding-top: 1cm;">Here hospitals list and button will come!!</p>-->
+
+                                <div *ngIf="showMe" style="padding-top: 1cm;">
+                                    <p style="font-size:20px; margin-top: 1cm; margin-left: 2cm;"> <b> Please select a hospital from the below list </b></p>
+                                    <br>
+                                    <select class="dropdwn" name="hospitals" style="margin-top: 1cm;" id="hospitals" >
+                                        <option style="height: 20px;" *ngFor="let hospitalVal of hospitals" [value]="hospitalVal.value">{{hospitalVal.viewValue}}</option>
+                                    </select>
+
+                                    <button type="button" routerLink="/thankyou" style="margin-top: 1cm;" id="donate" name="donate" class="btn btn-primary register_button">Donate</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

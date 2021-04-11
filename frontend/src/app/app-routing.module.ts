@@ -23,8 +23,8 @@ const routes: Routes = [
   {path: 'donatePage', component: DonatePageComponent},
   {path: 'listOfOrgans', component: ListOfOrgansComponent},
   {path: 'thankyou', component: ThankyouComponent},
-  {path: 'prmUserHomepage', component: PrmUserHomepageComponent},
-  {path: 'secUserHomepage', component: SecUserHomepageComponent}
+  {path: 'prmUserHomepage/:loginEmail', component: PrmUserHomepageComponent},
+  {path: 'secUserHomepage/:loginEmail', component: SecUserHomepageComponent}
 ];
 
 @NgModule({

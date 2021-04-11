@@ -16,7 +16,9 @@ export class UserLoginComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("inside ngOnInit()");
+    
     this.initLoginForm()
+    this.loginForm.controls["loginAs"].setValue("Primary User");
   }
 
   get f(){
@@ -30,6 +32,7 @@ export class UserLoginComponent implements OnInit {
     this.loginForm = new FormGroup({
         loginEmail: new FormControl('',[Validators.required]),
         loginPassword: new FormControl('',[Validators.required]), 
+        loginAs: new FormControl('',[Validators.required]),
     })
   }
 
@@ -49,15 +52,18 @@ export class UserLoginComponent implements OnInit {
         
         console.log("---------------------");
         
-        if(result==="one"){
+      
+        if(result['status'] == 200 && this.loginForm.controls['loginAs'].value === "Primary User")
+        {
           console.log(result);
           alert("all working!! Primary user");
-          this.router.navigateByUrl("/prmUserHomepage");
+          this.router.navigate(["/prmUserHomepage",this.loginForm.controls['loginEmail'].value]);
         }
-        else if(result === "two")
+        else if(result['status'] == 200 && this.loginForm.controls['loginAs'].value === "Secondary User")
         {
           alert("all working!! Secondary user");
-          this.router.navigateByUrl("/secUserHomepage");
+          this.router.navigate(["/secUserHomepage",this.loginForm.controls['loginEmail'].value]);
+      
         }
         else{
           alert("please enter correct credentials!!");

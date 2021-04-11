@@ -47,7 +47,9 @@ import { ThankyouComponent } from './thankyou/thankyou.component';
     ReactiveFormsModule
     
   ],
-  providers: [],
+  providers: [
+    UserLoginComponent,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,6 @@
 <app-navigation-bar></app-navigation-bar>
 
-<form [formGroup]="formGroup">
+<form [formGroup]="formGroup" > 
     <div class="container register">
         <div class="row">
             
@@ -35,7 +35,7 @@
                                         </select>
                                     </div>
 
-                                    <button type="button" routerLink="/thankyou" style="margin-top: 1cm; align-self: center;" id="donate" name="donate" class="btn btn-primary register_button" >Donate</button>
+                                    <button type="button" style="margin-top: 1cm; align-self: center;" id="donate" name="donate" class="btn btn-primary register_button" (click)="fetchOrganList()">Donate</button>
                                 </div>
                             </div>
                         </div>

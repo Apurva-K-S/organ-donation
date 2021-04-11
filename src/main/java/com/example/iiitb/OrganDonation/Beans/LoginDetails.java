@@ -8,13 +8,15 @@ public class LoginDetails {
 
     private String loginEmail;
     private String loginPassword;
-
-    public LoginDetails(String loginEmail, String loginPassword) {
-        this.loginEmail = loginEmail;
-        this.loginPassword = loginPassword;
-    }
+    private String loginAs;
 
     public LoginDetails() {
+    }
+
+    public LoginDetails(String loginEmail, String loginPassword, String loginAs) {
+        this.loginEmail = loginEmail;
+        this.loginPassword = loginPassword;
+        this.loginAs = loginAs;
     }
 
     public String getLoginEmail() {
@@ -33,5 +35,11 @@ public class LoginDetails {
         this.loginPassword = loginPassword;
     }
 
+    public String getLoginAs() {
+        return loginAs;
+    }
 
+    public void setLoginAs(String loginAs) {
+        this.loginAs = loginAs;
+    }
 }

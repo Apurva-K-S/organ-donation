@@ -15,11 +15,11 @@ export class UserLoginService {
 
   login(loginCredentials: any): Observable<any> {
     
-    console.log("We are in login service before gng to spring boot.");
+    console.log("We are in login service class and login() before gng to spring boot.");
     console.log("type is: ", typeof(loginCredentials));
     console.log("login credentials are: ", loginCredentials);
     //console.log(this.http.post(`${baseUrl}add`, credentials));
 
-    return this.http.post(`${baseUrl}login`, (loginCredentials), {responseType:"text"});
+    return this.http.post(`${baseUrl}login`, (loginCredentials));
   }
 }

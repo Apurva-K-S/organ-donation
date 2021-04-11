@@ -1,6 +1,6 @@
 <app-navigation-bar></app-navigation-bar>
 
-<form [formGroup]="formGroup">
+<form [formGroup]="formGroup" (ngSubmit)="organDonationList()">
     <div class="container register">
         <div class="row">
             
@@ -19,29 +19,29 @@
                             <div>
                                 <h3 style="font-size: 20px;"> I <b> GIVE </b> authorization for the following organs to be donated:</h3> <h4>(check all that apply)</h4>
                                 <div>
-                                    <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="heart_id" name="heart_name" formControlName="heart_name">
+                                    <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="heart_id" name="heart_name" formControlName="organ_Heart">
                                     <label class="form-check-label checkbox_label" >{{organHeart}}</label>
                                 </div>
                                 <div>
-                                    <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="kidneys_id" name="kidneys_name">
+                                    <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="kidneys_id" name="kidneys_name" formControlName="organ_Kidney">
                                     <label class="form-check-label checkbox_label"  >{{organKidney}}</label>
                                 </div>
                                 <div>
-                                    <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="liver_id" name="liver_name">
+                                    <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="liver_id" name="liver_name" formControlName="organ_Liver">
                                     <label class="form-check-label checkbox_label" >{{organLiver}}</label>
                                 </div>
                                 <div>
-                                    <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="lungs_id" name="lungs_name">
+                                    <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="lungs_id" name="lungs_name" formControlName="organ_Lungs">
                                     <label class="form-check-label checkbox_label" >{{organLungs}}</label>
                                 </div>
                                
                                 <div>
-                                    <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="eyes_id" name="eyes_name">
+                                    <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="eyes_id" name="eyes_name" formControlName="organ_Eyes">
                                     <label class="form-check-label checkbox_label">{{organEyes}}</label>
                                 </div>
                                 <div>
-                                    <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="skin_id" name="skin_name">
-                                    <label class="form-check-label checkbox_label">{{organPlasma}}</label>
+                                    <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="skin_id" name="skin_name" formControlName="organ_Skin">
+                                    <label class="form-check-label checkbox_label">{{organSkin}}</label>
                                 </div>
                                 
                                 <div>
@@ -53,7 +53,7 @@
                                         Research box.</i>
                                     </p>
                                 </div>
-                                <button type="button" routerLink="/thankyou" id="register" name="register" class="btn btn-primary register_button">submit organs list</button>
+                                <button type="submit"  id="register" name="register" class="btn btn-primary register_button">submit organs list</button>
                             </div>
                         </div>
                     </div>

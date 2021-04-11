@@ -3,10 +3,11 @@ package com.example.iiitb.OrganDonation.Beans;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name="primaryUser")
-public class primaryUser{
+public class primaryUser implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +21,7 @@ public class primaryUser{
     private String lastName;
 
 
-    @Column(nullable = false, unique = true)
+    @Column(name="email", unique = true)
     private String email;
 
     @Column(nullable = false, unique = true)

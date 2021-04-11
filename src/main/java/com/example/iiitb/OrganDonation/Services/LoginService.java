@@ -12,6 +12,10 @@ import java.util.List;
 public class LoginService {
     LoginRepository loginRepo;
 
+    private int LOGIN_AS_PRIMARY_USER = 1;
+    private int LOGIN_AS_SECONDARY_USER = 2;
+
+
     @Autowired
     public LoginService(LoginRepository loginRepo)
     {
@@ -167,7 +171,41 @@ public class LoginService {
         // secondary user -> false.
     } */
 
-    public boolean authenticateUser(String loginEmail,String loginPassword) {
-        return true;
+    public int authenticateUser(String loginEmail,String loginPassword, int loginAs)
+    {
+        List<primaryUser> login=null;
+
+        if(loginAs == LOGIN_AS_PRIMARY_USER) {
+            System.out.println("Inside Loginservice-authenticateUser-if(loginAs)");
+            login = loginRepo.findByEmail(loginEmail);
+        }
+            else if(loginAs == LOGIN_AS_SECONDARY_USER) {
+            System.out.println("Inside Loginservice-authenticateUser-elseif(loginAs)");
+            login = loginRepo.findBySecondary_email(loginEmail);
+        }
+        if(login.size()!=0)
+        {
+            System.out.println("Inside authenticateUser of LoginService-authenticateUSer-login.size()!=0");
+            System.out.println("from fontend email: "+loginEmail);
+            System.out.println("from frontend passwd: "+loginPassword);
+            System.out.println("from backend email: "+login.get(0).getEmail());
+            System.out.println("from backend passwd: "+login.get(0).getPassword());
+
+
+            if(loginAs == LOGIN_AS_PRIMARY_USER && loginEmail.equals(login.get(0).getEmail()) && loginPassword.equals(login.get(0).getPassword()))
+            {
+                System.out.println("Inside login and passwd match if of primaryuser");
+                return 1;  //Email and password matches
+            }
+            else if (loginAs == LOGIN_AS_SECONDARY_USER && loginEmail.equals(login.get(0).getSecondary_email()) && loginPassword.equals(login.get(0).getPassword()))
+            {
+                System.out.println("Inside else if of secondary user");
+                return 1;
+            }
+        }
+
+
+    return 0;
     }
+
 }

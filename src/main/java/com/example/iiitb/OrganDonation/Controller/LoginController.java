@@ -62,7 +62,6 @@ public class LoginController {
             result = loginService.authenticateUser(logDetails.getLoginEmail(),logDetails.getLoginPassword(),LOGIN_AS_SECONDARY_USER);
         }
 
-
         System.out.println("Came back from loginService.authenticateUser");
         System.out.println("result is: " + result);
 

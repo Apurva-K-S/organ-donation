@@ -53,14 +53,14 @@ export class UserRegComponent {
       this.authService.login(this.form.value).subscribe(result=>{
 
         console.log("inside: this.authService.login(this.form.value).subscribe(result=>{ ");
-        //if(result.success){
-        console.log(result);
-        //  alert(result.message);
-          
-        //}
-        //else{
-        //  alert(result.message);
-        //}
+        if(result['status']==200){
+          console.log(result);
+          alert("Registered Successfully!! Emails have been send for both the users.");
+          this.router.navigateByUrl("/"); //need to add registration successful code.
+        }
+        else{
+          alert(result.message);
+        }
         console.log("coming out of: this.authService.login(this.form.value).subscribe(result=>{ ");
       })
 
@@ -68,8 +68,5 @@ export class UserRegComponent {
     }
     
     console.log("coming out of submit process");
-    this.router.navigateByUrl("/"); //need to add registration successful code.
-    
   }
-   
 }

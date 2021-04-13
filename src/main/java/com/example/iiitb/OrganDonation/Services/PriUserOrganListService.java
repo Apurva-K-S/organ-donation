@@ -15,7 +15,7 @@ import java.util.List;
 @Named
 public class PriUserOrganListService {
 
-    PriUserOrganListRepository priUserOrganListRepository ;
+    PriUserOrganListRepository priUserOrganListRepository;
     LoginRepository loginRepository;
 
     @Autowired

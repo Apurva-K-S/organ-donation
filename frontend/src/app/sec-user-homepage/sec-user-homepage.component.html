@@ -1,45 +1,53 @@
 <app-navigation-bar></app-navigation-bar>
 
-<form [formGroup]="formGroup" > 
-    <div class="container register">
-        <div class="row">
-            
-            <div class="col-md-3 register-left">
-                <img src="assets/images/heart_medical.png"  alt=""/>
-                <p style="font-size:22px; font-style: oblique;"><b>Welcome!!</b></p>
-                <p style="font-size:22px; font-style: italic; padding:2%"><b>You are 30 seconds away from saving a life!</b></p>            
-            </div>
 
-            <div class="col-md-9 register-right">
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" ifade show actived="home" role="tabpanel" aria-labelledby="home-tab">
-                        <p class="register-heading" style="font-size:26px;"> <b>Welcome user <!-- Add user's name here. --></b></p>
-                        <div class="row register-form"  style="text-align: center;">
-                            <div >
-                                <p style="font-size:20px; padding-top: 20px;"> <b>Select Primary User status!! <!-- Add user's name here. --></b></p>
-                                <div class="px-2 mb-3 mt-n1 ml-10" style="padding-top: 1cm; font-size:20px;">
-                                    <fieldset id="group1">
-                                        <input class="ml-10 px-5" (click)="toggleTag1()" type="radio" value="dead" name="priUserStatus" id="dead" formControlName="priUserStatus"> <span class="px-2"> Dead </span>
-                                        <input class="ml-10 px-5" (click)="toggleTag2()" checked="checked" type="radio" value="alive" name="priUserStatus" id="alive" formControlName="priUserStatus"> <span class="px-2"> Alive </span>
-                                    </fieldset>
-                                </div>
-                                
-                                <p style="padding-top: 1cm; font-size:20px;"> Here organs list will be displayed. </p>
-
-                                <div *ngIf="showMe" style="padding-top: 1cm;">
-                                    <p style="font-size:20px;"> <b> Please select a hospital from the below list </b></p>
-                                    
-                                    <div style="align-self: center;">
-                                        <select name="hospitals" style="margin-top: 1cm;" id="hospitals" >
-                                            <option style="height: 20px;" *ngFor="let hospitalVal of hospitals" [value]="hospitalVal.value">{{hospitalVal.viewValue}}</option>
-                                        </select>
-                                    </div>
-
-                                    <button type="button" style="margin-top: 1cm; align-self: center;" id="donate" name="donate" class="btn btn-primary register_button" (click)="fetchOrganList()">Donate</button>
-                                </div>
-                            </div>
-                        </div>
+<form [formGroup]="formGroup" (ngSubmit)="storeHospitalName()"> 
+    <div class="container register row">
+        <div class="col-md-3 register-left">
+            <img src="assets/images/heart_medical.png"  alt=""/>
+            <p style="font-size:22px; font-style: oblique;"><b>Welcome!!</b></p>
+            <p style="font-size:22px; font-style: italic; padding:2%"><b>You are 30 seconds away from saving a life!</b></p>            
+        </div>
+        <div class="col-md-9 register-right tab-content tab-pane fade show active" id="myTabContent" ifade show actived="home" role="tabpanel" aria-labelledby="home-tab">
+            <p class="register-heading" style="font-size:26px;"> <b>Welcome user <!-- Add user's name here. --></b></p>
+            <div class="row register-form"  style="text-align: center;">
+                
+                <p style="font-size:20px; padding-top: 20px;"> <b>Select Primary User status!! <!-- Add user's name here. --></b></p>
+                <div class="px-2 mb-3 mt-n1 ml-10" style="padding-top: 1cm; font-size:20px;">
+                    <fieldset id="group1">
+                        <input class="ml-10 px-5" (click)="toggleTag1()" type="radio" value="dead" name="priUserStatus" id="dead" formControlName="priUserStatus"> <label class="px-2"> dead </label>
+                        <input class="ml-10 px-5" (click)="toggleTag2()" type="radio" value="alive" name="priUserStatus" id="alive" formControlName="priUserStatus"> <label class="px-2"> alive </label>
+                    </fieldset>
+                </div>
+                <!--<button type="button" style="margin-top: 1cm; align-self: center;" id="donate" name="donate" class="btn btn-primary register_button" >display donated organs</button>-->
+                <div class="container" *ngIf="showTable">
+                    <table class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th>Organ Donated</th>
+                        <!--<th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Department</th>
+                        <th>Email</th>
+                        <th>Country</th>-->
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let justOrgansList of justOrgansLists">
+                        <td><span>{{justOrgansList.organ}}</span></td>
+                    </tr>
+                    </tbody>
+                    </table>
+                </div>
+                <div *ngIf="showMe" style="padding-top: 1cm;">
+                    <p style="font-size:20px;"> <b> Please select a hospital from the below list </b></p>
+                    
+                    <div style="align-self: center;">
+                        <select name="hospitals" style="margin-top: 1cm;" id="hospitals" formControlName="hospitalName">
+                            <option style="height: 20px;" *ngFor="let hospitalVal of hospitals" [value]="hospitalVal.value">{{hospitalVal.viewValue}}</option>
+                        </select>
                     </div>
+                    <button type="submit" style="margin-top: 1cm; align-self: center;" id="donate" name="donate" class="btn btn-primary register_button">Donated</button>
                 </div>
             </div>
         </div>

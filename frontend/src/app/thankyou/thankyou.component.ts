@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
+import { ConfirmedValidator } from 'src/app/confirmed.validator';
+import {ThankyouServiceService} from 'src/app/services/thankyou-service.service';
 
 @Component({
   selector: 'app-thankyou',
@@ -7,9 +11,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThankyouComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup = new FormGroup({});
+
+  constructor(private fb: FormBuilder, private thankyouServiceService:ThankyouServiceService,private router: Router) {
+    
+  }
 
   ngOnInit(): void {
   }
+
+  submit(){
+    this.thankyouServiceService.sendEmail(this.form.value).subscribe(result=>{
+      console.log(result);
+    })
+  }
+
 
 }

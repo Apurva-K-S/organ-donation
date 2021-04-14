@@ -4,6 +4,7 @@ import { DonatePageComponent } from './donate-page/donate-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { HospitalsListComponent } from './hospitals-list/hospitals-list.component';
 import { ListOfOrgansComponent } from './list-of-organs/list-of-organs.component';
+import { OrganHeartComponent } from './organ-heart/organ-heart.component';
 import { OrganListComponent } from './organ-list/organ-list.component';
 import { PrmUserHomepageComponent } from './prm-user-homepage/prm-user-homepage.component';
 import { SecUserHomepageComponent } from './sec-user-homepage/sec-user-homepage.component';
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path: 'listOfOrgans', component: ListOfOrgansComponent},
   {path: 'thankyou', component: ThankyouComponent},
   {path: 'prmUserHomepage/:loginEmail', component: PrmUserHomepageComponent},
-  {path: 'secUserHomepage/:loginEmail', component: SecUserHomepageComponent}
+  {path: 'secUserHomepage/:loginEmail', component: SecUserHomepageComponent},
+  {path: 'organHeart', component: OrganHeartComponent}
 ];
 
 @NgModule({

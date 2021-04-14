@@ -19,6 +19,7 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { PrmUserHomepageComponent } from './prm-user-homepage/prm-user-homepage.component';
 import { SecUserHomepageComponent } from './sec-user-homepage/sec-user-homepage.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
+import { OrganHeartComponent } from './organ-heart/organ-heart.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { ThankyouComponent } from './thankyou/thankyou.component';
     NavigationBarComponent,
     PrmUserHomepageComponent,
     SecUserHomepageComponent,
-    ThankyouComponent
+    ThankyouComponent,
+    OrganHeartComponent
   ],
   imports: [
     BrowserModule,

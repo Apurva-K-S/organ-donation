@@ -17,14 +17,14 @@
                             
                             <div style="padding: 1cm;">
                                 <div style="margin-left: 5cm;">
-                                    <h3 style="font-size: 18px; padding-top:1%;"> <b> Email </b> </h3> 
+                                    <h3 style="font-size: 18px; padding-top:1cm;"> <b> Email </b> </h3> 
                                     <input type="text" style="width: 10cm; height: 1cm;" class="form-control" name="email" id="email" required placeholder="Please enter your email id or donor's email id" value="" formControlName="loginEmail"/>
                                     <div *ngIf = "f.loginEmail.touched && f.loginEmail.invalid" class="alert alert-danger">
                                         <div *ngIf="f.loginEmail.errors?.required">Email is required</div>
                                     </div>
                                 </div>
                                 <div style="margin-left: 5cm;">
-                                    <h3 style="font-size: 18px;  padding-top: 1cm;"> <b> Password </b> </h3> 
+                                    <h3 style="font-size: 18px; padding-top:1cm;"> <b> Password </b> </h3> 
                                     <input type="password" style="width: 10cm; height: 1cm;" class="form-control" name="password" id="password" required placeholder="Please enter your password" value="" formControlName="loginPassword"/>
                                     <div *ngIf = "f.loginPassword.touched && f.loginPassword.invalid" class="alert alert-danger">
                                         <div *ngIf="f.loginPassword.errors?.required">Password is required</div>
@@ -35,7 +35,7 @@
                                 <!-- Example single danger button -->
                                 
                                 <div class="dropdown-div dropdown-button">
-                                    <h6>Login As</h6>
+                                    <h3 style="font-size: 18px;"> <b> Login As </b> </h3>  
                                     <select name="Login As" formControlName="loginAs" style="margin-top: 0.5cm;" >
                                         <option style="height: 20px;"  selected>Primary User</option>
                                         <option style="height: 20px;"  >Secondary User</option>

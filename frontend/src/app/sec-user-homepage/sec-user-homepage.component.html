@@ -2,7 +2,7 @@
 
 
 <form [formGroup]="formGroup" (ngSubmit)="storeHospitalName()"> 
-    <div class="container register row">
+    <div class="container register row" style="margin-left: 7.5cm;">
         <div class="col-md-3 register-left">
             <img src="assets/images/heart_medical.png"  alt=""/>
             <p style="font-size:22px; font-style: oblique;"><b>Welcome!!</b></p>
@@ -20,7 +20,7 @@
                     </fieldset>
                 </div>
                 <!--<button type="button" style="margin-top: 1cm; align-self: center;" id="donate" name="donate" class="btn btn-primary register_button" >display donated organs</button>-->
-                <div class="container" *ngIf="showTable">
+                <div class="container" *ngIf="showTable" style="width: 10cm; margin-top:1cm;">
                     <table class="table table-bordered table-striped">
                     <thead>
                     <tr>

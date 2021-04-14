@@ -11,51 +11,46 @@
             </div>
 
             <div class="col-md-9 register-right">
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" ifade show actived="home" role="tabpanel" aria-labelledby="home-tab">
-                        <p class="register-heading" style="font-size:26px;"> <b>Welcome user <!-- Add user's name here. --></b></p>
-                        <div class="row register-form">
-                            
-                            <div>
-                                <h3 style="font-size: 20px;"> I <b> GIVE </b> authorization for the following organs to be donated:</h3> <h4>(check all that apply)</h4>
-                                <div>
-                                    <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="heart_id" name="heart_name" formControlName="organ_Heart">
-                                    <label class="form-check-label checkbox_label" >{{organHeart}}</label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="kidneys_id" name="kidneys_name" formControlName="organ_Kidney">
-                                    <label class="form-check-label checkbox_label"  >{{organKidney}}</label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="liver_id" name="liver_name" formControlName="organ_Liver">
-                                    <label class="form-check-label checkbox_label" >{{organLiver}}</label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="lungs_id" name="lungs_name" formControlName="organ_Lungs">
-                                    <label class="form-check-label checkbox_label" >{{organLungs}}</label>
-                                </div>
-                               
-                                <div>
-                                    <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="eyes_id" name="eyes_name" formControlName="organ_Eyes">
-                                    <label class="form-check-label checkbox_label">{{organEyes}}</label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="skin_id" name="skin_name" formControlName="organ_Skin">
-                                    <label class="form-check-label checkbox_label">{{organSkin}}</label>
-                                </div>
-                                
-                                <div>
-                                    <p style="margin-top: 1cm; font-size:14px">
-                                        <i>Every possible effort will be made to help save the lives of individual recipients 
-                                        through your gift of organ, tissue, and eye donation. If in the event that your organs, 
-                                        tissues, and eyes are unable to be used for transplantation, they might be donated for 
-                                        education and research purposes, unless specifically excluded by checking the Limitations 
-                                        Research box.</i>
-                                    </p>
-                                </div>
-                                <button type="submit"  id="register" name="register" class="btn btn-primary register_button">submit organs list</button>
-                            </div>
+                <div class="tab-content" id="myTabContent tab-pane fade show active" style="align-self: center;" ifade show actived="home" role="tabpanel" aria-labelledby="home-tab">
+                    <p class="register-heading" style="font-size:26px;"> <b>Welcome user <!-- Add user's name here. --></b></p>
+                    <div class="row register-form">
+                        <h3 style="font-size: 20px;"> I <b> GIVE </b> authorization for the following organs to be donated:</h3> <h4>(check all that apply)</h4>
+                        <div>
+                            <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="heart_id" name="heart_name" formControlName="organ_Heart">
+                            <label class="form-check-label checkbox_label" >{{organHeart}}</label>
                         </div>
+                        <div>
+                            <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="kidneys_id" name="kidneys_name" formControlName="organ_Kidney">
+                            <label class="form-check-label checkbox_label"  >{{organKidney}}</label>
+                        </div>
+                        <div>
+                            <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="liver_id" name="liver_name" formControlName="organ_Liver">
+                            <label class="form-check-label checkbox_label" >{{organLiver}}</label>
+                        </div>
+                        <div>
+                            <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="lungs_id" name="lungs_name" formControlName="organ_Lungs">
+                            <label class="form-check-label checkbox_label" >{{organLungs}}</label>
+                        </div>
+                        
+                        <div>
+                            <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="eyes_id" name="eyes_name" formControlName="organ_Eyes">
+                            <label class="form-check-label checkbox_label">{{organEyes}}</label>
+                        </div>
+                        <div>
+                            <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="skin_id" name="skin_name" formControlName="organ_Skin">
+                            <label class="form-check-label checkbox_label">{{organSkin}}</label>
+                        </div>
+                        
+                        <div>
+                            <p style="margin-top: 1cm; font-size:14px">
+                                <i>Every possible effort will be made to help save the lives of individual recipients 
+                                through your gift of organ, tissue, and eye donation. If in the event that your organs, 
+                                tissues, and eyes are unable to be used for transplantation, they might be donated for 
+                                education and research purposes, unless specifically excluded by checking the Limitations 
+                                Research box.</i>
+                            </p>
+                        </div>
+                        <button type="submit"  id="register" name="register" class="btn btn-primary register_button">submit organs list</button>
                     </div>
                 </div>
             </div>

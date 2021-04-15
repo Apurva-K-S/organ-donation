@@ -15,9 +15,9 @@ export class OrganListComponent implements OnInit {
   organHeart = 'Heart';
   organKidney = 'Kidney';
   organLiver = 'Liver';
-  organLungs = 'Lungs';
+  //organLungs = 'Lungs';
   organEyes= 'Eyes';
-  organPlasma = 'Plasma';
+  //organPlasma = 'Plasma';
 
 
   constructor() { }

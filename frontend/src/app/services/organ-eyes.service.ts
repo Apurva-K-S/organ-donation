@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { baseUrl } from 'src/environments/environment';
 
-export interface HeartData{
+export interface EyesData{
   bloodGroup: any;
   count: any;
   donatedDay: any;
@@ -15,22 +15,20 @@ export interface HeartData{
 @Injectable({
   providedIn: 'root'
 })
-export class OrganHeartService {
+export class OrganEyesService {
 
   temp!: Observable<any>;
- 
 
   constructor(private httpClient: HttpClient) { }
 
-  getHeartData()
-  {
-    console.log("inside OrganHeartService->getHeartData");
+  getEyesData(){
+    console.log("inside OrganEyesService->getEyesData");
     
-    this.temp = this.httpClient.get<HeartData[]>(`${baseUrl}getHeartOrgan`, {headers:{'Accept':'application/json', 'Content-Type':'application/json'} });
+    this.temp = this.httpClient.get<EyesData[]>(`${baseUrl}getEyesOrgan`, {headers:{'Accept':'application/json', 'Content-Type':'application/json'} });
 
     console.log("after httpClient.get call");
     
     return this.temp;
-
   }
+
 }

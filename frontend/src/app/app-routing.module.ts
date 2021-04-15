@@ -4,8 +4,11 @@ import { DonatePageComponent } from './donate-page/donate-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { HospitalsListComponent } from './hospitals-list/hospitals-list.component';
 import { ListOfOrgansComponent } from './list-of-organs/list-of-organs.component';
+import { OrganEyesComponent } from './organ-eyes/organ-eyes.component';
 import { OrganHeartComponent } from './organ-heart/organ-heart.component';
+import { OrganKidneyComponent } from './organ-kidney/organ-kidney.component';
 import { OrganListComponent } from './organ-list/organ-list.component';
+import { OrganLiverComponent } from './organ-liver/organ-liver.component';
 import { PrmUserHomepageComponent } from './prm-user-homepage/prm-user-homepage.component';
 import { SecUserHomepageComponent } from './sec-user-homepage/sec-user-homepage.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
@@ -26,7 +29,10 @@ const routes: Routes = [
   {path: 'thankyou', component: ThankyouComponent},
   {path: 'prmUserHomepage/:loginEmail', component: PrmUserHomepageComponent},
   {path: 'secUserHomepage/:loginEmail', component: SecUserHomepageComponent},
-  {path: 'organHeart', component: OrganHeartComponent}
+  {path: 'organHeart', component: OrganHeartComponent},
+  {path: 'organKidney', component: OrganKidneyComponent},
+  {path: 'organEyes', component: OrganEyesComponent},
+  {path: 'organLiver', component: OrganLiverComponent}
 ];
 
 @NgModule({

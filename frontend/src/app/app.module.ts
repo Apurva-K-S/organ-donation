@@ -20,6 +20,9 @@ import { PrmUserHomepageComponent } from './prm-user-homepage/prm-user-homepage.
 import { SecUserHomepageComponent } from './sec-user-homepage/sec-user-homepage.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
 import { OrganHeartComponent } from './organ-heart/organ-heart.component';
+import { OrganKidneyComponent } from './organ-kidney/organ-kidney.component';
+import { OrganLiverComponent } from './organ-liver/organ-liver.component';
+import { OrganEyesComponent } from './organ-eyes/organ-eyes.component';
 
 
 @NgModule({
@@ -38,7 +41,10 @@ import { OrganHeartComponent } from './organ-heart/organ-heart.component';
     PrmUserHomepageComponent,
     SecUserHomepageComponent,
     ThankyouComponent,
-    OrganHeartComponent
+    OrganHeartComponent,
+    OrganKidneyComponent,
+    OrganLiverComponent,
+    OrganEyesComponent
   ],
   imports: [
     BrowserModule,

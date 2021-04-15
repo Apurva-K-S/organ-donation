@@ -1,0 +1,104 @@
+package com.example.iiitb.OrganDonation.Services;
+
+import com.example.iiitb.OrganDonation.Beans.Organ;
+import com.example.iiitb.OrganDonation.DAO.OrganRepository;
+
+import javax.inject.Named;
+import java.util.ArrayList;
+import java.util.List;
+
+@Named
+public class KidneyService {
+    OrganRepository organRepository;
+    OrganService organService;
+
+    public KidneyService(OrganRepository organRepository, OrganService organService)
+    {
+        this.organRepository = organRepository;
+        this.organService = organService;
+    }
+
+    public List<Organ> getKidneyData()
+    {
+        System.out.println("inside: HeartService: getHeartData()");
+        /*List<Object[]> t = new ArrayList<Object[]>();
+        t = organRepository.findByOrgan("Heart");
+
+        System.out.println("size of output returned by heartRepository.findByOrgan(Heart); is " + t.size());
+
+        System.out.println("----------------------------------------------------------------------------------------------");
+
+        System.out.println("The output of " +
+                "select pu.first_name, oht.hospital_name, ou.organ, pu.blood_group, oht.datetime from primary_user pu, organ_user_table ou, user_hospital_table oht\n" +
+                "where pu.email = ou.user_email and pu.email = oht.user_email and\n" +
+                "(oht.datetime, ou.organ, pu.blood_group) in (select min(oht.datetime), ou.organ, pu.blood_group from primary_user pu, organ_user_table ou, user_hospital_table oht\n" +
+                "where pu.email = ou.user_email and pu.email = oht.user_email group by ou.organ, pu.blood_group) and ou.organ=\"Heart\" is: \n");
+
+        for(int i=0;i<t.size();i++)
+        {
+            for(int j=0;j<t.get(i).length;j++)
+            {
+                System.out.print(t.get(i)[j] + "  ");
+            }
+            System.out.println("");
+        }
+
+        System.out.println("----------------------------------------------------------------------------------------------");
+
+        System.out.println("The output of select ou.organ, pu.blood_group, count(*), min(uht.datetime) from primary_user pu, organ_user_table ou, user_hospital_table uht where pu.email = ou.user_email\n" +
+                "and uht.user_email = pu.email and ou.organ=\"Heart\" group by ou.organ, pu.blood_group; is: ");
+        List<Object[]> temp = organRepository.findByOrganContaining("Heart");
+        for(int i=0;i<temp.size();i++)
+        {
+            for(int j=0;j<temp.get(i).length;j++)
+            {
+                System.out.print(temp.get(i)[j] + "  ");
+            }
+            System.out.println("");
+        }
+        System.out.println("----------------------------------------------------------------------------------------------");
+        System.out.println("----------------------------------------------------------------------------------------------");
+
+
+        we need : Blood Group	    Count	    Timer	        Donor Name	    Hospital Name
+                   t[3]/temp[1]     temp[2]     t[4]/temp[3]    t[0]            t[1]*/
+
+        List<List<Object[]>> listOflistOfKidneys = organService.getOrganData("Kidney");
+        List<Object[]> t = listOflistOfKidneys.get(0);
+        List<Object[]> temp = listOflistOfKidneys.get(1);
+
+        List<Organ> listOfKidneys=new ArrayList<Organ>();
+        for(int i=0;i<t.size();i++)
+        {
+            Organ o = new Organ();
+            o.setBloodGroup(t.get(i)[3].toString());
+            o.setCount(temp.get(i)[2].toString());
+            String timer = temp.get(i)[3].toString();
+            String[] timr = timer.split(" ", 3);
+            o.setDonatedDay(timr[0]);
+            o.setDonatedTime(timr[1]);
+            o.setDonorName(t.get(i)[0].toString());
+            o.setHospitalName(t.get(i)[1].toString());
+
+            listOfKidneys.add(o);
+        }
+
+        System.out.println("list of kidneys has been made... this is to check it");
+
+        System.out.println("BloodGroup\t\tCount\t\tDonated Day \t\t Donated time\t\tDonorName\t\tHospitalName");
+
+        for(int i=0;i<listOfKidneys.size();i++)
+        {
+            System.out.println(listOfKidneys.get(i).getBloodGroup()+"\t\t"+
+                    listOfKidneys.get(i).getCount() + "\t\t" + listOfKidneys.get(i).getDonatedDay() + "\t\t" + listOfKidneys.get(i).getDonatedTime() + "\t\t" +
+                    listOfKidneys.get(i).getDonorName() + "\t\t" +listOfKidneys.get(i).getHospitalName());
+        }
+
+        System.out.println("----------------------------------------------------------------------------------------------");
+        System.out.println("----------------------------------------------------------------------------------------------");
+
+        System.out.println("coming out of getKidneyData");
+        //return t;
+        return listOfKidneys;
+    }
+}

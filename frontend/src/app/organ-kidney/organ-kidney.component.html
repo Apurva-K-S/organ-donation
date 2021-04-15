@@ -10,7 +10,7 @@
         </div>
 
         <div class="col-md-9 register-right tab-content tab-pane fade show active" id="myTabContent" ifade show actived="home" role="tabpanel" aria-labelledby="home-tab">
-            <p class="register-heading" style="font-size:26px;"> <b>Organ Heart</b></p>
+            <p class="register-heading" style="font-size:26px;"> <b>Organ Kidney</b></p>
             <div class="row register-form" style="font-size: 18px; text-align: center;">
                 <!--<div class="container" *ngIf="showTable" style="width: 10cm; margin-top:1cm;">-->
                 <table class="table table-bordered table-striped">
@@ -25,14 +25,13 @@
                     </tr>
                     </thead>
                     <tbody>
-
-                        <tr *ngFor="let hD of heartData">
-                            <td><span>{{hD.bloodGroup}}</span></td>
-                            <td><span>{{hD.count}}</span></td>
-                            <td><span>{{hD.donatedDay}}</span></td>
-                            <td><span>{{hD.donatedTime}}</span></td>
-                            <td><span>{{hD.donorName}}</span></td>
-                            <td><span>{{hD.hospitalName}}</span></td>
+                        <tr *ngFor="let hK of kidneyData">
+                            <td><span>{{hK.bloodGroup}}</span></td>
+                            <td><span>{{hK.count}}</span></td>
+                            <td><span>{{hK.donatedDay}}</span></td>
+                            <td><span>{{hK.donatedTime}}</span></td>
+                            <td><span>{{hK.donorName}}</span></td>
+                            <td><span>{{hK.hospitalName}}</span></td>
                         </tr>
                     </tbody>
                 </table>

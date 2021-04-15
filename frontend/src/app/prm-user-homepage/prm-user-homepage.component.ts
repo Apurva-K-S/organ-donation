@@ -18,9 +18,9 @@ export class PrmUserHomepageComponent implements OnInit {
   organHeart = 'Heart';
   organKidney = 'Kidney';
   organLiver = 'Liver';
-  organLungs = 'Lungs';
+  //organLungs = 'Lungs';
   organEyes= 'Eyes';
-  organSkin = 'Skin';
+  //organSkin = 'Skin';
 
   loginEmail!: string;
 
@@ -32,9 +32,9 @@ export class PrmUserHomepageComponent implements OnInit {
       organ_Heart: new FormControl('', [Validators.required]),
       organ_Kidney : new FormControl('',[Validators.required]),
       organ_Liver : new FormControl('',[Validators.required]),
-      organ_Lungs : new FormControl('',[Validators.required]),
+      //organ_Lungs : new FormControl('',[Validators.required]),
       organ_Eyes: new FormControl('',[Validators.required]),
-      organ_Skin: new FormControl('',[Validators.required]),
+      //organ_Skin: new FormControl('',[Validators.required]),
 
     })
 

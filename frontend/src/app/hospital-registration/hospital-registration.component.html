@@ -1,1 +1,84 @@
-<p>hospital-registration works!</p>
+<app-navigation-bar></app-navigation-bar>
+<form class="registration-form" [formGroup]="hospForm" (ngSubmit)="submit()">
+    <div class="container register" style="align-self: center;">
+        <div class="row">
+            
+            <div class="col-md-3 register-left">
+                
+                <p style="font-size:22px; font-style: oblique;"><b>Welcome to Hospital Registration Page!!</b></p>
+                <p style="font-size:22px; font-style: italic; padding:2%"><b>Register your hospital here...</b></p>
+            </div>
+
+            <div class="col-md-9 register-right">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" ifade show actived="home" role="tabpanel" aria-labelledby="home-tab">
+                        <p class="register-heading" style="font-size:26px;"><b>Hospital Registration Form</b></p>
+                        <div class="row register-form">
+                            
+                           
+                                <p style="font-size:17px; padding-bottom: 2%;"><b>Hospital Name</b></p>
+                                <div class="form-group mb-3  mt-n1" >
+                                    <input type="text" pattern="[a-zA-Z0-9]*" class="form-control" name="hospName" id="hospName" placeholder="Enter Hospital Name *" value="" required formControlName="hospName"/>
+                                    <div *ngIf = "f.hospName.touched && f.hospName.invalid" class="alert alert-danger">
+                                        <div *ngIf="f.hospName.errors?.required">Hospital name is required</div>
+                                    </div>
+                                </div>
+                            
+                            
+                                <p style="font-size:17px; padding-bottom: 2%;"><b>Hospital Email</b></p>
+                                <div class="form-group mb-3  mt-n1" >
+                                    <input type="email" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" class="form-control" name="hospEmail" id="hospEmail" placeholder="Enter Hospital Email ID *" value="" required formControlName="hospEmail"/>
+                                    <div *ngIf = "f.hospName.touched && f.hospName.invalid" class="alert alert-danger">
+                                        <div *ngIf="f.hospName.errors?.required">Hospital Email ID is required</div>
+                                    </div>
+                                </div>
+                            
+                            
+                        
+                            <div class="form-group mb-3 mt-n1 was-validated">
+                                <p style="font-size:17px; padding-bottom: 2%;"><b>Contact</b></p>
+                                <div class="input-group has-validation">
+                                   <span class="input-group-text" id="inputGroupPrepend3">+91</span>
+                                   <input type="tel" pattern="[789][0-9]{9}" class="form-control" id="phone" name="phone" placeholder="Phone number*"  value="" required formControlName="phone" />
+                                </div>
+                            </div>
+
+                            
+
+                            <div class=" form-group mb-3 mt-n1">
+                                <p style="font-size:17px; padding-bottom: 2%;"><b>State</b></p>
+                                <div style="align-self: center; margin-top: 0.5cm;">
+                                   
+                                    <select name="states" id="state" formControlName="state">
+                                        <option style="height: 30px;" *ngFor="let stateVal of states" [value]="stateVal.value">{{stateVal.viewValue}}</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-3  mt-n1">
+                                <p style="font-size:17px; padding-bottom: 2%;"><b>City</b></p>
+                                <input type="text" pattern="[a-zA-Z]*" class="form-control" name="city" id="city" placeholder="City *" value="" formControlName="city"/>
+                                <div *ngIf = "f.city.touched && f.city.invalid" class="alert alert-danger">
+                                    <div *ngIf="f.city.errors?.required">City Name is required</div>
+                                </div>
+                            </div>
+                          
+                            <div class="form-group mb-3  mt-n1">
+                                <p style="font-size:17px; padding-bottom: 2%;"><b>Pincode</b></p>
+                                <input type="text" pattern="[0-9]{6}" class="form-control" name="pin" id="pin" placeholder="Pincode *" value="" formControlName="pin"/>
+                                <div *ngIf = "f.city.touched && f.city.invalid" class="alert alert-danger">
+                                    <div *ngIf="f.city.errors?.required">Pincode is required</div>
+                                </div>
+                            </div>
+                          
+
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+

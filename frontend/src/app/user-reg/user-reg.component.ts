@@ -18,12 +18,15 @@ interface Role{
 export class UserRegComponent {
   form: FormGroup = new FormGroup({});
 
-  hospitals: Role[]=[
-    {value: 'Hospital1', viewValue: 'Hospital1'},
-    {value: 'Hospital2', viewValue: 'Hospital2'},
-    {value: 'Hospital3', viewValue: 'Hospital3'},
-    {value: 'Hospital4', viewValue: 'Hospital4'},
-    {value: 'Hospital5', viewValue: 'Hospital5'}
+  bloodGroups: Role[]=[
+    {value: 'A+', viewValue: 'A+'},
+    {value: 'A-', viewValue: 'A-'},
+    {value: 'B+', viewValue: 'B+'},
+    {value: 'B-', viewValue: 'B-'},
+    {value: 'O+', viewValue: 'O+'},
+    {value: 'O-', viewValue: 'O-'},
+    {value: 'AB+', viewValue: 'AB+'},
+    {value: 'AB-', viewValue: 'AB-'}
   
     ];
   

@@ -17,7 +17,7 @@ public class UserHospitalTable implements Serializable {
     @JoinColumn(name="userEmail", referencedColumnName = "email")
     private primaryUser puser;
 
-    @Column(unique = true)
+    @Column // here there used to be (unique=true) which is wrong. so removed it.
     private String hospitalName;
 
     @Column

@@ -26,6 +26,7 @@ import { OrganLiverComponent } from './organ-liver/organ-liver.component';
 import { OrganEyesComponent } from './organ-eyes/organ-eyes.component';
 import { QrCodeComponent } from './qr-code/qr-code.component';
 import { QRCodeModule } from 'angular2-qrcode';
+import { HospitalRegistrationComponent } from './hospital-registration/hospital-registration.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { QRCodeModule } from 'angular2-qrcode';
     OrganKidneyComponent,
     OrganLiverComponent,
     OrganEyesComponent,
-    QrCodeComponent    
+    QrCodeComponent,
+    HospitalRegistrationComponent    
   ],
   imports: [
     BrowserModule,

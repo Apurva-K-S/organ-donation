@@ -3,7 +3,6 @@ package com.example.iiitb.OrganDonation.Controller;
 
 import com.example.iiitb.OrganDonation.Beans.Organ;
 import com.example.iiitb.OrganDonation.Services.OrganServiceTwo;
-import com.example.iiitb.OrganDonation.Services.KidneyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;

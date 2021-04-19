@@ -66,16 +66,17 @@
                                         <div *ngIf="f.bloodGroup.errors?.required">Age is required</div>
                                     </div>
                                 </div>-->
-
+                                
                                 <div class=" form-group mb-3 mt-n1">
-                                    <select name="hospitals" style="margin-top: 1cm;" id="hospitals" formControlName="hospitalName">
-                                        <option style="height: 20px;" *ngFor="let hospitalVal of hospitals" [value]="hospitalVal.value">
-                                            {{hospitalVal.viewValue}}
-                                        </option>
-                                    </select>
+                                    <div style="align-self: center; margin-top: 0.5cm;">
+                                        <p style="font-size:17px;" > <b>Choose your blood Group</b></p>
+                                        <select name="hospitals" id="bloodGroup" formControlName="bloodGroup">
+                                            <option style="height: 20px;" *ngFor="let bloodGroupVal of bloodGroups" [value]="bloodGroupVal.value">{{bloodGroupVal.viewValue}}</option>
+                                        </select>
+                                    </div>
                                 </div>
 
-                                <div class="px-2 mb-3 mt-n1 ml-10">
+                                <div class="px-2 mb-3 mt-n1 ml-10" style="margin-top: 1cm;">
                                     <fieldset id="group1">
                                         <input class="ml-10 px-5" type="radio" value="Male" name="gender" id="Male" formControlName="gender"> <span class="px-2"> Male </span>
                                         <input class="ml-10 px-5" type="radio" value="Female" name="gender" id="Female" formControlName="gender"> <span class="px-2"> Female </span>
@@ -169,7 +170,7 @@
                             <button type="submit" class="btn btn-primary register_button" [disabled]="!form.valid">
                                 proceed to next page
                             </button>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -177,3 +178,5 @@
         </div>
     </div>
 </form>
+
+

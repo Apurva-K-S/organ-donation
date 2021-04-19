@@ -10,6 +10,7 @@ import { OrganKidneyComponent } from './organ-kidney/organ-kidney.component';
 import { OrganListComponent } from './organ-list/organ-list.component';
 import { OrganLiverComponent } from './organ-liver/organ-liver.component';
 import { PrmUserHomepageComponent } from './prm-user-homepage/prm-user-homepage.component';
+import { QrCodeComponent } from './qr-code/qr-code.component';
 import { SecUserHomepageComponent } from './sec-user-homepage/sec-user-homepage.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
 import { UserHomepageComponent } from './user-homepage/user-homepage.component';
@@ -32,7 +33,9 @@ const routes: Routes = [
   {path: 'organHeart', component: OrganHeartComponent},
   {path: 'organKidney', component: OrganKidneyComponent},
   {path: 'organEyes', component: OrganEyesComponent},
-  {path: 'organLiver', component: OrganLiverComponent}
+  {path: 'organLiver', component: OrganLiverComponent},
+  {path: 'qrCode', component: QrCodeComponent}
+
 ];
 
 @NgModule({

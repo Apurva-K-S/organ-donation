@@ -1,0 +1,76 @@
+<ngx-qrcode
+  [elementType]="elementType"
+  [errorCorrectionLevel]="correctionLevel"
+  [value]="value"
+  cssClass="bshadow"></ngx-qrcode>
+
+<!--  <textarea [(ngModel)] = "value"></textarea>
+  <div class="container">
+    <h1>QRCODE GENERATOR</h1>
+    <input [(ngModel)]="value">
+    <ngx-qrcode
+       [elementType]="elementType"
+       [errorCorrectionLevel]="correctionLevel"
+       [value]="value"
+        class="coolQRCode"></ngx-qrcode>
+
+    <button (click)="downloadQRCode()">Download QRCode</button>
+ </div>
+ <div style="text-align:center">  
+  <h2>Upload an QR code</h2>  
+  <input type="file" #file name="file" id="file" (change)="preview(file.files)">  
+  <ng2-qrcode-reader (result)="render($event)" [qrr-show]="showQRCode" [qrr-value]="value" [qrr-type]="elementType">  
+  </ng2-qrcode-reader><br>  
+  <div #result></div>  
+</div>-->
+<!--
+<h2>Dynamically Update QR Code Values</h2>
+
+<div>QR Code: {{ qrCodeVal }}</div>
+<div>Level: {{ level }}</div>
+<div>Width: {{ width }}</div>
+
+<br />
+<br />
+
+<div>
+  <qr-code [value]="qrCodeVal" [size]="width" [level]="level"></qr-code>
+</div>
+
+<h4>Change QR Code Info</h4>
+<label>
+  Update name string: <input [(ngModel)]="qrCodeVal" placeholder="name" />
+</label>
+<br />
+<br />
+
+<button (click)="updateQrInfo('John Doe')">Update to "John Doe"</button>
+<button (click)="updateQrInfo('Ryan Duff')">Update to "Ryan Duff"</button>
+<button (click)="updateQrInfo('Jerry Maguire')"> update to "Jerry Maguire"</button>
+
+<br />
+<br />
+<strong>Update Width</strong>: 
+<button (click)="updateWidth(500)">500</button>
+<button (click)="updateWidth(400)">400</button>
+<button (click)="updateWidth(300)">300</button>
+<button (click)="updateWidth(200)">200</button>
+
+<br />
+<br />
+<strong>Update Level</strong>: 
+<button (click)="updateLevel('L')">L</button>
+<button (click)="updateLevel('M')">M</button>
+<button (click)="updateLevel('Q')">Q</button>
+<button (click)="updateLevel('H')">H</button>-->
+<!--The content below is only a placeholder and can be replaced.-->
+
+<!--
+<div style="text-align:center">
+  <input type="text" placeholder="Enter name to generate QR Code" [(ngModel)]="qrcodename"><br>
+  <button (click)="generateQRCode()">Generate QR Code</button>
+  <ngx-qrcode *ngIf="display" id="qrCodeImage" [value] = "value">
+  </ngx-qrcode><br>
+  <a [href]="href" *ngIf="display" (click)="downloadImage()" download>Download Image</a>
+</div>
+<router-outlet></router-outlet>-->

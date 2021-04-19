@@ -1,0 +1,23 @@
+/*input {
+    width: 200px;
+    padding: 10px;
+    font-size: 15px;
+}
+.coolQRCode {
+    filter: drop-shadow(3px 3px 3px #999);
+}*/
+button {
+    padding: 10px;
+    background-color: skyblue;
+    margin-top: 10px;
+}
+input {
+    padding: 10px;
+    width: 15%;
+}
+a {
+    padding: 10px;
+    background-color: skyblue;
+    margin-top: 10px;
+    text-decoration: none;
+}

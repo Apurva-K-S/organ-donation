@@ -4,6 +4,11 @@ import { Router } from '@angular/router';
 import { ConfirmedValidator } from 'src/app/confirmed.validator';
 import {AuthService} from 'src/app/services/auth.service';
 
+interface Role{
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-user-reg',
   templateUrl: './user-reg.component.html',
@@ -12,6 +17,15 @@ import {AuthService} from 'src/app/services/auth.service';
 
 export class UserRegComponent {
   form: FormGroup = new FormGroup({});
+
+  hospitals: Role[]=[
+    {value: 'Hospital1', viewValue: 'Hospital1'},
+    {value: 'Hospital2', viewValue: 'Hospital2'},
+    {value: 'Hospital3', viewValue: 'Hospital3'},
+    {value: 'Hospital4', viewValue: 'Hospital4'},
+    {value: 'Hospital5', viewValue: 'Hospital5'}
+  
+    ];
   
   constructor(private fb: FormBuilder, private authService:AuthService,private router: Router) {
   

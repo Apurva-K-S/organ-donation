@@ -60,11 +60,19 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group mb-3 mt-n1">
+                                <!--<div class="form-group mb-3 mt-n1">
                                     <input type="text" class="form-control" pattern="(A|B|AB|O)[+-]" name="bloodGroup" id="bloodGroup" placeholder="Blood Group*" value="" formControlName="bloodGroup"/>
                                     <div *ngIf = "f.bloodGroup.touched && f.bloodGroup.invalid" class="alert alert-danger">
                                         <div *ngIf="f.bloodGroup.errors?.required">Age is required</div>
                                     </div>
+                                </div>-->
+
+                                <div class=" form-group mb-3 mt-n1">
+                                    <select name="hospitals" style="margin-top: 1cm;" id="hospitals" formControlName="hospitalName">
+                                        <option style="height: 20px;" *ngFor="let hospitalVal of hospitals" [value]="hospitalVal.value">
+                                            {{hospitalVal.viewValue}}
+                                        </option>
+                                    </select>
                                 </div>
 
                                 <div class="px-2 mb-3 mt-n1 ml-10">

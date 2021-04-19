@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+//import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
+import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,6 +24,8 @@ import { OrganHeartComponent } from './organ-heart/organ-heart.component';
 import { OrganKidneyComponent } from './organ-kidney/organ-kidney.component';
 import { OrganLiverComponent } from './organ-liver/organ-liver.component';
 import { OrganEyesComponent } from './organ-eyes/organ-eyes.component';
+import { QrCodeComponent } from './qr-code/qr-code.component';
+import { QRCodeModule } from 'angular2-qrcode';
 
 
 @NgModule({
@@ -44,7 +47,8 @@ import { OrganEyesComponent } from './organ-eyes/organ-eyes.component';
     OrganHeartComponent,
     OrganKidneyComponent,
     OrganLiverComponent,
-    OrganEyesComponent
+    OrganEyesComponent,
+    QrCodeComponent    
   ],
   imports: [
     BrowserModule,
@@ -52,7 +56,9 @@ import { OrganEyesComponent } from './organ-eyes/organ-eyes.component';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxQRCodeModule,
+    QRCodeModule
     
   ],
   providers: [

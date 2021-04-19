@@ -49,6 +49,7 @@ import { HospitalRegistrationComponent } from './hospital-registration/hospital-
     OrganKidneyComponent,
     OrganLiverComponent,
     OrganEyesComponent,
+//    QrCodeComponent,
     HospitalRegistrationComponent    
   ],
   imports: [
@@ -58,8 +59,8 @@ import { HospitalRegistrationComponent } from './hospital-registration/hospital-
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-   // NgxQRCodeModule,
-   // QRCodeModule
+//    NgxQRCodeModule,
+//    QRCodeModule
     
   ],
   providers: [

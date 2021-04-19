@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.json.Json;
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -72,10 +73,46 @@ public class SecUserDetailsController {
         System.out.println("hospital name is: " + allDetails.get("hospitalName"));
         System.out.println("login Email is: " + allDetails.get("loginEmail")); // this email is secondary_email.
 
+        System.out.println("check the keys:\n");
+        Iterator<Map.Entry<String, Object>> iterator = allDetails.entrySet().iterator();
+
+        List<String> organsList = new ArrayList<String>();
+
+        // Iterate over the HashMap
+        while (iterator.hasNext()) {
+            // Get the entry at this iteration
+            Map.Entry<String, Object> entry = iterator.next();
+
+            // Check if this key is the required key
+            if ("Heart" == entry.getKey()) {
+                System.out.println(allDetails.get("Heart"));
+                if(allDetails.get("Heart").toString()=="true")
+                    organsList.add(entry.getKey());
+            }
+            if("Eyes" == entry.getKey()){
+                System.out.println(allDetails.get("Eyes"));
+                if(allDetails.get("Eyes").toString()=="true")
+                    organsList.add(entry.getKey());
+            }
+            if("Liver" == entry.getKey()){
+                System.out.println(allDetails.get("Liver"));
+                if(allDetails.get("Liver").toString()=="true")
+                    organsList.add(entry.getKey());
+            }
+            if("Kidney" == entry.getKey()) {
+                System.out.println(allDetails.get("Kidney"));
+                if(allDetails.get("Kidney").toString()=="true")
+                    organsList.add(entry.getKey());
+            }
+        }
+
+        boolean result1 = secUserDetailsService.storeUserFinalOrgans(organsList, allDetails.get("loginEmail").toString());
+
         boolean result = secUserDetailsService.storeHospitalName( allDetails.get("hospitalName").toString(), allDetails.get("loginEmail").toString());
 
-        System.out.println("\nResult is " + result);
-        if(result)
+        System.out.println("\nResult is " + result1);
+
+        if(result && result1)
             return Response.ok().build();
 
         return Response.status(401).build();

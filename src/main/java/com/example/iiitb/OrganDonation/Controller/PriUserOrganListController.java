@@ -31,10 +31,10 @@ public class PriUserOrganListController {
         System.out.println("inside PriUserOrganListController-takeOrganList ");
         System.out.println("Heart: "+orgList.getOrgan_Heart());
         System.out.println("Kidney: "+orgList.getOrgan_Kidney());
-        System.out.println("Lungs: "+orgList.getOrgan_Lungs());
-        System.out.println("Liver: "+orgList.getOrgan_Liver());
-        System.out.println("Eyes: "+orgList.getOrgan_Eyes());
-        System.out.println("Skin: "+orgList.getOrgan_Skin());
+        //System.out.println("Lungs: "+orgList.getOrgan_Lungs());
+        //System.out.println("Liver: "+orgList.getOrgan_Liver());
+        //System.out.println("Eyes: "+orgList.getOrgan_Eyes());
+        //System.out.println("Skin: "+orgList.getOrgan_Skin());
         System.out.println("email: "+orgList.getLoginEmail());
 
         boolean result=priUserOrganListService.storeOrganData(orgList);

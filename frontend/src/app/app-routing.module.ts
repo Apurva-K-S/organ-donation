@@ -35,7 +35,8 @@ const routes: Routes = [
   {path: 'organKidney', component: OrganKidneyComponent},
   {path: 'organEyes', component: OrganEyesComponent},
   {path: 'organLiver', component: OrganLiverComponent},
-  {path: 'hospReg', component: HospitalRegistrationComponent}
+  //{path: 'qrCode', component: QrCodeComponent},
+  {path: 'hospitalRegistration', component: HospitalRegistrationComponent}
 
 ];
 

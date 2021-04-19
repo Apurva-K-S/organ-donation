@@ -13,13 +13,13 @@ public interface OrganRepository extends CrudRepository<userOrganTable,Integer> 
     /*@Query(value="select ou.organ, pu.blood_group, count(*), min(uht.datetime) from primary_user pu, organ_user_table ou, user_hospital_table uht where pu.email = ou.user_email " +
             "and uht.user_email = pu.email and ou.organ=?1 group by ou.organ, pu.blood_group", nativeQuery = true)*/
 
-    @Query(value="select pu.first_name, oht.hospital_name, ou.organ, pu.blood_group, oht.datetime from primary_user pu, organ_user_table ou, user_hospital_table oht " +
-            "where pu.email = ou.user_email and pu.email = oht.user_email and (oht.datetime, ou.organ, pu.blood_group) in (select min(oht.datetime), ou.organ, pu.blood_group from primary_user pu, organ_user_table ou, user_hospital_table oht where pu.email = ou.user_email and pu.email = oht.user_email group by ou.organ, pu.blood_group) and ou.organ=?1", nativeQuery = true)
+    @Query(value="select pu.first_name, oht.hospital_name, ufot.organ, pu.blood_group, oht.datetime from primary_user pu, user_final_organ_table ufot, user_hospital_table oht " +
+            "where pu.email = ufot.user_email and pu.email = oht.user_email and (oht.datetime, ufot.organ, pu.blood_group) in (select min(oht.datetime), ufot.organ, pu.blood_group from primary_user pu, user_final_organ_table ufot, user_hospital_table oht where pu.email = ufot.user_email and pu.email = oht.user_email group by ufot.organ, pu.blood_group) and ufot.organ=?1", nativeQuery = true)
     List<Object[]> findByOrgan(String organ);
 
 
-    @Query(value="select ou.organ, pu.blood_group, count(*), min(uht.datetime) from primary_user pu, organ_user_table ou, user_hospital_table uht where pu.email = ou.user_email " +
-            "and uht.user_email = pu.email and ou.organ=?1 group by ou.organ, pu.blood_group", nativeQuery = true)
+    @Query(value="select ufot.organ, pu.blood_group, count(*), min(uht.datetime) from primary_user pu, user_final_organ_table ufot, user_hospital_table uht where pu.email = ufot.user_email " +
+            "and uht.user_email = pu.email and ufot.organ=?1 group by ufot.organ, pu.blood_group", nativeQuery = true)
     List<Object[]> findByOrganContaining(String organ);
 
     /*
@@ -37,9 +37,18 @@ public interface OrganRepository extends CrudRepository<userOrganTable,Integer> 
 }
 
 /*
+
+select pu.first_name, oht.hospital_name, ufot.organ, pu.blood_group, oht.datetime from primary_user pu, user_final_organ_table ufot, user_hospital_table oht where pu.email = ufot.user_email
+and pu.email = oht.user_email and (oht.datetime, ufot.organ, pu.blood_group) in (select min(oht.datetime), ufot.organ, pu.blood_group from primary_user pu, user_final_organ_table ufot,
+user_hospital_table oht where pu.email = ufot.user_email and pu.email = oht.user_email group by ufot.organ, pu.blood_group) and ufot.organ="Heart";
+
+select ufot.organ, pu.blood_group, count(*), min(uht.datetime) from primary_user pu, user_final_organ_table ufot, user_hospital_table uht where pu.email = ufot.user_email
+and uht.user_email = pu.email and ufot.organ="Heart" group by ufot.organ, pu.blood_group
+
+ */
+/*
 select pu.first_name, oht.hospital_name, ou.organ, pu.blood_group, oht.datetime from primary_user pu, organ_user_table ou, user_hospital_table oht where pu.email = ou.user_email and pu.email = oht.user_email and (oht.datetime, ou.organ, pu.blood_group) in (select min(oht.datetime), ou.organ, pu.blood_group from primary_user pu, organ_user_table ou, user_hospital_table oht where pu.email = ou.user_email and pu.email = oht.user_email group by ou.organ, pu.blood_group) and ou.organ="Kidney"
  */
-
 /*
 
 to decrement count when a request is raise do the following:

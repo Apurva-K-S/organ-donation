@@ -32,14 +32,14 @@ public class PriUserOrganListService {
         System.out.println("inside PriUserOrganListService-storeOrganData ");
         List<String> temp=new ArrayList<>();
 
-        if(orgList.getOrgan_Skin()=="true")
-            temp.add("Skin");
+        //if(orgList.getOrgan_Skin()=="true")
+        //    temp.add("Skin");
         if(orgList.getOrgan_Eyes()=="true")
             temp.add("Eyes");
         if(orgList.getOrgan_Liver() == "true")
             temp.add("Liver");
-        if(orgList.getOrgan_Lungs() == "true")
-            temp.add("Lungs");
+        //if(orgList.getOrgan_Lungs() == "true")
+        //    temp.add("Lungs");
         if(orgList.getOrgan_Kidney() == "true")
             temp.add("Kidney");
         if(orgList.getOrgan_Heart() == "true")

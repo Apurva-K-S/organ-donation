@@ -47,6 +47,7 @@ export class SecUserHomepageComponent implements OnInit {
       hospitalName: new FormControl('', [Validators.required])
     })
 
+    //this.justOrgansLists.forEach(control => this.formGroup.addControl(control.organ, new FormControl('', Validators.required)))
 
     this.route.params.subscribe(params=>{
       this.loginEmail = params['loginEmail'];
@@ -78,11 +79,13 @@ export class SecUserHomepageComponent implements OnInit {
       this.justOrgansLists = result;
       console.log("inside this.secUserServ.getOrganList(this.formGroup.value).subscribe(result=>{ ");
       console.log("list is: ",this.justOrgansLists);
-      })
+      this.justOrgansLists.forEach(control => this.formGroup.addControl(control.organ, new FormControl('', Validators.required)))
+    })  
   }
 
   storeHospitalName()
   {
+    
     console.log("Inside storeHospitalName",this.formGroup.value);
     console.log("Login form email in storeHospitalName:", this.loginEmail);
     this.formGroup.addControl('loginEmail',new FormControl(this.loginEmail,Validators.required));

@@ -35,6 +35,9 @@
                     <tbody>
                     <tr *ngFor="let justOrgansList of justOrgansLists">
                         <td><span>{{justOrgansList.organ}}</span></td>
+                        <td *ngIf="showMe">
+                            <input class="form-check-input" style="margin-right: 0.25cm" type="checkbox" value="" id="accept_terms" formControlName={{justOrgansList.organ}}>
+                        </td>
                     </tr>
                     </tbody>
                     </table>

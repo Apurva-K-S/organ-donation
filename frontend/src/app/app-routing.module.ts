@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DonatePageComponent } from './donate-page/donate-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { HospitalRegistrationComponent } from './hospital-registration/hospital-registration.component';
 import { HospitalsListComponent } from './hospitals-list/hospitals-list.component';
 import { ListOfOrgansComponent } from './list-of-organs/list-of-organs.component';
 import { OrganEyesComponent } from './organ-eyes/organ-eyes.component';
@@ -10,7 +11,7 @@ import { OrganKidneyComponent } from './organ-kidney/organ-kidney.component';
 import { OrganListComponent } from './organ-list/organ-list.component';
 import { OrganLiverComponent } from './organ-liver/organ-liver.component';
 import { PrmUserHomepageComponent } from './prm-user-homepage/prm-user-homepage.component';
-import { QrCodeComponent } from './qr-code/qr-code.component';
+//import { QrCodeComponent } from './qr-code/qr-code.component';
 import { SecUserHomepageComponent } from './sec-user-homepage/sec-user-homepage.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
 import { UserHomepageComponent } from './user-homepage/user-homepage.component';
@@ -34,7 +35,7 @@ const routes: Routes = [
   {path: 'organKidney', component: OrganKidneyComponent},
   {path: 'organEyes', component: OrganEyesComponent},
   {path: 'organLiver', component: OrganLiverComponent},
-  {path: 'qrCode', component: QrCodeComponent}
+  {path: 'hospReg', component: HospitalRegistrationComponent}
 
 ];
 

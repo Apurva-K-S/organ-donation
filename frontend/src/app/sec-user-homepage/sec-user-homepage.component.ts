@@ -4,6 +4,7 @@ import { Validators } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { SecUserService, JustOrgansList } from '../services/sec-user.service';
+import {ThankyouServiceService, HospitalData} from 'src/app/services/thankyou-service.service';
 
 interface Role{
   value: string;
@@ -24,17 +25,9 @@ export class SecUserHomepageComponent implements OnInit {
   //priUserStatus!: string;
   justOrgansLists!: JustOrgansList[];
 
-  hospitals: Role[]=[
-    {value: 'Hospital1', viewValue: 'Hospital1'},
-    {value: 'Hospital2', viewValue: 'Hospital2'},
-    {value: 'Hospital3', viewValue: 'Hospital3'},
-    {value: 'Hospital4', viewValue: 'Hospital4'},
-    {value: 'Hospital5', viewValue: 'Hospital5'}
-  
-    ];
-    
+  hospitalData!: HospitalData[];
 
-  constructor(private route: ActivatedRoute, private secUserServ:SecUserService) { 
+  constructor(private route: ActivatedRoute, private thankyouServiceService:ThankyouServiceService, private secUserServ:SecUserService) { 
     //this.priUserStatus = 'alive';
     
   }
@@ -53,8 +46,19 @@ export class SecUserHomepageComponent implements OnInit {
       this.loginEmail = params['loginEmail'];
      })
      this.fetchOrganList();
+
+     this.submit2();
   }
 
+  submit2(){
+    console.log("inside submit2 of organ-liver.component.ts");
+    this.thankyouServiceService.getHospitalInfo().subscribe(result=>{
+      this.hospitalData = result;
+      console.log("inside this.thankyouServiceService.getHospitalInfo().subscribe(result=>{ and the result is: ");
+      console.log(this.hospitalData);
+    })
+  }
+  
   toggleTag1()
   {
     this.showMe=true

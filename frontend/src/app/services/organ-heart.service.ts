@@ -6,10 +6,13 @@ import { baseUrl } from 'src/environments/environment';
 export interface HeartData{
   bloodGroup: any;
   count: any;
-  donatedDay: any;
-  donatedTime: any;
-  donorName: any;
+}
+
+export interface HeartData2{
+  bloodGroup: any;
   hospitalName: any;
+  donorName: any;
+  donatedDateAndTime: any;
 }
 
 @Injectable({
@@ -19,7 +22,6 @@ export class OrganHeartService {
 
   temp!: Observable<any>;
  
-
   constructor(private httpClient: HttpClient) { }
 
   getHeartData()
@@ -31,6 +33,25 @@ export class OrganHeartService {
     console.log("after httpClient.get call");
     
     return this.temp;
+  }
+
+  getPatientData(bldHospitalData: any): Observable<any>
+  {
+    /*
+      required: bloodGroup, hospitalName, donorName, donatedTime (Day, time) => heartData2.
+
+      send bloodGroup and hospitalName and get all the above data.
+    */
+
+    console.log("inside OrganHeartService->getPatientData");
+    console.log("form data is: ", bldHospitalData);
+    this.temp = this.httpClient.get<HeartData2[][]>(`${baseUrl}getDonorInfo`, {params:bldHospitalData, headers:{'Accept':'application/json', 'Content-Type':'application/json'} });
+    
+    console.log("after httpClient.get call");
+    
+    return this.temp;
 
   }
+
+
 }

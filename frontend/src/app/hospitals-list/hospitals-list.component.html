@@ -11,67 +11,35 @@
         <div class="col-md-9 register-right">
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" ifade show actived="home" role="tabpanel" aria-labelledby="home-tab">
-                    <p class="register-heading" style="font-size:26px;"> <b>Organ Donation Registraion</b></p>
+                    <p class="register-heading" style="font-size:26px; align-self:center;"> <b> The Below is the list of registered hospitals</b></p>
                     <div class="row register-form">
                         
-                        <div class="col-md-6">
-                            <div class="card" style="width: 18rem; margin-top:1cm; margin-left:1cm; background: -webkit-linear-gradient(left, #3931af, #00c6ff); color: white;">
-                                <img src="assets/images/heart.jpeg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                <p class="card-title" style="font-size: 16px;"> <b>Heart</b></p>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary" style="background-color: white; color:#3931af"><b>Go somewhere</b></a>
-                                </div>
-                            </div>
-
-                            <div class="card" style="width: 18rem; margin-top:1cm; margin-left:1cm; background: -webkit-linear-gradient(left, #3931af, #00c6ff); color: white;">
-                                <img src="assets/images/kidney.jpeg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                <p class="card-title" style="font-size: 16px;"> <b>Kidney</b></p>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary" style="background-color: white; color:#3931af" ><b>Go somewhere</b></a>
-                                </div>
-                            </div>
-                            <div class="card" style="width: 18rem; margin-top:1cm; margin-left:1cm; background: -webkit-linear-gradient(left, #3931af, #00c6ff); color: white;">
-                                <img src="assets/images/liver.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                <p class="card-title" style="font-size: 16px;"><b>Liver</b></p>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary" style="background-color: white; color:#3931af"><b>Go somewhere</b></a>
-                                </div>
-                            </div>
-
+                        <div class="row register-form" style="font-size: 18px; text-align: center;">
+                            <!--<div class="container" *ngIf="showTable" style="width: 10cm; margin-top:1cm;">-->
+                            <table class="table table-bordered table-striped" style="margin-left:-2cm; margin-top: -2cm;">
+                                <thead>
+                                <tr>
+                                    <th>Hospital ID</th>
+                                    <th>Hospital Name</th>
+                                    <th>Hospital Contact Email</th>
+                                    <th>Hospital Contact Number</th>
+                                    <th>Hospital location</th>
+                                    <th>Hospital Pin</th>
+                                    
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let hAD of hospitalAllData">
+                                        <td><span>{{hAD.id}}</span></td>
+                                        <td><span>{{hAD.hospName}}</span></td>
+                                        <td><span>{{hAD.hospEmail}}</span></td>
+                                        <td><span>{{hAD.phone}}</span></td>
+                                        <td><span>{{hAD.city}}, {{hAD.state}}</span></td>
+                                        <td><span>{{hAD.pin}}</span></td>                                      
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-
-                        <div class="col-md-6">
-                            <div class="card" style="width: 18rem; margin-top:1cm; margin-left:1cm; background: -webkit-linear-gradient(left, #3931af, #00c6ff); color: white;">
-                                <img src="assets/images/lungs.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <p class="card-title" style="font-size: 16px;"><b>Lungs</b></p>
-                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                  <a href="#" class="btn btn-primary" style="background-color: white; color:#3931af"><b>Go somewhere</b></a>
-                                </div>
-                            </div>
-    
-                            <div class="card" style="width: 18rem; margin-top:1cm; margin-left:1cm; background: -webkit-linear-gradient(left, #3931af, #00c6ff); color: white;">
-                                <img src="assets/images/eyes.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <p class="card-title" style="font-size: 16px;"><b>Eyes</b></p>
-                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                  <a href="#" class="btn btn-primary" style="background-color: white; color:#3931af"><b>Go somewhere</b></a>
-                                </div>
-                            </div>
-    
-                            <div class="card" style="width: 18rem; margin-top:1cm; margin-left:1cm; background: -webkit-linear-gradient(left, #3931af, #00c6ff); color: white;">
-                                <img src="assets/images/plasma_1.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <p class="card-title" style="font-size: 16px;"><b>Plasma</b></p>
-                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                  <a href="#" class="btn btn-primary" style="background-color: white; color:#3931af"><b><b>Go somewhere</b></b></a>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>

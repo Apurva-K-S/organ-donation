@@ -5,21 +5,26 @@ import 'rxjs/Rx';
 import { map } from 'rxjs/operators';
 import { baseUrl } from 'src/environments/environment';
 
+export interface HospitalData{
+  hospitalName:any;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class ThankyouServiceService {
 
-  constructor(private http: HttpClient) { }
+  temp!: Observable<any>;
 
-  sendEmail(credentials: any): Observable<any> {
+  constructor(private httpClient: HttpClient) { }
+
+  getHospitalInfo(): Observable<any> {
     
-    console.log("We are in ThankyouService before gng to spring boot.");
-    console.log("type is: ", typeof(credentials));
-    console.log("credentials are: ", credentials);
-    //console.log(this.http.post(`${baseUrl}add`, credentials));
+    console.log("We are in ThankyouService:getHospitalInfo before gng to spring boot.");
+  
 
-    return this.http.post(`${baseUrl}sendEmail`, (credentials));
-   // return this.http.post(`${baseUrl}add`, (credentials));
+    this.temp = this.httpClient.get<HospitalData[][]>(`${baseUrl}thankyou`, {headers:{'Accept':'application/json', 'Content-Type':'application/json'} });
+   
+    return this.temp;
   }
 }

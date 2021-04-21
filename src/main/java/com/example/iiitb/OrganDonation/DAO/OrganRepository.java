@@ -22,6 +22,23 @@ public interface OrganRepository extends CrudRepository<userOrganTable,Integer> 
             "and uht.user_email = pu.email and ufot.organ=?1 group by ufot.organ, pu.blood_group", nativeQuery = true)
     List<Object[]> findByOrganContaining(String organ);
 
+
+    @Query(value="select pu.blood_group, uht.hospital_name, pu.first_name, uht.datetime from primary_user pu, user_hospital_table uht, " +
+            "user_final_organ_table ufot where pu.email = uht.user_email and pu.email = ufot.user_email and ufot.organ =?1 and uht.hospital_name =?3 and pu.blood_group =?2", nativeQuery = true)
+    List<Object[]> findByBothBldGrpAndHospital(String organ, String bldGrp, String hospitalName);
+
+    @Query(value="select pu.blood_group, uht.hospital_name, pu.first_name, uht.datetime from primary_user pu, user_hospital_table uht, " +
+            "user_final_organ_table ufot where pu.email = uht.user_email and pu.email = ufot.user_email and ufot.organ =?1 and pu.blood_group =?2", nativeQuery = true)
+    List<Object[]> findByBldGrp(String organ, String bldGrp);
+
+    @Query(value="select pu.blood_group, uht.hospital_name, pu.first_name, uht.datetime from primary_user pu, user_hospital_table uht, " +
+            "user_final_organ_table ufot where pu.email = uht.user_email and pu.email = ufot.user_email and ufot.organ =?1 and uht.hospital_name =?2", nativeQuery = true)
+    List<Object[]> findByHospitalName(String organ, String hospitalName);
+
+    @Query(value="select pu.blood_group, uht.hospital_name, pu.first_name, uht.datetime from primary_user pu, user_hospital_table uht, " +
+            "user_final_organ_table ufot where pu.email = uht.user_email and pu.email = ufot.user_email and ufot.organ =?1", nativeQuery = true)
+    List<Object[]> findByNeither(String organ);
+
     /*
     @Query(value = "select * from primary_user where secondary_email=?1",nativeQuery = true)
      List<primaryUser> findBySecondary_email(String  secondary_email);

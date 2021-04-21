@@ -1,7 +1,7 @@
 .register{
     background: -webkit-linear-gradient(left, #3931af, #00c6ff);
-    margin-top: 3%;
     margin-bottom: 3%;
+    margin-top: 3%;
     padding: 3%;
 }
 .register-left{
@@ -27,9 +27,10 @@
     border-bottom-left-radius: 10% 50%;
 }
 .register-left img{
-    margin-top: 14cm;
+    
+    margin-top: 6cm;
     margin-bottom: 5%;
-    width: 70%;
+    width: 50%;
     -webkit-animation: mover 2s infinite  alternate;
     animation: mover 1s infinite  alternate;
 }
@@ -97,10 +98,9 @@
 
 
 .register_button{
-    width: 200px;
-    height: 40px;
-    margin-left: 7cm;
-    margin-top: 1cm;
+    width: 110px;
+    height: 35px;
+    margin-left: 1cm;
 }
 
 
@@ -114,3 +114,6 @@
     margin-top: 0.25cm;
 }
 
+th, td {
+    padding: 15px;
+  }

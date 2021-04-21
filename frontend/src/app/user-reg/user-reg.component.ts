@@ -30,7 +30,7 @@ export class UserRegComponent {
   
     ];
   
-  constructor(private fb: FormBuilder, private authService:AuthService,private router: Router) {
+  constructor(private fb: FormBuilder, private authService:AuthService, private router: Router) {
   
     this.form = fb.group({
       

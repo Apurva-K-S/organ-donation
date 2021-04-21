@@ -47,7 +47,7 @@
                     
                     <div style="align-self: center;">
                         <select name="hospitals" style="margin-top: 1cm;" id="hospitals" formControlName="hospitalName">
-                            <option style="height: 20px;" *ngFor="let hospitalVal of hospitals" [value]="hospitalVal.value">{{hospitalVal.viewValue}}</option>
+                            <option style="height: 20px;" *ngFor="let hD of hospitalData" value={{hD.hospitalName}}>{{hD.hospitalName}}</option>
                         </select>
                     </div>
                     <button type="submit" style="margin-top: 1cm; align-self: center;" id="donate" name="donate" class="btn btn-primary register_button">Donated</button>

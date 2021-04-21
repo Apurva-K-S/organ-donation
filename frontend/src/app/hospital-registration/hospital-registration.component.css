@@ -99,12 +99,17 @@
 .register_button{
     width: 200px;
     height: 40px;
-    margin-left: 7cm;
-    margin-top: 1cm;
+    margin-left: 0.5cm;
+    margin-bottom: 1.5cm;
 }
 
 .message{
     border: 2px solid red;
+}
+
+input{
+    width: 7cm;
+    height: 1cm;
 }
 
 /*

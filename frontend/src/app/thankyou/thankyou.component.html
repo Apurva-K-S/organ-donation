@@ -1,6 +1,10 @@
 <p>thankyou!</p>
-<form [formGroup]="form" (ngSubmit)="submit()">
-    <button type="submit" class="btn btn-primary register_button">
-        submit
-    </button>
+<form [formGroup]="form" (ngSubmit)="submit2()">
+    <div style="align-self: center;">
+        <select name="hospitals" style="margin-top: 1cm;" id="hospitals" formControlName="hospitalName">
+            <option style="height: 20px;" *ngFor="let hD of hospitalData" value={{hD.hospitalName}}>{{hD.hospitalName}}</option>
+        </select>
+
+        <button type="submit" id="donate" name="donate" class="btn btn-primary register_button">Filter</button>
+    </div>
 </form>

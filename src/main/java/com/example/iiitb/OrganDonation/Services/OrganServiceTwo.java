@@ -1,5 +1,6 @@
 package com.example.iiitb.OrganDonation.Services;
 
+import com.example.iiitb.OrganDonation.Beans.DonorInfo;
 import com.example.iiitb.OrganDonation.Beans.Organ;
 import com.example.iiitb.OrganDonation.DAO.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -103,6 +104,63 @@ public class OrganServiceTwo {
         System.out.println("coming out of getOrgnData");
         //return t;
         return listOfOrgans;
+    }
+
+    public List<DonorInfo> getDonorInfo(String organ, String bldGrp, String hospitalName)
+    {
+        System.out.println("inside: OrganServiceTwo: getDonorInfo()");
+        System.out.println(bldGrp + " ---- " + hospitalName);
+
+        List<Object[]> result = new ArrayList<>();
+
+        if(!hospitalName.equals("None") && !bldGrp.equals("None"))
+        {
+            result = organRepository.findByBothBldGrpAndHospital(organ, bldGrp, hospitalName);
+        }
+        else if(hospitalName.equals("None") && !bldGrp.equals("None")) // hospitalName is none
+        {
+            System.out.println("hospital name is none");
+            result = organRepository.findByBldGrp(organ, bldGrp);
+        }
+        else if(!hospitalName.equals("None") && bldGrp.equals("None")) // bldGrp is none
+        {
+            System.out.println("Blood group name is none");
+            result = organRepository.findByHospitalName(organ, hospitalName);
+        }
+        else
+        {
+            System.out.println("Both are none");
+            result = organRepository.findByNeither(organ);
+        }
+
+
+        System.out.println("printing the result");
+
+        //List<Object[]> result2 = new ArrayList<>();
+        for(int i=0;i<result.size();i++)
+        {
+            for (int j = 0; j < result.get(i).length; j++)
+            {
+                System.out.print(result.get(i)[j] + "  ");
+                System.out.print(result.get(i)[j].toString() + "\n");
+
+            }
+            System.out.println("");
+        }
+
+        List<DonorInfo> di = new ArrayList<>();
+        for(int i=0;i<result.size();i++)
+        {
+            DonorInfo d = new DonorInfo();
+            d.setBloodGroup(result.get(i)[0].toString());
+            d.setHospitalName(result.get(i)[1].toString());
+            d.setDonorName(result.get(i)[2].toString());
+            d.setDonatedDateAndTime(result.get(i)[3].toString());
+
+            di.add(d);
+        }
+
+        return di;
     }
 }
 

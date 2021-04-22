@@ -1,0 +1,38 @@
+<app-navigation-bar></app-navigation-bar>
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="container register">
+        <div class="row">
+            
+            <div class="col-md-3 register-left">
+                <img src="assets/images/heart_medical.png"  alt=""/>
+                <p style="font-size:22px; font-style: oblique;"><b>Welcome!!</b></p>
+                <p style="font-size:22px; font-style: italic; padding:2%"><b>You are 30 seconds away from saving a life!</b></p>            
+            </div>
+
+            <div class="col-md-9 register-right">
+                <div class="tab-content tab-pane fade show active" id="myTabContent" ifade show actived="home" role="tabpanel" aria-labelledby="home-tab">
+                    <p class="register-heading" style="font-size:26px;"> <b>Hospital Login</b></p>
+                    <div class="row register-form" style="padding: 1cm; align-self: center; margin-left: 1.5cm; margin-top:3cm;">
+                        <div style="margin-left: 5cm;">
+                            <h3 style="font-size: 18px; padding-top:1cm;"> <b> Email </b> </h3> 
+                            <input type="text" style="width: 10cm; height: 1cm;" class="form-control" name="email" id="email" required placeholder="Please enter your email id" value="" formControlName="loginEmail"/>
+                            <div *ngIf = "f.loginEmail.touched && f.loginEmail.invalid" class="alert alert-danger" style="width: 10cm;">
+                                <div *ngIf="f.loginEmail.errors?.required">Email is required</div>
+                            </div>
+                        </div>
+                        <div style="margin-left: 5cm;">
+                            <h3 style="font-size: 18px; padding-top:1cm;"> <b> Password </b> </h3> 
+                            <input type="password" style="width: 10cm; height: 1cm;" class="form-control" name="password" id="password" required placeholder="Please enter your password" value="" formControlName="loginPassword"/>
+                            <div *ngIf = "f.loginPassword.touched && f.loginPassword.invalid" class="alert alert-danger" style="width: 10cm;">
+                                <div *ngIf="f.loginPassword.errors?.required">Password is required</div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary register_button">
+                            Login
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

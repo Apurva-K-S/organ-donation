@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping(path="/api")
@@ -79,5 +80,21 @@ public class hospitalRegistrationController
         System.out.println("\ncoming out of : HospitalRegistrationController:getAllHospitalData\n");
 
         return hNames;
+    }
+
+    @PostMapping(path="/hospitalLogin", consumes = {MediaType.APPLICATION_JSON_VALUE})
+    public @ResponseBody
+    Response hospitalAuthentication(@RequestBody final Map<String, Object> loginDetails)
+    {
+        System.out.println("inside hospitalRegistrationController:hospitalAuthentication");
+        System.out.println(loginDetails);
+        //loginEmail && loginPassword
+        boolean result = hospitalRegisterService.authenticateHospital(loginDetails.get("loginEmail").toString(), loginDetails.get("loginPassword").toString());
+
+        System.out.println(result);
+        if(result)
+            return Response.ok().build();
+
+        return Response.status(401).build();
     }
 }

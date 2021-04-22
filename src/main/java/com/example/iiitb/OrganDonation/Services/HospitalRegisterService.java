@@ -66,4 +66,13 @@ public class HospitalRegisterService {
         List<HospitalRegistration> hospitalData = hospitalRegisterRepository.findAll();
         return hospitalData;
     }
+
+    public boolean authenticateHospital(String email, String password)
+    {
+        List<HospitalRegistration> temp = hospitalRegisterRepository.findByHospEmailAndPassword(email, password);
+
+        if(temp.size() != 0)
+            return true;
+        return false;
+    }
 }

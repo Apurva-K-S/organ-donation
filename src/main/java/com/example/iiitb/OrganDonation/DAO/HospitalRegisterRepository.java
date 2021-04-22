@@ -16,4 +16,7 @@ public interface HospitalRegisterRepository  extends CrudRepository<HospitalRegi
 
     @Query(value="select * from hospital_registration;", nativeQuery=true)
     List<HospitalRegistration> findAll();
+
+    @Query(value="select * from hospital_registration where hosp_email=?1 and password=?2", nativeQuery = true)
+    List<HospitalRegistration> findByHospEmailAndPassword(String email, String password);
 }

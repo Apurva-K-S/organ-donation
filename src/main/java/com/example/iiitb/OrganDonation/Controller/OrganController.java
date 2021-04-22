@@ -39,7 +39,6 @@ public class OrganController {
         return hearts;
     }
 
-
     @GetMapping(path="/getDonorInfo", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
     public @ResponseBody List<DonorInfo> getDonorInfo(final BldAndHospital bldAndHospital) {
 
@@ -68,7 +67,6 @@ public class OrganController {
 
         return sample;
     }
-
 
     @GetMapping(path="/getKidneyDonorInfo", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
     public @ResponseBody List<DonorInfo> getKidneyDonorInfo(final BldAndHospital bldAndHospital) {
@@ -159,7 +157,6 @@ public class OrganController {
 
         return sample;
     }
-
 
     @GetMapping(path="/getKidneyOrgan", consumes ={MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
     public @ResponseBody List<Organ> sendKidneyDetails() {

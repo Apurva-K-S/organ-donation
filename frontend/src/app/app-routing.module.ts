@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DonatePageComponent } from './donate-page/donate-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { HospitalLoginComponent } from './hospital-login/hospital-login.component';
 import { HospitalRegistrationComponent } from './hospital-registration/hospital-registration.component';
 import { HospitalsListComponent } from './hospitals-list/hospitals-list.component';
 import { ListOfOrgansComponent } from './list-of-organs/list-of-organs.component';
@@ -36,7 +37,8 @@ const routes: Routes = [
   {path: 'organEyes', component: OrganEyesComponent},
   {path: 'organLiver', component: OrganLiverComponent},
   //{path: 'qrCode', component: QrCodeComponent},
-  {path: 'hospitalRegistration', component: HospitalRegistrationComponent}
+  {path: 'hospitalRegistration', component: HospitalRegistrationComponent},
+  {path: 'hospitalLoginComponent', component: HospitalLoginComponent}
 
 ];
 

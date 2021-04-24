@@ -28,6 +28,10 @@ import { OrganEyesComponent } from './organ-eyes/organ-eyes.component';
 //import { QRCodeModule } from 'angular2-qrcode';
 import { HospitalRegistrationComponent } from './hospital-registration/hospital-registration.component';
 import { HospitalLoginComponent } from './hospital-login/hospital-login.component';
+import { HospitalOneComponent } from './hospital-one/hospital-one.component';
+import { HospitalTwoComponent } from './hospital-two/hospital-two.component';
+import { HospitalOneRequestformComponent } from './hospital-one-requestform/hospital-one-requestform.component';
+import { HospitalTwoRequestformComponent } from './hospital-two-requestform/hospital-two-requestform.component';
 
 
 @NgModule({
@@ -52,7 +56,11 @@ import { HospitalLoginComponent } from './hospital-login/hospital-login.componen
     OrganEyesComponent,
 //    QrCodeComponent,
     HospitalRegistrationComponent,
-    HospitalLoginComponent    
+    HospitalLoginComponent,
+    HospitalOneComponent,
+    HospitalTwoComponent,
+    HospitalOneRequestformComponent,
+    HospitalTwoRequestformComponent    
   ],
   imports: [
     BrowserModule,

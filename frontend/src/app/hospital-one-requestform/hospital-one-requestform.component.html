@@ -1,0 +1,86 @@
+<app-hospital-one></app-hospital-one>
+
+<form [formGroup]="hospRequestForm" (ngSubmit)="raiseRequest()">
+    <!-- 2 column grid layout with text inputs for the first and last names -->
+    <div class="row mb-4">
+      <div class="col">
+        <div class="form-outline">
+          <input type="text" id="form6Example1" class="form-control" required formControlName="patientFirstName"/>
+          <label class="form-label" for="form6Example1">Patient First Name</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+          <input type="text" id="form6Example2" class="form-control" required formControlName="patientLastName"/>
+          <label class="form-label" for="form6Example2">Patient Last name</label>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Text input -->
+   <!-- <div class="form-outline mb-4">
+      <input type="text" id="form6Example3" class="form-control" />
+      <label class="form-label" for="form6Example3">Company name</label>
+    </div>
+    -->
+  
+    <!-- Text input -->
+    
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <input type="email" id="form6Example5" class="form-control" required formControlName="patientEmail"/>
+      <label class="form-label" for="form6Example5">Patient Email-ID</label>
+    </div>
+  
+    <!-- Number input -->
+    <div class="form-outline mb-4">
+      <input type="text" id="form6Example6" class="form-control" required formControlName="patientPhone"/>
+      <label class="form-label" for="form6Example6">Patient Phone</label>
+    </div>
+
+    <div class="form-outline mb-4">
+        <input type="email" id="form6Example5" class="form-control" required formControlName="hospitalEmail"/>
+        <label class="form-label" for="form6Example5">Hospital Email-ID</label>
+      </div>
+    
+      <div class="form-outline mb-4">
+        <input type="text" id="form6Example6" class="form-control" required formControlName="hospitalPhone"/>
+        <label class="form-label" for="form6Example6">Hospital Phone</label>
+      </div>
+  
+
+    <div>
+        <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="heart_id" name="heart_name" formControlName="organ_Heart">
+        <label class="form-check-label checkbox_label" >{{organHeart}}</label>
+    </div>
+   
+    <div>
+        <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="kidneys_id" name="kidneys_name" formControlName="organ_Kidney">
+        <label class="form-check-label checkbox_label"  >{{organKidney}}</label>
+    </div>
+    <div>
+        <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="liver_id" name="liver_name" formControlName="organ_Liver">
+        <label class="form-check-label checkbox_label" >{{organLiver}}</label>
+    </div>
+
+    <div>
+        <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="eyes_id" name="eyes_name" formControlName="organ_Eyes">
+        <label class="form-check-label checkbox_label">{{organEyes}}</label>
+    </div>
+   
+
+
+    <div class=" form-group mb-3 mt-n1">
+        <div style="align-self: center; margin-top: 0.5cm;">
+            <p style="font-size:17px;" > <b>Choose your blood Group</b></p>
+            <select name="hospitals" id="bloodGroup" formControlName="bloodGroup">
+                <option style="height: 20px;" *ngFor="let bloodGroupVal of bloodGroups" [value]="bloodGroupVal.value">{{bloodGroupVal.viewValue}}</option>
+            </select>
+        </div>
+    </div>
+
+    
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">Raise the Request</button>
+  </form>
+

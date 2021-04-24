@@ -3,7 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { DonatePageComponent } from './donate-page/donate-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { HospitalLoginComponent } from './hospital-login/hospital-login.component';
+import { HospitalOneRequestformComponent } from './hospital-one-requestform/hospital-one-requestform.component';
+import { HospitalOneComponent } from './hospital-one/hospital-one.component';
 import { HospitalRegistrationComponent } from './hospital-registration/hospital-registration.component';
+import { HospitalTwoComponent } from './hospital-two/hospital-two.component';
 import { HospitalsListComponent } from './hospitals-list/hospitals-list.component';
 import { ListOfOrgansComponent } from './list-of-organs/list-of-organs.component';
 import { OrganEyesComponent } from './organ-eyes/organ-eyes.component';
@@ -38,7 +41,10 @@ const routes: Routes = [
   {path: 'organLiver', component: OrganLiverComponent},
   //{path: 'qrCode', component: QrCodeComponent},
   {path: 'hospitalRegistration', component: HospitalRegistrationComponent},
-  {path: 'hospitalLoginComponent', component: HospitalLoginComponent}
+  {path: 'hospitalLoginComponent', component: HospitalLoginComponent},
+  {path: 'hospitalOne', component: HospitalOneComponent},
+  {path: 'hospOneRequest', component: HospitalOneRequestformComponent},
+  {path: 'hospitalTwo', component: HospitalTwoComponent},
 
 ];
 

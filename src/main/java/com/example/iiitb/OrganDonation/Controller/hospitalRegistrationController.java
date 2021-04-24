@@ -82,19 +82,21 @@ public class hospitalRegistrationController
         return hNames;
     }
 
+   // @GetMapping(path="/hospitalLogin", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.TEXT_PLAIN_VALUE})
     @PostMapping(path="/hospitalLogin", consumes = {MediaType.APPLICATION_JSON_VALUE})
     public @ResponseBody
-    Response hospitalAuthentication(@RequestBody final Map<String, Object> loginDetails)
+    String hospitalAuthentication( @RequestBody final HospitalLoginDetails loginDetails)
     {
         System.out.println("inside hospitalRegistrationController:hospitalAuthentication");
-        System.out.println(loginDetails);
+        System.out.println("Email: "+loginDetails.getloginEmail());
+        System.out.println("Password: "+loginDetails.getloginPassword());
         //loginEmail && loginPassword
-        boolean result = hospitalRegisterService.authenticateHospital(loginDetails.get("loginEmail").toString(), loginDetails.get("loginPassword").toString());
+        String result = hospitalRegisterService.authenticateHospital(loginDetails.getloginEmail(), loginDetails.getloginPassword());
 
-        System.out.println(result);
-        if(result)
-            return Response.ok().build();
+        System.out.println("Result: "+result);
+        if(result == null)
+            return "Incorrect Credentials";
 
-        return Response.status(401).build();
+        return result;
     }
 }

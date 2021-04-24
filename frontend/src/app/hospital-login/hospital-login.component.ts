@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import {HospitalLoginService} from 'src/app/services/hospital-login.service';
+import {HospitalLoginService, HospitalName} from 'src/app/services/hospital-login.service';
 
 @Component({
   selector: 'app-hospital-login',
@@ -11,7 +11,7 @@ import {HospitalLoginService} from 'src/app/services/hospital-login.service';
 export class HospitalLoginComponent implements OnInit {
 
   loginForm!: FormGroup;
-
+  hospName!: HospitalName;
   constructor(private hospitalLoginService:HospitalLoginService, private router:Router) { }
 
   ngOnInit(): void {
@@ -35,13 +35,14 @@ export class HospitalLoginComponent implements OnInit {
 
       this.hospitalLoginService.login(this.loginForm.value).subscribe(result=>{
 
+        //this.hospName = result;
         console.log("inside: this.hospitalLoginService.login(this.loginForm.value).subscribe(result=>{ ")
-          if(result['status'] == 200)
-          {
-            alert("login successful!!");
-          }
-          else
-            alert("login failed!!");
+        console.log("Logging console after login inside hosp login component: ",result);
+        if(result === "Sunshine")
+          this.router.navigateByUrl("/hospitalOne");
+        else if(result === "Moonshine")
+          this.router.navigateByUrl("/hospitalTwo");
+        
       })
     }
   }

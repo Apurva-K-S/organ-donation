@@ -14,11 +14,20 @@ import java.util.List;
 public interface OrganRequestRepository extends CrudRepository<userOrganTable,Integer> {
 
 
-    @Query(value = "select pu.first_name, pu.secondary_email, oht.hospital_name, hr.hosp_email, ufot.organ, pu.blood_group, oht.datetime from primary_user pu, user_final_organ_tab\n" +
-            "le ufot, user_hospital_table oht,hospital_registration hr where pu.email = ufot.user_email and pu.email = oht.user_email and hr.hosp_name = oht.hospital_name and (oht\n" +
-            ".datetime, ufot.organ, pu.blood_group) in (select min(oht.datetime), ufot.organ, pu.blood_group from primary_user pu, user_final_organ_table ufot, user_hospital_table\n" +
-            " oht where pu.email = ufot.user_email and pu.email = oht.user_email group by ufot.organ, pu.blood_group) and ufot.organ=?1 and pu.blood_group=?2", nativeQuery = true)
-    OrganResponse findOrganByHospital(String organ, String bloodGroup);
+    @Query(value = "select pu.first_name, pu.secondary_email, oht.hospital_name, hr.hosp_email, ufot.organ, pu.blood_group, oht.datetime from primary_user pu, user_final_organ_table ufot,"+
+            " user_hospital_table oht,hospital_registration hr where pu.email = ufot.user_email and pu.email = oht.user_email and hr.hosp_name = oht.hospital_name and " +
+            "(oht.datetime, ufot.organ, pu.blood_group) in (select min(oht.datetime), ufot.organ, pu.blood_group from primary_user pu, user_final_organ_table ufot, user_hospital_table oht " +
+            "where pu.email = ufot.user_email and pu.email = oht.user_email group by ufot.organ, pu.blood_group) and ufot.organ=?1 and pu.blood_group=?2", nativeQuery = true)
+    List<Object[]> findOrganByHospital(String organ, String bloodGroup);
 
 
 }
+
+/*
+
+select pu.first_name, pu.secondary_email, oht.hospital_name, hr.hosp_email, ufot.organ, pu.blood_group, oht.datetime from primary_user pu, user_final_organ_table ufot,
+user_hospital_table oht,hospital_registration hr where pu.email = ufot.user_email and pu.email = oht.user_email and hr.hosp_name = oht.hospital_name and
+(oht.datetime, ufot.organ, pu.blood_group) in (select min(oht.datetime), ufot.organ, pu.blood_group from primary_user pu, user_final_organ_table ufot, user_hospital_table oht
+where pu.email = ufot.user_email and pu.email = oht.user_email group by ufot.organ, pu.blood_group) and ufot.organ="Liver" and pu.blood_group="O+"
+
+ */

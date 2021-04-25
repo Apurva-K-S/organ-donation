@@ -4,8 +4,14 @@ import { DonatePageComponent } from './donate-page/donate-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { HospitalLoginComponent } from './hospital-login/hospital-login.component';
 import { HospitalOneRequestformComponent } from './hospital-one-requestform/hospital-one-requestform.component';
+import { HospitalOneResponseComponent } from './hospital-one-response/hospital-one-response.component';
 import { HospitalOneComponent } from './hospital-one/hospital-one.component';
 import { HospitalRegistrationComponent } from './hospital-registration/hospital-registration.component';
+import { HospitalThreeRequestformComponent } from './hospital-three-requestform/hospital-three-requestform.component';
+import { HospitalThreeResponseComponent } from './hospital-three-response/hospital-three-response.component';
+import { HospitalThreeComponent } from './hospital-three/hospital-three.component';
+import { HospitalTwoRequestformComponent } from './hospital-two-requestform/hospital-two-requestform.component';
+import { HospitalTwoResponseComponent } from './hospital-two-response/hospital-two-response.component';
 import { HospitalTwoComponent } from './hospital-two/hospital-two.component';
 import { HospitalsListComponent } from './hospitals-list/hospitals-list.component';
 import { ListOfOrgansComponent } from './list-of-organs/list-of-organs.component';
@@ -33,18 +39,30 @@ const routes: Routes = [
   {path: 'donatePage', component: DonatePageComponent},
   {path: 'listOfOrgans', component: ListOfOrgansComponent},
   {path: 'thankyou', component: ThankyouComponent},
+  
   {path: 'prmUserHomepage/:loginEmail', component: PrmUserHomepageComponent},
   {path: 'secUserHomepage/:loginEmail', component: SecUserHomepageComponent},
+  
   {path: 'organHeart', component: OrganHeartComponent},
   {path: 'organKidney', component: OrganKidneyComponent},
   {path: 'organEyes', component: OrganEyesComponent},
   {path: 'organLiver', component: OrganLiverComponent},
   //{path: 'qrCode', component: QrCodeComponent},
+  
   {path: 'hospitalRegistration', component: HospitalRegistrationComponent},
   {path: 'hospitalLoginComponent', component: HospitalLoginComponent},
+
   {path: 'hospitalOne', component: HospitalOneComponent},
   {path: 'hospOneRequest', component: HospitalOneRequestformComponent},
+  {path: 'hospOneResponse', component: HospitalOneResponseComponent},
+  
   {path: 'hospitalTwo', component: HospitalTwoComponent},
+  {path: 'hospTwoRequest', component: HospitalTwoRequestformComponent},
+  {path: 'hospTwoResponse', component: HospitalTwoResponseComponent},
+
+  {path: 'hospitalThree', component: HospitalThreeComponent},
+  {path: 'hospThreeRequest', component: HospitalThreeRequestformComponent},
+  {path: 'hospThreeResponse', component: HospitalThreeResponseComponent},
 
 ];
 

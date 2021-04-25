@@ -2,20 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { OrganRequestService } from '../services/organ-request.service';
 
-
 interface BloodGroup{
   value: string;
   viewValue: string;
 }
 
-
 @Component({
-  selector: 'app-hospital-two-requestform',
-  templateUrl: './hospital-two-requestform.component.html',
-  styleUrls: ['./hospital-two-requestform.component.css']
+  selector: 'app-hospital-three-requestform',
+  templateUrl: './hospital-three-requestform.component.html',
+  styleUrls: ['./hospital-three-requestform.component.css']
 })
-export class HospitalTwoRequestformComponent implements OnInit {
+export class HospitalThreeRequestformComponent implements OnInit {
 
+  
   bloodGroups: BloodGroup[]=[
     {value: 'A+', viewValue: 'A+'},
     {value: 'A-', viewValue: 'A-'},
@@ -36,12 +35,14 @@ export class HospitalTwoRequestformComponent implements OnInit {
   
   hospRequestForm!: FormGroup;
 
+
   constructor(private orgRequestService:OrganRequestService) { }
 
   ngOnInit(): void {
-    console.log("Inside ngInit of hosp-2-requestform class");
+    console.log("Inside ngInit of hosp-1-requestform class");
     this.initRequestForm()
   }
+
 
   initRequestForm()
   {
@@ -77,7 +78,10 @@ export class HospitalTwoRequestformComponent implements OnInit {
         if(result['status']==200){
           alert("Your request has been forwarded. You will receive an email as and when the request is satisfied.");
         }
-       })
+      })
     }
   }
+
 }
+
+

@@ -38,10 +38,12 @@ export class HospitalLoginComponent implements OnInit {
         //this.hospName = result;
         console.log("inside: this.hospitalLoginService.login(this.loginForm.value).subscribe(result=>{ ")
         console.log("Logging console after login inside hosp login component: ",result);
-        if(result === "Sunshine")
+        if(result === "Hospital1") // change it to "Sunshine"
           this.router.navigateByUrl("/hospitalOne");
-        else if(result === "Moonshine")
+        else if(result === "Hospital2") // change it to "Moonshine"
           this.router.navigateByUrl("/hospitalTwo");
+        else if(result === "Hospital3") // change it to "Moonshine"
+          this.router.navigateByUrl("/hospitalThree");
         
       })
     }

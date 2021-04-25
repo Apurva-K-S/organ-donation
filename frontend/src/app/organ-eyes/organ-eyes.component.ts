@@ -36,6 +36,9 @@ export class OrganEyesComponent implements OnInit {
     ];
   
     hospitalData!: HospitalData[];
+    hd:HospitalData = {
+      hospitalName : "None"
+    };
 
   constructor(private fb: FormBuilder, private thankyouServiceService:ThankyouServiceService, private route: ActivatedRoute, private organEyesService:OrganEyesService, private router: Router) 
   { 
@@ -51,7 +54,7 @@ export class OrganEyesComponent implements OnInit {
     
     this.organEyesService.getEyesData().subscribe(result=>{
       this.eyesData = result;
-
+      this.hospitalData.push(this.hd);
       console.log("inside this.organEyesService.getEyesData().subscribe(result=>{ ");
       console.log("list is: ",this.eyesData);
       if(this.eyesData.length == 0)

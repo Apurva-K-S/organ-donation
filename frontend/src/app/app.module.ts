@@ -32,6 +32,11 @@ import { HospitalOneComponent } from './hospital-one/hospital-one.component';
 import { HospitalTwoComponent } from './hospital-two/hospital-two.component';
 import { HospitalOneRequestformComponent } from './hospital-one-requestform/hospital-one-requestform.component';
 import { HospitalTwoRequestformComponent } from './hospital-two-requestform/hospital-two-requestform.component';
+import { HospitalOneResponseComponent } from './hospital-one-response/hospital-one-response.component';
+import { HospitalTwoResponseComponent } from './hospital-two-response/hospital-two-response.component';
+import { HospitalThreeComponent } from './hospital-three/hospital-three.component';
+import { HospitalThreeRequestformComponent } from './hospital-three-requestform/hospital-three-requestform.component';
+import { HospitalThreeResponseComponent } from './hospital-three-response/hospital-three-response.component';
 
 
 @NgModule({
@@ -60,7 +65,12 @@ import { HospitalTwoRequestformComponent } from './hospital-two-requestform/hosp
     HospitalOneComponent,
     HospitalTwoComponent,
     HospitalOneRequestformComponent,
-    HospitalTwoRequestformComponent    
+    HospitalTwoRequestformComponent,
+    HospitalOneResponseComponent,
+    HospitalTwoResponseComponent,
+    HospitalThreeComponent,
+    HospitalThreeRequestformComponent,
+    HospitalThreeResponseComponent    
   ],
   imports: [
     BrowserModule,

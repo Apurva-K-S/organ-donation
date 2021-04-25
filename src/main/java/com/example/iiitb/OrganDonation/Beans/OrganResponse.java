@@ -5,57 +5,85 @@ import org.springframework.stereotype.Component;
 @Component
 public class OrganResponse {
 
-    private String patientFirstName;
-    private String secondaryEmail;
-    private String hospitalName;
-    private String hospitalEmail;
+    private String donorName;
+    private String donorEmail;
+    private String recepientName;
+    private String donorHospital;
+    private String requestHospitalEmail;
     private String organ;
     private String bloodGroup;
-    private String time;
+
+
+    /*
+    donorName: any;
+  recepientName: any;
+  donorHospital: any;
+  requestHospitalEmail: any;
+  organ: any;
+  bloodGroup: any;
+
+
+donorName: any;
+  donorEmail: any;
+  recepientName: any;
+  donorHospital: any;
+  requestHospitalEmail: any;
+  organ: any;
+  bloodGroup: any;
+
+     */
 
     public OrganResponse() {
     }
 
-    public OrganResponse(String patientFirstName, String secondaryEmail, String hospitalName, String hospitalEmail, String organ, String bloodGroup, String time) {
-        this.patientFirstName = patientFirstName;
-        this.secondaryEmail = secondaryEmail;
-        this.hospitalName = hospitalName;
-        this.hospitalEmail = hospitalEmail;
+    public OrganResponse(String donorName, String donorEmail, String recepientName, String donorHospital, String requestHospitalEmail, String organ, String bloodGroup) {
+        this.donorName = donorName;
+        this.donorEmail = donorEmail;
+        this.recepientName = recepientName;
+        this.donorHospital = donorHospital;
+        this.requestHospitalEmail = requestHospitalEmail;
         this.organ = organ;
         this.bloodGroup = bloodGroup;
-        this.time = time;
     }
 
-    public String getPatientFirstName() {
-        return patientFirstName;
+    public String getDonorName() {
+        return donorName;
     }
 
-    public void setPatientFirstName(String patientFirstName) {
-        this.patientFirstName = patientFirstName;
+    public void setDonorName(String donorName) {
+        this.donorName = donorName;
     }
 
-    public String getSecondaryEmail() {
-        return secondaryEmail;
+    public String getDonorEmail() {
+        return donorEmail;
     }
 
-    public void setSecondaryEmail(String secondaryEmail) {
-        this.secondaryEmail = secondaryEmail;
+    public void setDonorEmail(String donorEmail) {
+        this.donorEmail = donorEmail;
     }
 
-    public String getHospitalName() {
-        return hospitalName;
+    public String getRecepientName() {
+        return recepientName;
     }
 
-    public void setHospitalName(String hospitalName) {
-        this.hospitalName = hospitalName;
+    public void setRecepientName(String recepientName) {
+        this.recepientName = recepientName;
     }
 
-    public String getHospitalEmail() {
-        return hospitalEmail;
+    public String getDonorHospital() {
+        return donorHospital;
     }
 
-    public void setHospitalEmail(String hospitalEmail) {
-        this.hospitalEmail = hospitalEmail;
+    public void setDonorHospital(String donorHospital) {
+        this.donorHospital = donorHospital;
+    }
+
+    public String getRequestHospitalEmail() {
+        return requestHospitalEmail;
+    }
+
+    public void setRequestHospitalEmail(String requestHospitalEmail) {
+        this.requestHospitalEmail = requestHospitalEmail;
     }
 
     public String getOrgan() {
@@ -72,13 +100,5 @@ public class OrganResponse {
 
     public void setBloodGroup(String bloodGroup) {
         this.bloodGroup = bloodGroup;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
     }
 }

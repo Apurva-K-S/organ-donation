@@ -1,0 +1,51 @@
+<p>hospital-three-response works!</p>
+<h4>Hospital 3 response form</h4>
+
+<app-navigation-bar></app-navigation-bar>
+
+<!--<form class="registration-form" [formGroup]="form" (ngSubmit)="submit()">-->
+    <form class="registration-form" [formGroup]="form">
+    <div class="container register">
+        <div class="row">
+            
+            <div class="col-md-3 register-left">
+                <img src="assets/images/heart_medical.png"  alt=""/>
+                <p style="font-size:22px; font-style: oblique;"><b>Welcome!!</b></p>
+                <p style="font-size:22px; font-style: italic; padding:2%"><b>You are 30 seconds away from saving a life!</b></p>            
+            </div>
+
+            <div class="col-md-9 register-right tab-content tab-pane fade show active" id="myTabContent" ifade show actived="home" role="tabpanel" aria-labelledby="home-tab">
+                <p class="register-heading" style="font-size:26px;"> <b>The below are the Requests</b></p>
+                <div class="row register-form" style="font-size: 18px; text-align: center;">
+                    <!--<div class="container" *ngIf="showTable" style="width: 10cm; margin-top:1cm;">-->
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>Donor Name</th>
+                            <th>Recepient Name</th>
+                            <th>Donor Hospital</th>
+                            <th>Request Hospital Email</th>
+                            <th>Organ</th>
+                            <th>Blood Group</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let rD of responseData">
+                                <td><span>{{rD.donorName}}</span></td>
+                                <td><span>{{rD.recepientName}}</span></td>
+                                <td><span>{{rD.donorHospital}}</span></td>
+                                <td><span>{{rD.requestHospitalEmail}}</span></td>
+                                <td><span>{{rD.organ}}</span></td>
+                                <td><span>{{rD.bloodGroup}}</span></td>
+                                <td><span>
+                                    <!--<button type="submit" id="donate" name="donate" class="btn btn-primary register_button">Donate!!</button>-->
+                                    <button (click)="submit(rD)" id="donate" name="donate" class="btn btn-primary register_button">Donate!!</button>
+                                </span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

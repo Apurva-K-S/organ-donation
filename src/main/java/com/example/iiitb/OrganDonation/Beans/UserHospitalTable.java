@@ -13,7 +13,8 @@ public class UserHospitalTable implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    //@ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name="userEmail", referencedColumnName = "email")
     private primaryUser puser;
 

@@ -38,6 +38,11 @@ export class OrganHeartComponent implements OnInit {
     ];
   
     hospitalData!: HospitalData[];
+    hd:HospitalData = {
+      hospitalName : "None"
+    };
+    
+    
 
   constructor(private fb: FormBuilder, private thankyouServiceService:ThankyouServiceService, private route: ActivatedRoute, private organHeartService:OrganHeartService, private router: Router) 
   { 
@@ -45,6 +50,7 @@ export class OrganHeartComponent implements OnInit {
       bloodGroup: ['', [Validators.required]],
       hospitalName: ['', [Validators.required]],
     })
+    
   }
 
   ngOnInit(): void {
@@ -53,7 +59,7 @@ export class OrganHeartComponent implements OnInit {
     
     this.organHeartService.getHeartData().subscribe(result=>{
       this.heartData = result;
-
+     
       console.log("inside this.organHeartService.getHeartData().subscribe(result=>{ ");
       console.log("list is: ",this.heartData);
       if(this.heartData.length == 0)
@@ -71,6 +77,7 @@ export class OrganHeartComponent implements OnInit {
     console.log("inside submit2 of organ-eyes.component.ts");
     this.thankyouServiceService.getHospitalInfo().subscribe(result=>{
       this.hospitalData = result;
+      this.hospitalData.push(this.hd);
       console.log("inside this.thankyouServiceService.getHospitalInfo().subscribe(result=>{ and the result is: ");
       console.log(this.hospitalData);
     })

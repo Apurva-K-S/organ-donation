@@ -29,7 +29,7 @@ export class HospitalOneRequestformComponent implements OnInit {
   
     ];
   
-    organHeart = 'Heart';
+  organHeart = 'Heart';
   organKidney = 'Kidney';
   organLiver = 'Liver';
   //organLungs = 'Lungs';
@@ -64,15 +64,11 @@ export class HospitalOneRequestformComponent implements OnInit {
       organ_Liver : new FormControl(''),
       organ_Eyes: new FormControl(''),
       bloodGroup: new FormControl(''),
-
-      
-
     })
   }
 
   raiseRequest()
   {
-
     console.log(this.hospRequestForm.value);
     console.log("inside raiseRequest process");
     if(this.hospRequestForm.valid)
@@ -81,13 +77,10 @@ export class HospitalOneRequestformComponent implements OnInit {
       this.orgRequestService.raiseRequest(this.hospRequestForm.value).subscribe(result=>{
       
         console.log("Inside the subscribe method of raiseRequest service");
-        
-      
+        if(result['status']==200){
+          alert("Your request has been forwarded. You will receive an email as and when the request is satisfied.");
+        }
       })
-
-    
-
+    }
   }
-
-}
 }

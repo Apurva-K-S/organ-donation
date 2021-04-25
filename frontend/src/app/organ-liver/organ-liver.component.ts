@@ -36,6 +36,9 @@ export class OrganLiverComponent implements OnInit {
     ];
   
   hospitalData!: HospitalData[];
+  hd:HospitalData = {
+    hospitalName : "None"
+  };
 
   constructor(private fb: FormBuilder, private thankyouServiceService:ThankyouServiceService, private route: ActivatedRoute, private organLiverService:OrganLiverService, private router: Router) 
   { 
@@ -68,6 +71,7 @@ export class OrganLiverComponent implements OnInit {
     console.log("inside submit2 of organ-liver.component.ts");
     this.thankyouServiceService.getHospitalInfo().subscribe(result=>{
       this.hospitalData = result;
+      this.hospitalData.push(this.hd);
       console.log("inside this.thankyouServiceService.getHospitalInfo().subscribe(result=>{ and the result is: ");
       console.log(this.hospitalData);
     })

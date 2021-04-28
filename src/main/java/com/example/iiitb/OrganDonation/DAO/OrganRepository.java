@@ -55,6 +55,9 @@ public interface OrganRepository extends CrudRepository<userOrganTable,Integer> 
 
 /*
 
+select pu.blood_group, uht.hospital_name, pu.first_name, uht.datetime from primary_user pu, user_hospital_table uht,
+user_final_organ_table ufot where pu.email = uht.user_email and pu.email = ufot.user_email and ufot.organ ="Eyes" and uht.hospital_name =?3 and pu.blood_group =?2
+
 select pu.first_name, oht.hospital_name, ufot.organ, pu.blood_group, oht.datetime from primary_user pu, user_final_organ_table ufot, user_hospital_table oht where pu.email = ufot.user_email
 and pu.email = oht.user_email and (oht.datetime, ufot.organ, pu.blood_group) in (select min(oht.datetime), ufot.organ, pu.blood_group from primary_user pu, user_final_organ_table ufot,
 user_hospital_table oht where pu.email = ufot.user_email and pu.email = oht.user_email group by ufot.organ, pu.blood_group) and ufot.organ="Heart";

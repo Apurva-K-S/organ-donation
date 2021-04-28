@@ -9,6 +9,8 @@ import com.example.iiitb.OrganDonation.Services.OrganRequestResponseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
@@ -20,11 +22,13 @@ public class OrganRequestResponseController {
 
     private OrganRequestResponseService organRequestResponseService;
     private OrganResponse orgResponse;
+    private static final Logger logger = LogManager.getLogger(LoginController.class);
     List<OrganResponse> organsRequested;
 
     @Autowired
     public OrganRequestResponseController(OrganRequestResponseService organRequestResponseService, OrganResponse orgResponse)
     {
+        logger.info("[INFO]: inside OrganRequestResponseController()");
         this.organRequestResponseService = organRequestResponseService;
         this.orgResponse = orgResponse;
     }
@@ -35,8 +39,10 @@ public class OrganRequestResponseController {
     Response raiseOrganRequest(@RequestBody final OrganRequest orgReq)
     {
         System.out.println("Inside raiseOrganRequest() of controller class");
+        logger.info("[INFO]: inside raiseOrganRequest() of controller class");
 
          boolean result = organRequestResponseService.getOrganRequestDetails(orgReq);
+         logger.info("[INFO]: organRequestResponseService.getOrganRequestDetails(orgReq); = " + result);
 
          if(result)
                 return Response.ok().build();
@@ -49,8 +55,11 @@ public class OrganRequestResponseController {
     public @ResponseBody List<OrganResponse> getResponseData(final HospitalNames hospitalName) {
 
         System.out.println("inside OrganRequestResponseController:getResponseData ");
+        logger.info("[INFO]: inside OrganRequestResponseController:getResponseData ");
+
         System.out.println("hospitalname is: " + hospitalName.getHospitalName());
         List<OrganResponse> temp = organRequestResponseService.getResponseData(hospitalName.getHospitalName());
+        logger.info("[INFO]: inside organRequestResponseService.getResponseData(hospitalName.getHospitalName()); =  " +temp.size());
         return temp;
     }
 
@@ -60,12 +69,14 @@ public class OrganRequestResponseController {
     Response sendDonationData(@RequestBody final OrganResponse organResponse)
     {
         System.out.println("Inside sendDonationData() of controller class");
+        logger.info("[INFO]: inside OrganRequestResponseController:sendDonationData ");
+
         System.out.println("values are: " + organResponse.getDonorName() + " --- " + organResponse.getDonorEmail()
         + " --- " + organResponse.getRecepientName() + " --- " + organResponse.getDonorHospital() + " ---- "
                         + organResponse.getOrgan() + " ---- " + organResponse.getBloodGroup());
 
         boolean result = organRequestResponseService.deletingCorrespondingData(organResponse);
-
+        logger.info("[INFO]: result of organRequestResponseService.deletingCorrespondingData(organResponse); = " + result );
         /*
 
         | request_response        |

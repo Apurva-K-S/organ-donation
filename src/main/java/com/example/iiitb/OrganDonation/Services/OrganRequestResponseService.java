@@ -101,22 +101,7 @@ public class OrganRequestResponseService {
             System.out.print("\n\n--------------------------------------------------------\n\n");
 
         }
-
         return true;
-
-
-        /*ListIterator<OrganResponse> itr = orgResp.listIterator();
-        OrganResponse temp;
-        while(itr.hasNext())
-        {
-            temp=itr.next();
-            System.out.println("=============Organ Response List============");
-            System.out.print(temp.getPatientFirstName());
-            System.out.print(temp.getHospitalEmail());
-            System.out.print(temp.getOrgan());
-            System.out.print(temp.getBloodGroup());
-        }*/
-        //return orgResp;
     }
 
     public List<OrganResponse> getResponseData(String hospitalName)

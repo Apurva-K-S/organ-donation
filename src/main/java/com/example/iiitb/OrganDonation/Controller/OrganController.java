@@ -6,19 +6,24 @@ import com.example.iiitb.OrganDonation.Services.OrganServiceTwo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+//import org.apache.logging.log4j.LogManager;
+//import org.apache.logging.log4j.Logger;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 @RestController
+@Slf4j
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping(path="/api")
 public class OrganController {
 
     private OrganServiceTwo organServiceTwo;
-    private static final Logger logger = LogManager.getLogger(LoginController.class);
+    private static final Logger logger = LoggerFactory.getLogger(OrganController.class);
+    //private static final Logger logger = LogManager.getLogger(LoginController.class);
 
     @Autowired
     public OrganController(OrganServiceTwo organServiceTwo )

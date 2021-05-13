@@ -7,8 +7,11 @@ import com.example.iiitb.OrganDonation.Services.SendEmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+//import org.apache.logging.log4j.LogManager;
+//import org.apache.logging.log4j.Logger;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
@@ -16,13 +19,15 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
+@Slf4j
 @RequestMapping(path="/api")
 public class hospitalRegistrationController
 {
 
     private HospitalRegisterService hospitalRegisterService;
     private SendEmailService sendEmailService;
-    private static final Logger logger = LogManager.getLogger(LoginController.class);
+    private static final Logger logger = LoggerFactory.getLogger(hospitalRegistrationController.class);
+    //private static final Logger logger = LogManager.getLogger(LoginController.class);
 
 
     @Autowired

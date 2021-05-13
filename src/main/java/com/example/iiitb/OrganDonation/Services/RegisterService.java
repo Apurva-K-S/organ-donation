@@ -1,27 +1,33 @@
 package com.example.iiitb.OrganDonation.Services;
 
 import com.example.iiitb.OrganDonation.Beans.primaryUser;
+import com.example.iiitb.OrganDonation.Controller.LoginController;
 import com.example.iiitb.OrganDonation.DAO.primaryUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.inject.Named;
 import javax.validation.constraints.Null;
 @Named
+@Slf4j
 public class RegisterService {
 
     primaryUserRepository prmUsrRepo ;
+    private static final Logger logger = LoggerFactory.getLogger(RegisterService.class);
+    //private static final Logger logger = LogManager.getLogger(LoginController.class);
 
     @Autowired
     public RegisterService(primaryUserRepository prmUsrRepo)
     {
+        logger.info("[INFO]: inside RegisterService()");
         this.prmUsrRepo = prmUsrRepo;
     }
 
     public boolean registerUser(primaryUser prmUser)
     {
+        logger.info("[INFO]: inside registerUser()");
         primaryUser n = new primaryUser();
         n.setFirstName(prmUser.getFirstName());
         n.setSecondary_first_name(prmUser.getSecondary_first_name());

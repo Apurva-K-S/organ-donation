@@ -1,25 +1,35 @@
 package com.example.iiitb.OrganDonation.Services;
 
+import com.example.iiitb.OrganDonation.Controller.LoginController;
 import com.example.iiitb.OrganDonation.DAO.OrganRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.inject.Named;
 import java.util.ArrayList;
 import java.util.List;
 
 @Named
+@Slf4j
 public class OrganService {
     OrganRepository organRepository;
+    private static final Logger logger = LoggerFactory.getLogger(OrganService.class);
+    //private static final Logger logger = LogManager.getLogger(LoginController.class);
 
     @Autowired
     public OrganService(OrganRepository organRepository)
     {
+        logger.info("[INFO]: inside OrganService()");
         this.organRepository = organRepository;
     }
 
     public List<List<Object[]>>  getOrganData(String orgn)
     {
         System.out.println("inside: OrganService: getOrganData()");
+        logger.info("[INFO]: inside: OrganService: getOrganData()");
+
         List<Object[]> t = new ArrayList<Object[]>();
         t = organRepository.findByOrgan(orgn);
 
@@ -60,7 +70,7 @@ public class OrganService {
 
         organsData.add(t);
         organsData.add(temp);
-
+        logger.info("[INFO]: output is = " + organsData.size());
         return organsData;
     }
 

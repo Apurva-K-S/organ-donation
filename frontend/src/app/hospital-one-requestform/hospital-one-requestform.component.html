@@ -1,87 +1,102 @@
 <app-hospital-one></app-hospital-one>
 
 <form [formGroup]="hospRequestForm" (ngSubmit)="raiseRequest()">
-    <!-- 2 column grid layout with text inputs for the first and last names -->
-    <h4>Hospital 1 request form</h4>
-    <div class="row mb-4">
-      <div class="col">
-        <div class="form-outline">
-          <input type="text" id="form6Example1" class="form-control" required formControlName="patientFirstName"/>
-          <label class="form-label" for="form6Example1">Patient First Name</label>
+    <div class="container register">
+        <div class="row">
+            
+            <div class="col-md-3 register-left">
+                <img src="assets/images/heart_medical.png"  alt=""/>
+                <p style="font-size:22px; font-style: oblique;"><b>Welcome!!</b></p>
+                <p style="font-size:22px; font-style: italic; padding:2%"><b>You are 30 seconds away from saving a life!</b></p>            
+            </div>
+
+            <div class="col-md-9 register-right">
+                <div class="tab-content tab-pane fade show active" id="myTabContent" ifade show actived="home" role="tabpanel" aria-labelledby="home-tab">
+                    <p class="register-heading" style="font-size:26px;"> <b>Raise a Request</b></p>
+                    <div class="row register-form" style="padding: 1cm; align-self: center; margin-left: 1.5cm; margin-top:4cm;">
+                        <div style="margin-left: 0cm;" class="row mb-4">
+                            <div class="col">
+                              <div class="form-outline">
+                                <label class="form-label" for="form6Example1"><b>Patient First Name</b></label>
+                                <input type="text" id="form6Example1" class="form-control" required formControlName="patientFirstName"/>
+                                
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-outline">
+                                <label class="form-label" for="form6Example2"><b>Patient Last name</b></label>
+                                <input type="text" id="form6Example2" class="form-control" required formControlName="patientLastName"/>
+                                
+                              </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div style="margin-left: 0cm;" class="row mb-4">
+                            <div class="col">
+                              <div class="form-outline">
+                                <label class="form-label" for="form6Example5"><b>Patient Email-ID</b></label>
+                                <input type="email" id="form6Example5" class="form-control" required formControlName="patientEmail"/>
+                                
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-outline">
+                                <label class="form-label" for="form6Example6"><b>Patient Phone</b></label>
+                                <input type="text" id="form6Example6" class="form-control" required formControlName="patientPhone"/>
+                                
+                              </div>
+                            </div>
+                          
+                        </div>
+                        <br>
+                        <div style="margin-left: 0cm;" class="row mb-4">
+                            <div class="col">
+                              <div class="form-outline">
+                                <label class="form-label" for="form6Example5"><b>Hospital Email-ID</b></label>
+                                <input type="email" id="form6Example5" class="form-control" required formControlName="hospitalEmail"/>
+                                
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-outline">
+                                <label class="form-label" for="form6Example6"><b>Hospital Phone</b></label>
+                                <input type="text" id="form6Example6" class="form-control" required formControlName="hospitalPhone"/>
+                                
+                              </div>
+                            </div>
+                          
+                        </div>
+                        <br>
+                        <div style="margin-left: 0.5cm;">
+                          <p><b style="font-size: 18px; margin-right: 1cm;">Choose Organs you want: </b>
+                          <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="heart_id" name="heart_name" formControlName="organ_Heart">
+                          <label class="form-check-label checkbox_label" style="margin-right: 0.25cm">{{organHeart}}</label>
+                        
+                          <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="kidneys_id" name="kidneys_name" formControlName="organ_Kidney">
+                          <label class="form-check-label checkbox_label" style="margin-right: 0.25cm" >{{organKidney}}</label>
+                          
+                          <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="liver_id" name="liver_name" formControlName="organ_Liver">
+                          <label class="form-check-label checkbox_label" style="margin-right: 0.25cm">{{organLiver}}</label>
+                          <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="eyes_id" name="eyes_name" formControlName="organ_Eyes">
+                          <label class="form-check-label checkbox_label" style="margin-right: 0.25cm">{{organEyes}}</label>
+                      </div>
+                      <br>
+                      <div style="margin-left: 0.5cm;">
+                        <div style="align-self: center; margin-top: 1cm;">
+                            <p> <b style="font-size: 18px; margin-right: 1cm;">Choose your blood Group</b>
+                            <select name="hospitals" id="bloodGroup" formControlName="bloodGroup">
+                                <option style="height: 20px;" *ngFor="let bloodGroupVal of bloodGroups" [value]="bloodGroupVal.value">{{bloodGroupVal.viewValue}}</option>
+                            </select>
+                        </div>
+                      </div>
+                
+                    
+                      <!-- Submit button -->
+                      <button type="submit" class="btn btn-primary btn-block mb-4" style="width: 5cm; margin-left: 8cm; margin-top:1cm;">Raise the Request</button>
+                        
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="form-outline">
-          <input type="text" id="form6Example2" class="form-control" required formControlName="patientLastName"/>
-          <label class="form-label" for="form6Example2">Patient Last name</label>
-        </div>
-      </div>
     </div>
-  
-    <!-- Text input -->
-   <!-- <div class="form-outline mb-4">
-      <input type="text" id="form6Example3" class="form-control" />
-      <label class="form-label" for="form6Example3">Company name</label>
-    </div>
-    -->
-  
-    <!-- Text input -->
-    
-    <!-- Email input -->
-    <div class="form-outline mb-4">
-      <input type="email" id="form6Example5" class="form-control" required formControlName="patientEmail"/>
-      <label class="form-label" for="form6Example5">Patient Email-ID</label>
-    </div>
-  
-    <!-- Number input -->
-    <div class="form-outline mb-4">
-      <input type="text" id="form6Example6" class="form-control" required formControlName="patientPhone"/>
-      <label class="form-label" for="form6Example6">Patient Phone</label>
-    </div>
-
-    <div class="form-outline mb-4">
-        <input type="email" id="form6Example5" class="form-control" required formControlName="hospitalEmail"/>
-        <label class="form-label" for="form6Example5">Hospital Email-ID</label>
-      </div>
-    
-      <div class="form-outline mb-4">
-        <input type="text" id="form6Example6" class="form-control" required formControlName="hospitalPhone"/>
-        <label class="form-label" for="form6Example6">Hospital Phone</label>
-      </div>
-  
-
-    <div>
-        <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="heart_id" name="heart_name" formControlName="organ_Heart">
-        <label class="form-check-label checkbox_label" >{{organHeart}}</label>
-    </div>
-   
-    <div>
-        <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="kidneys_id" name="kidneys_name" formControlName="organ_Kidney">
-        <label class="form-check-label checkbox_label"  >{{organKidney}}</label>
-    </div>
-    <div>
-        <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="liver_id" name="liver_name" formControlName="organ_Liver">
-        <label class="form-check-label checkbox_label" >{{organLiver}}</label>
-    </div>
-
-    <div>
-        <input class="form-check-input checkbox" style="margin-right: 0.25cm" type="checkbox"  id="eyes_id" name="eyes_name" formControlName="organ_Eyes">
-        <label class="form-check-label checkbox_label">{{organEyes}}</label>
-    </div>
-   
-
-
-    <div class=" form-group mb-3 mt-n1">
-        <div style="align-self: center; margin-top: 0.5cm;">
-            <p style="font-size:17px;" > <b>Choose your blood Group</b></p>
-            <select name="hospitals" id="bloodGroup" formControlName="bloodGroup">
-                <option style="height: 20px;" *ngFor="let bloodGroupVal of bloodGroups" [value]="bloodGroupVal.value">{{bloodGroupVal.viewValue}}</option>
-            </select>
-        </div>
-    </div>
-
-    
-    <!-- Submit button -->
-    <button type="submit" class="btn btn-primary btn-block mb-4">Raise the Request</button>
-  </form>
-
+</form>

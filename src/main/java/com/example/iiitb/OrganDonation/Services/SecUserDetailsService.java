@@ -4,19 +4,23 @@ import com.example.iiitb.OrganDonation.Beans.UserHospitalTable;
 import com.example.iiitb.OrganDonation.Beans.primaryUser;
 import com.example.iiitb.OrganDonation.Beans.userFinalOrganTable;
 import com.example.iiitb.OrganDonation.Beans.userOrganTable;
+import com.example.iiitb.OrganDonation.Controller.LoginController;
 import com.example.iiitb.OrganDonation.DAO.LoginRepository;
 import com.example.iiitb.OrganDonation.DAO.PriUserOrganListRepository;
 import com.example.iiitb.OrganDonation.DAO.UserFinalOrganTableRepository;
 import com.example.iiitb.OrganDonation.DAO.SecUserDetailsRepository;
 import com.example.iiitb.OrganDonation.DAO.StoreHospitalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.origin.SystemEnvironmentOrigin;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.inject.Named;
 import java.sql.Date;
 import java.util.List;
 
 @Named
+@Slf4j
 public class SecUserDetailsService {
 
 
@@ -25,12 +29,15 @@ public class SecUserDetailsService {
     LoginRepository loginRepository;
     StoreHospitalRepository storeHospitalRepository;
     UserFinalOrganTableRepository userFinalOrganTableRepository;
+    private static final Logger logger = LoggerFactory.getLogger(SecUserDetailsService.class);
+    //private static final Logger logger = LogManager.getLogger(LoginController.class);
 
     private SendEmailService sendEmailService;
 
     @Autowired
     public SecUserDetailsService(UserFinalOrganTableRepository userFinalOrganTableRepository,SecUserDetailsRepository secUserDetailsRepository, LoginRepository loginRepository, PriUserOrganListRepository priUserOrganListRepository, StoreHospitalRepository storeHospitalRepository, SendEmailService sendEmailService)
     {
+        logger.info("[INFO]: inside SecUserDetailsService()");
         this.secUserDetailsRepository = secUserDetailsRepository;
         this.loginRepository = loginRepository;
         this.priUserOrganListRepository = priUserOrganListRepository;
@@ -42,7 +49,9 @@ public class SecUserDetailsService {
     public List<userOrganTable> getOrgansList(String loginEmail)
     {
         System.out.println("");
-        System.out.println("inside SecUserDetailsService-getOrgansList ");
+        System.out.println("inside SecUserDetailsService-getOrgansList");
+        logger.info("[INFO]: SecUserDetailsService-getOrgansList");
+
         System.out.println("email is: " + loginEmail);
 
         List<primaryUser> pu = loginRepository.findBySecondary_email(loginEmail);
@@ -66,6 +75,7 @@ public class SecUserDetailsService {
     {
         System.out.println("\nSecUserDetailsController -> SecUserDetailsService:storeUserFinalOrgans");
         System.out.println("\norganList size is: " + organsList.size());
+        logger.info("[INFO]: SecUserDetailsController -> SecUserDetailsService:storeUserFinalOrgans");
 
         List<primaryUser> pu = loginRepository.findBySecondary_email(loginEmail);
 
@@ -90,6 +100,7 @@ public class SecUserDetailsService {
     public boolean storeHospitalName(String hospitalName, String loginEmail)
     {
         System.out.println("\nSecUserDetailsController -> SecUserDetailsService:storeHospitalName");
+        logger.info("[INFO] \nSecUserDetailsController -> SecUserDetailsService:storeHospitalName");
         List<primaryUser> pu = loginRepository.findBySecondary_email(loginEmail);
 
         UserHospitalTable userHospitalTable = new UserHospitalTable();
@@ -102,6 +113,7 @@ public class SecUserDetailsService {
 
         userHospitalTable.setDatetime(date);
         System.out.println("current date time is: " + date);
+        logger.info("[INFO]: current date time is: " + date);
 
         UserHospitalTable uHT = storeHospitalRepository.save(userHospitalTable);
 

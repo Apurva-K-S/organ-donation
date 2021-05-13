@@ -8,12 +8,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+//import org.apache.logging.log4j.LogManager;
+//import org.apache.logging.log4j.Logger;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import javax.ws.rs.core.Response;
 import java.util.Objects;
 
 @RestController
+@Slf4j
 @RequestMapping(path="/api")
 //@CrossOrigin(origins = "*",allowedHeaders = "*")
 public class LoginController {
@@ -21,7 +25,8 @@ public class LoginController {
     private LoginService loginService;
     private int LOGIN_AS_PRIMARY_USER = 1;
     private int LOGIN_AS_SECONDARY_USER = 2;
-    private static final Logger logger = LogManager.getLogger(LoginController.class);
+    private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
+//    private static final Logger logger = LogManager.getLogger(LoginController.class);
 
     @Autowired
     public LoginController(LoginService loginService)

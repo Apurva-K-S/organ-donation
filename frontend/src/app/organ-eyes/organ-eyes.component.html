@@ -3,7 +3,7 @@
     <div class="container register">
         <div class="row">
             
-            <div class="col-md-3 register-left">
+            <div class="col-md-3 register-left" style="margin-top: 2cm;">
                 <img src="assets/images/eye-donation-1-removebg-preview.png"  alt=""/>
                 <p style="font-size:22px; font-style: oblique;"><b>Welcome!!</b></p>
                 <p style="font-size:22px; font-style: italic; padding:2%"><b>You are 30 seconds away from saving a life!</b></p>            
@@ -38,17 +38,17 @@
 
                     <div style="margin-top: 1cm; font-size:17px;">
                                 
-                        <b>blood Group: </b>
+                        <b>Blood Group: </b>
                         <select name="hospitals" id="bloodGroup" formControlName="bloodGroup">
                             <option *ngFor="let bloodGroupVal of bloodGroups" [value]="bloodGroupVal.value">{{bloodGroupVal.viewValue}}</option>
                         </select>
                     
-                        <b style="margin-left: 1cm;">Hospital: </b> 
+                        <b style="margin-left: 1.5cm;">Hospital: </b> 
                         <select name="hospitals" style="margin-top: 1cm;" id="hospitals" formControlName="hospitalName">
                             <option style="height: 20px;" *ngFor="let hD of hospitalData" value={{hD.hospitalName}}>{{hD.hospitalName}}</option>
                         </select>
 
-                        <button type="submit" id="donate" name="donate" class="btn btn-primary register_button">Filter</button>
+                        <button type="submit" id="donate" name="donate" class="btn btn-primary register_button" style="margin-left: 1.5cm;">Filter</button>
 
                     </div>
 

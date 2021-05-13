@@ -13,27 +13,27 @@
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" ifade show actived="home" role="tabpanel" aria-labelledby="home-tab">
                         <p class="register-heading" style="font-size:26px;"><b>Hospital Registration Form</b></p>
-                        <div style="margin-top: 5cm; margin-left: 8cm;">
+                        <div style="margin-top: 5cm; margin-left: 9cm;">
         <!-- class="row register-form" -->                        
                             <div class="form-group mb-3  mt-n1" >
-                                <p style="font-size:17px; margin-bottom: 0.5cm;"><b>Hospital Name</b></p>
-                                <input type="text" pattern="[a-zA-Z0-9]*" style="margin-bottom: 0.5cm;" class="form-control" name="hospName" id="hospName" placeholder="Enter Hospital Name *" value="" required formControlName="hospName"/>
-                                <div *ngIf = "f.hospName.touched && f.hospName.invalid" class="alert alert-danger" style="width: 7cm;">
+                                <p style="font-size:17px; margin-bottom: 0.5cm; margin-left:1.8cm;"><b>Hospital Name</b></p>
+                                <input type="text" pattern="[a-zA-Z0-9]*" class="form-control" name="hospName" id="hospName" placeholder="Enter Hospital Name *" value="" required formControlName="hospName"/>
+                                <div *ngIf = "f.hospName.touched && f.hospName.invalid" class="alert alert-danger" style="width: 7cm; margin-bottom: 0.5cm;">
                                     <div *ngIf="f.hospName.errors?.required">Hospital name is required</div>
                                 </div>
                             </div>
                         
                         
                             <div class="form-group mb-3  mt-n1" >
-                                <p style="font-size:17px; margin-bottom: 0.5cm;"><b>Hospital Email</b></p>
-                                <input type="email" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" style="margin-bottom: 0.5cm;" class="form-control" name="hospEmail" id="hospEmail" placeholder="Enter Hospital Email ID *" value="" required formControlName="hospEmail"/>
-                                <div *ngIf = "f.hospEmail.touched && f.hospEmail.invalid" class="alert alert-danger" style="width: 7cm;">
+                                <p style="font-size:17px; margin-bottom: 0.5cm; margin-left:2cm;"><b>Hospital Email</b></p>
+                                <input type="email" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"  class="form-control" name="hospEmail" id="hospEmail" placeholder="Enter Hospital Email ID *" value="" required formControlName="hospEmail"/>
+                                <div *ngIf = "f.hospEmail.touched && f.hospEmail.invalid" class="alert alert-danger" style="width: 7cm; margin-bottom: 0.5cm;">
                                     <div *ngIf="f.hospEmail.errors?.required">Hospital Email ID is required</div>
                                 </div>
                             </div>
                            
                             <div class="form-group mb-3 mt-n1 was-validated">
-                                <p style="font-size:17px; margin-bottom: 0.5cm;"><b>Contact</b></p>
+                                <p style="font-size:17px; margin-bottom: 0.5cm; margin-left:2.5cm;"><b>Contact</b></p>
                                 <div class="input-group has-validation" style="width: 7cm;" >
                                    <span class="input-group-text" id="inputGroupPrepend3" style="height: 1cm;">+91</span>
                                    <input type="tel" pattern="[789][0-9]{9}" style="margin-bottom: 0.5cm; height: 1cm;" class="form-control" id="phone" name="phone" placeholder="Phone number*"  value="" required formControlName="phone" />
@@ -41,7 +41,7 @@
                             </div>
 
                             <div class=" form-group mb-3 mt-n1">
-                                <p style="font-size:17px; margin-bottom: 0.5cm;"><b>State</b></p>
+                                <p style="font-size:17px; margin-bottom: 0.5cm; margin-left:2.75cm;"><b>State</b></p>
                                 <div style="align-self: center;" >
                                     <select name="states" id="state" style="width: 7cm;" formControlName="state" style="margin-bottom: 0.5cm;">
                                         <option *ngFor="let stateVal of states" style="width: 6.25cm;"  [value]="stateVal.value">{{stateVal.viewValue}}</option>
@@ -50,37 +50,37 @@
                             </div>
 
                             <div class="form-group mb-3  mt-n1">
-                                <p style="font-size:17px; margin-bottom: 0.5cm;"><b>City</b></p>
-                                <input type="text" pattern="[a-zA-Z]*" style="margin-bottom: 0.5cm;" class="form-control" name="city" id="city" placeholder="City *" value="" formControlName="city"/>
-                                <div *ngIf = "f.city.touched && f.city.invalid" class="alert alert-danger" style="width: 7cm;">
+                                <p style="font-size:17px; margin-bottom: 0.5cm; margin-left:2.8cm;"><b>City</b></p>
+                                <input type="text" pattern="[a-zA-Z]*" class="form-control" name="city" id="city" placeholder="City *" value="" formControlName="city"/>
+                                <div *ngIf = "f.city.touched && f.city.invalid" class="alert alert-danger" style="width: 7cm; margin-bottom: 0.5cm;">
                                     <div *ngIf="f.city.errors?.required">City Name is required</div>
                                 </div>
                             </div>
                           
                             <div class="form-group mb-3  mt-n1">
-                                <p style="font-size:17px; margin-bottom: 0.5cm;"><b>Pincode</b></p>
-                                <input type="text" pattern="[0-9]{6}" style="margin-bottom: 0.5cm;" class="form-control" name="pin" id="pin" placeholder="Pincode *" value="" formControlName="pin"/>
-                                <div *ngIf = "f.pin.touched && f.pin.invalid" class="alert alert-danger" style="width: 7cm;">
+                                <p style="font-size:17px; margin-bottom: 0.5cm; margin-left:2.5cm;"><b>Pincode</b></p>
+                                <input type="text" pattern="[0-9]{6}" class="form-control" name="pin" id="pin" placeholder="Pincode *" value="" formControlName="pin"/>
+                                <div *ngIf = "f.pin.touched && f.pin.invalid" class="alert alert-danger" style="width: 7cm; margin-bottom: 0.5cm;">
                                     <div *ngIf="f.pin.errors?.required">Pincode is required</div>
                                 </div>
                             </div>
 
                             <div class="form-group mb-3 mt-n1">
-                                <label style="font-size:16px; margin-bottom: 0.5cm;" for="password" ><b>Password</b></label>
+                                <label style="font-size:17px; margin-bottom: 0.5cm; margin-left:2.4cm;" for="password"><b>Password</b></label>
                                 <input formControlName="password" id="password" type="password" class="form-control"  name="password" 
                                 value="" />
-                                <div *ngIf = "f.password.touched && f.password.invalid" class="alert alert-danger" style="width: 7cm;">
+                                <div *ngIf = "f.password.touched && f.password.invalid" class="alert alert-danger" style="width: 7cm; margin-bottom: 0.5cm;">
                                     <div *ngIf="f.password.errors?.required">Password is required</div>
                                 </div>
                             </div>
 
 
                             <div class="form-group mb-3 mt-n1">
-                                <label style="font-size:16px; margin-bottom: 0.5cm;" for="confirm_password"><b>Confirm Password</b></label>
+                                <label style="font-size:17px; margin-bottom: 0.5cm; margin-left:1.5cm;" for="confirm_password"><b>Confirm Password</b></label>
                                 <input formControlName="confirm_password" id="confirm_password" type="password" class="form-control"  
                                 name="confirm_password" value="" />
 
-                                <div *ngIf = "f.confirm_password.touched && f.confirm_password.invalid" class="alert alert-danger" style="width: 7cm;">
+                                <div *ngIf = "f.confirm_password.touched && f.confirm_password.invalid" class="alert alert-danger" style="width: 7cm; margin-bottom: 0.5cm;">
                                     <div *ngIf="f.confirm_password.errors?.required">Confirm Password is required</div>
                                     <div *ngIf="f.confirm_password.errors?.confirmedValidator">Password and confirm password must match.</div>
                                 </div>

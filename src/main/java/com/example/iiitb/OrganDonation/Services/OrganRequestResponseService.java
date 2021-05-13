@@ -1,11 +1,16 @@
 package com.example.iiitb.OrganDonation.Services;
 
 import com.example.iiitb.OrganDonation.Beans.*;
+import com.example.iiitb.OrganDonation.Controller.LoginController;
 import com.example.iiitb.OrganDonation.DAO.LoginRepository;
 import com.example.iiitb.OrganDonation.DAO.OrganRequestRepository;
 import com.example.iiitb.OrganDonation.DAO.RequestResponseRepository;
 import com.example.iiitb.OrganDonation.DAO.UserFinalOrganTableRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import javax.inject.Named;
 import java.util.ArrayList;
@@ -13,6 +18,7 @@ import java.util.List;
 import java.util.ListIterator;
 
 @Named
+@Slf4j
 public class OrganRequestResponseService {
 
     private OrganRequestRepository orgReqRepo;
@@ -21,9 +27,13 @@ public class OrganRequestResponseService {
     private SendEmailService sendEmailService;
     private UserFinalOrganTableRepository userFinalOrganTableRepository;
 
+    private static final Logger logger = LoggerFactory.getLogger(OrganRequestResponseService.class);
+    //private static final Logger logger = LogManager.getLogger(LoginController.class);
+
     @Autowired
     public OrganRequestResponseService(UserFinalOrganTableRepository userFinalOrganTableRepository, SendEmailService sendEmailService, OrganRequestRepository orgReqRepo, RequestResponseRepository requestResponseRepository, LoginRepository loginRepository)
     {
+        logger.info("[INFO]: inside OrganRequestResponseService()");
         this.orgReqRepo = orgReqRepo;
         this.requestResponseRepository = requestResponseRepository;
         this.loginRepository = loginRepository;
@@ -34,6 +44,7 @@ public class OrganRequestResponseService {
     public boolean getOrganRequestDetails(OrganRequest organRequest)
     {
         System.out.println("Inside getOrganRequestDetails Service Class");
+        logger.info("[INFO]: inside getOrganRequestDetails Service Class");
 
         List<String> organs = new ArrayList<>();
 
@@ -48,6 +59,8 @@ public class OrganRequestResponseService {
 
         ListIterator<String> iterator = organs.listIterator();
         System.out.println("total number of organs (inside OrgReqService): " + organs.size());
+        logger.info("[INFO]:total number of organs (inside OrgReqService): = " + organs.size());
+
         System.out.println("organs are (inside OrgReqService): ");
         while (iterator.hasNext()) {
             System.out.println("Organ is : " + iterator.next());
@@ -106,7 +119,10 @@ public class OrganRequestResponseService {
 
     public List<OrganResponse> getResponseData(String hospitalName)
     {
+        logger.info("[INFO]:inside OrganRequestResponseService:getResponseData");
+
         System.out.println("inside OrganRequestResponseService:getResponseData");
+
         List<List<Object[]>> data= requestResponseRepository.findByDonorHospital(hospitalName);
         List<OrganResponse> organResponses=new ArrayList<>();
 
@@ -146,6 +162,7 @@ public class OrganRequestResponseService {
     public boolean deletingCorrespondingData(OrganResponse organResponse)
     {
         System.out.println("inside OrganRequestResponseService:deletingCorrespondingData");
+        logger.info("[INFO]:inside OrganRequestResponseService:deletingCorrespondingData");
         //----------------------------------------------------------------------------------------------------------------------
         // here we have to delete entry from user_final_organ_table
         // for this we need primary user's email. so first get it.
@@ -153,15 +170,18 @@ public class OrganRequestResponseService {
         System.out.println("deleting from user final organ table.");
         boolean temp = deletingRequestResponse(organResponse);
         System.out.println("came back from deleting request function");
+        logger.info("[INFO]: came back from deleting request function. result is = " + temp);
 
         //-------------------------------------------------------------------------------------------------------------------------
         //change the value of status from 0 to 1 in request_response table.
         // UPDATE----------------------------------------------------------
 
         System.out.println("\n\nupdating the status of request response");
+        logger.info("[INFO]: updating the status of request response");
         boolean stat = updateRequestResponse(organResponse.getDonorName(), organResponse.getOrgan());
 
         System.out.println("status is: = " + stat);
+        logger.info("[INFO]: came back from updateRequestResponse function. result is = " + stat);
         //----------------------------------------------------------------------------------------------------------------------------
 
         //---------------------------------------------------------------------------------------------------------------------------
@@ -178,9 +198,11 @@ public class OrganRequestResponseService {
     public boolean updateRequestResponse(String donorName, String Organ)
     {
         List<RequestResponse> LRR = requestResponseRepository.findByDonorNameAndOrgan(donorName, Organ);
+        logger.info("[INFO]: inside OrganRequestResponseService:updateRequestResponse");
 
         System.out.println("Size of List of RequestResponse = " + LRR.size());
         System.out.println("id is: = " + LRR.get(0).getId());
+        logger.info("[INFO]: Size of List of RequestResponse = " + LRR.size() + "id is: = " + LRR.get(0).getId());
 
         RequestResponse row = LRR.get(0);
         row.setStatus(1);
@@ -192,6 +214,8 @@ public class OrganRequestResponseService {
 
     public boolean deletingRequestResponse(OrganResponse organResponse)
     {
+        logger.info("[INFO]: inside OrganRequestResponseService:deletingRequestResponse");
+
         List<primaryUser> LPU = loginRepository.findBySecondary_email(organResponse.getDonorEmail());
 
         System.out.println("donorEmail = " + LPU.get(0).getEmail());
@@ -208,6 +232,7 @@ public class OrganRequestResponseService {
 
     public boolean sendEmails(OrganResponse organResponse)
     {
+        logger.info("[INFO]: inside OrganRequestResponseService:sendEmails");
         String donor_hospital_message = "Patient named " + organResponse.getDonorName() + " donated their " + organResponse.getOrgan() + " to your hospital. You have approved its transmission to "
                 + organResponse.getRequestHospitalEmail() + " . ";
 

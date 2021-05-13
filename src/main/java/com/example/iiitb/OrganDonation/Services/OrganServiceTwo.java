@@ -2,22 +2,30 @@ package com.example.iiitb.OrganDonation.Services;
 
 import com.example.iiitb.OrganDonation.Beans.DonorInfo;
 import com.example.iiitb.OrganDonation.Beans.Organ;
+import com.example.iiitb.OrganDonation.Controller.LoginController;
 import com.example.iiitb.OrganDonation.DAO.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.inject.Named;
 import java.util.ArrayList;
 import java.util.List;
 
 @Named
+@Slf4j
 public class OrganServiceTwo {
 
     OrganRepository organRepository;
     OrganService organService;
+    private static final Logger logger = LoggerFactory.getLogger(OrganServiceTwo.class);
+    //private static final Logger logger = LogManager.getLogger(LoginController.class);
 
     @Autowired
     public OrganServiceTwo(OrganRepository organRepository, OrganService organService)
     {
+        logger.info("[INFO]: inside OrganServiceTwo()");
         this.organRepository = organRepository;
         this.organService = organService;
     }
@@ -25,6 +33,7 @@ public class OrganServiceTwo {
     public List<Organ> getOrgnData(String orggn)
     {
         System.out.println("inside: OrganServiceTwo: getOrgnData()");
+        logger.info("[INFO]: inside: OrganServiceTwo: getOrganData()");
         /*List<Object[]> t = new ArrayList<Object[]>();
         t = organRepository.findByOrgan("Heart");
 
@@ -103,12 +112,15 @@ public class OrganServiceTwo {
 
         System.out.println("coming out of getOrgnData");
         //return t;
+        logger.info("[INFO]: coming out of getOrgnData = " + listOfOrgans.size());
         return listOfOrgans;
     }
 
     public List<DonorInfo> getDonorInfo(String organ, String bldGrp, String hospitalName)
     {
         System.out.println("inside: OrganServiceTwo: getDonorInfo()");
+        logger.info("[INFO]: inside: OrganServiceTwo: getDonorInfo()");
+
         System.out.println(bldGrp + " ---- " + hospitalName);
 
         List<Object[]> result = new ArrayList<>();
@@ -160,6 +172,7 @@ public class OrganServiceTwo {
             di.add(d);
         }
 
+        logger.info("[INFO]: output is = " + di.size());
         return di;
     }
 }

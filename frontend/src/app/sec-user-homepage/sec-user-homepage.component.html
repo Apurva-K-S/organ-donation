@@ -12,19 +12,20 @@
             <p class="register-heading" style="font-size:26px;"> <b>Welcome user <!-- Add user's name here. --></b></p>
             <div class="row register-form"  style="text-align: center;">
                 
-                <p style="font-size:20px; padding-top: 20px;"> <b>Select Primary User status!! <!-- Add user's name here. --></b></p>
-                <div class="px-2 mb-3 mt-n1 ml-10" style="padding-top: 1cm; font-size:20px;">
+                <p style="font-size:20px; padding-top: 5px;"> <b>Select Primary User status!! <!-- Add user's name here. --></b></p>
+                <div class="px-2 mb-3 mt-n1 ml-10" style="padding-top: 0.5cm; font-size:20px;">
                     <fieldset id="group1">
                         <input class="ml-10 px-5" (click)="toggleTag1()" type="radio" value="dead" name="priUserStatus" id="dead" formControlName="priUserStatus"> <label class="px-2"> dead </label>
                         <input class="ml-10 px-5" (click)="toggleTag2()" type="radio" value="alive" name="priUserStatus" id="alive" formControlName="priUserStatus"> <label class="px-2"> alive </label>
                     </fieldset>
                 </div>
                 <!--<button type="button" style="margin-top: 1cm; align-self: center;" id="donate" name="donate" class="btn btn-primary register_button" >display donated organs</button>-->
-                <div class="container" *ngIf="showTable" style="width: 10cm; margin-top:1cm;">
+                <div class="container" *ngIf="showTable" style="width: 10cm; margin-top:0.2cm;">
                     <table class="table table-bordered table-striped">
                     <thead>
                     <tr>
-                        <th>Organ Donated</th>
+                        <th>Organ Marked</th>
+                        <th *ngIf="showMe">click to donate the organ</th>
                         <!--<th>Firstname</th>
                         <th>Lastname</th>
                         <th>Department</th>

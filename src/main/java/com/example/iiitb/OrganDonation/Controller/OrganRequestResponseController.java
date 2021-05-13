@@ -21,6 +21,7 @@ import java.util.List;
 
 @RestController
 @Slf4j
+@CrossOrigin(origins = "*")
 @RequestMapping(path="/api")
 public class OrganRequestResponseController {
 
@@ -82,7 +83,6 @@ public class OrganRequestResponseController {
 
         boolean result = organRequestResponseService.deletingCorrespondingData(organResponse);
         logger.info("[INFO]: result of organRequestResponseService.deletingCorrespondingData(organResponse); = " + result );
-
         /*
 
         | request_response        |
@@ -99,7 +99,6 @@ public class OrganRequestResponseController {
         boolean result = organRequestResponseService.getOrganRequestDetails(orgReq);
 
         if(result)*/
-
         if(result)
             return Response.ok().build();
         return Response.status(401).build();

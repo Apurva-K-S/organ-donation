@@ -41,7 +41,7 @@ public class LoginService {
             System.out.println("Inside Loginservice-authenticateUser-if(loginAs)");
             login = loginRepo.findByEmail(loginEmail);
         }
-            else if(loginAs == LOGIN_AS_SECONDARY_USER) {
+        else if(loginAs == LOGIN_AS_SECONDARY_USER) {
             logger.info("[INFO]: inside if of LOGIN_AS_SECONDARY_USER");
             System.out.println("Inside Loginservice-authenticateUser-elseif(loginAs)");
             login = loginRepo.findBySecondary_email(loginEmail);

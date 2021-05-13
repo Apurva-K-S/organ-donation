@@ -19,14 +19,14 @@ import java.util.Objects;
 @RestController
 @Slf4j
 @RequestMapping(path="/api")
-//@CrossOrigin(origins = "*",allowedHeaders = "*")
+@CrossOrigin(origins = "*")
 public class LoginController {
 
     private LoginService loginService;
     private int LOGIN_AS_PRIMARY_USER = 1;
     private int LOGIN_AS_SECONDARY_USER = 2;
     private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
-//    private static final Logger logger = LogManager.getLogger(LoginController.class);
+    //private static final Logger logger = LogManager.getLogger(LoginController.class);
 
     @Autowired
     public LoginController(LoginService loginService)

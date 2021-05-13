@@ -17,7 +17,7 @@ import java.util.Map;
 
 @RestController
 @Slf4j
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = "*")
 @RequestMapping(path="/api")
 public class OrganController {
 

@@ -6,11 +6,6 @@ import com.example.iiitb.OrganDonation.Services.SecUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-//import org.apache.logging.log4j.LogManager;
-//import org.apache.logging.log4j.Logger;
-import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.json.Json;
 import javax.ws.rs.core.Response;
@@ -18,17 +13,18 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @RestController
 @Slf4j
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = "*")
 @RequestMapping(path="/api")
 public class SecUserDetailsController {
 
     private SecUserDetailsService secUserDetailsService;
     private static final Logger logger = LoggerFactory.getLogger(SecUserDetailsController.class);
-    //private static final Logger logger = LogManager.getLogger(LoginController.class);
-
 
     @Autowired
     public SecUserDetailsController(SecUserDetailsService secUserDetailsService)
@@ -54,6 +50,7 @@ public class SecUserDetailsController {
 
         System.out.println("size of result list is: " + organs.size());
         logger.info("[INFO]: size of result list is: " + organs.size());
+
 
         for(int i=0;i<organs.size();i++)
         {
@@ -86,8 +83,8 @@ public class SecUserDetailsController {
         System.out.println("all details: " + allDetails);
         System.out.println("primary User Status is: " + allDetails.get("priUserStatus"));
         System.out.println("hospital name is: " + allDetails.get("hospitalName"));
-        System.out.println("login Email is: " + allDetails.get("loginEmail")); // this email is secondary_email.
-        logger.info("[INFO]: all details: " + allDetails);
+        System.out.println("login Email is: " + allDetails.get("loginEmail")); // this email is secondary_email
+        logger.info("[INFO]: all details: " + allDetails);// .
 
         System.out.println("check the keys:\n");
         Iterator<Map.Entry<String, Object>> iterator = allDetails.entrySet().iterator();
@@ -128,6 +125,7 @@ public class SecUserDetailsController {
 
         logger.info("[INFO]: result1 of secUserDetailsService.storeUserFinalOrgans(organsList, allDetails.get(loginEmail).toString());" + result1 );
         logger.info("[INFO]: result of secUserDetailsService.storeHospitalName( allDetails.get(hospitalName).toString(), allDetails.get(loginEmail).toString());" + result);
+
         System.out.println("\nResult is " + result1);
 
         if(result && result1)

@@ -104,7 +104,7 @@ public class OrganServiceTwo {
         {
             System.out.println(listOfOrgans.get(i).getBloodGroup()+"\t\t"+
                     listOfOrgans.get(i).getCount() + "\t\t" + listOfOrgans.get(i).getDonatedDay() + "\t\t" + listOfOrgans.get(i).getDonatedTime() + "\t\t" +
-                            listOfOrgans.get(i).getDonorName() + "\t\t" + listOfOrgans.get(i).getHospitalName());
+                    listOfOrgans.get(i).getDonorName() + "\t\t" + listOfOrgans.get(i).getHospitalName());
         }
 
         System.out.println("----------------------------------------------------------------------------------------------");

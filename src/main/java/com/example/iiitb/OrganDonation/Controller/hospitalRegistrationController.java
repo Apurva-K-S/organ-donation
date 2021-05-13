@@ -21,14 +21,15 @@ import java.util.Map;
 @RestController
 @Slf4j
 @RequestMapping(path="/api")
+@CrossOrigin(origins = "*")
 public class hospitalRegistrationController
 {
 
     private HospitalRegisterService hospitalRegisterService;
     private SendEmailService sendEmailService;
+    //private static final Logger logger = LogManager.getLogger(LoginController.class);
     private static final Logger logger = LoggerFactory.getLogger(hospitalRegistrationController.class);
     //private static final Logger logger = LogManager.getLogger(LoginController.class);
-
 
     @Autowired
     public hospitalRegistrationController(HospitalRegisterService hospitalRegisterService, SendEmailService sendEmailService)

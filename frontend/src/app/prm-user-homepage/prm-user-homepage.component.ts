@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { PriUserOrganListService } from 'src/app/services/pri-user-organ-list.service'
 import { UserLoginComponent } from '../user-login/user-login.component';
 
@@ -24,7 +25,7 @@ export class PrmUserHomepageComponent implements OnInit {
 
   loginEmail!: string;
 
-  constructor(private priUserOrganListService:PriUserOrganListService, private loginComp: UserLoginComponent,private route: ActivatedRoute) { }
+  constructor(private priUserOrganListService:PriUserOrganListService, private loginComp: UserLoginComponent,private route: ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void {
 
@@ -61,7 +62,9 @@ export class PrmUserHomepageComponent implements OnInit {
       this.priUserOrganListService.primUserList(this.formGroup.value).subscribe(result=>
         {
           // need to show alert box if its success or error.
-    
+          alert("Thank you for saving someone's life");
+
+          this.router.navigateByUrl("/");
    
    
         })

@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { SecUserService, JustOrgansList } from '../services/sec-user.service';
 import {ThankyouServiceService, HospitalData} from 'src/app/services/thankyou-service.service';
 
@@ -27,7 +28,7 @@ export class SecUserHomepageComponent implements OnInit {
 
   hospitalData!: HospitalData[];
 
-  constructor(private route: ActivatedRoute, private thankyouServiceService:ThankyouServiceService, private secUserServ:SecUserService) { 
+  constructor(private route: ActivatedRoute, private router:Router, private thankyouServiceService:ThankyouServiceService, private secUserServ:SecUserService) { 
     //this.priUserStatus = 'alive';
     
   }
@@ -99,13 +100,15 @@ export class SecUserHomepageComponent implements OnInit {
         
       if(result['status']==200)
       {
-        console.log("stored hospital name + timestamp to database and also sent mail to primary user.")
+        console.log("stored hospital name + timestamp to database and also sent mail to primary user.");
+        alert("Thank you for donating!!");
+        this.router.navigateByUrl("/");
       }
       else
       {
         alert("unable to store values");
       }
 
-      })
+    })
   }
 }

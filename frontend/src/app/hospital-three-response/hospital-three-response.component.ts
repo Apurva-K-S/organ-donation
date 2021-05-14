@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { OrganResponseService, ResponseData } from '../services/organ-response.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class HospitalThreeResponseComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   hospitalName = "hospitalName";
 
-  constructor(private organResponseService:OrganResponseService) { }
+  constructor(private organResponseService:OrganResponseService, private router:Router) { }
 
   ngOnInit(): void {
 
@@ -33,6 +34,7 @@ export class HospitalThreeResponseComponent implements OnInit {
       if(this.responseData.length == 0)
       {
           alert("Currently no requests available!!");
+          this.router.navigateByUrl("/hospitalThree");
       }
     })
 
@@ -46,14 +48,16 @@ export class HospitalThreeResponseComponent implements OnInit {
         
       if(result['status']==200)
       {
-        alert("donated!! Mails have been sent to requested hospitals");
+        console.log("donated!! Mails have been sent to requested hospitals");
+        this.router.navigateByUrl("/hospThreeResponse");
       }
       else
       {
-        alert("unable to store values");
+        alert("unable to donate!!");
+        this.router.navigateByUrl("/hospThreeResponse");
       }
-
-      })
+    })
+    
   }
 
 }

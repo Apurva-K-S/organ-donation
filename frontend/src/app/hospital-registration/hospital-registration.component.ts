@@ -72,7 +72,8 @@ export class HospitalRegistrationComponent implements OnInit {
         console.log("inside: this.hospitalRegistrationService.hospitalRegistration(this.form.value).subscribe(result=>{ ");
         if(result['status']==200){
           console.log(result);
-          alert("Registered Successfully!! Email has been sent to hospital.");
+          //alert("Registered Successfully!! Email has been sent to hospital.");
+          console.log("Registered Successfully!! Email has been sent to hospital.");
           this.router.navigateByUrl("/"); //need to add registration successful code.
         }
         else{

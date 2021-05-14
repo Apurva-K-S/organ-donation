@@ -72,7 +72,8 @@ export class UserRegComponent {
         console.log("inside: this.authService.login(this.form.value).subscribe(result=>{ ");
         if(result['status']==200){
           console.log(result);
-          alert("Registered Successfully!! Emails have been send for both the users.");
+          //alert("Registered Successfully!! Emails have been send for both the users.");
+          console.log("Registered Successfully!! Emails have been send for both the users.");
           this.router.navigateByUrl("/"); //need to add registration successful code.
         }
         else{
@@ -83,7 +84,6 @@ export class UserRegComponent {
 
       console.log("coming out of this.form.valid");
     }
-    
     console.log("coming out of submit process");
   }
 }

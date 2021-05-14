@@ -56,12 +56,14 @@ export class UserLoginComponent implements OnInit {
         if(result['status'] == 200 && this.loginForm.controls['loginAs'].value === "Primary User")
         {
           console.log(result);
-          alert("all working!! Primary user");
+          //alert("all working!! Primary user");
+          console.log("all working!! Primary user");
           this.router.navigate(["/prmUserHomepage",this.loginForm.controls['loginEmail'].value]);
         }
         else if(result['status'] == 200 && this.loginForm.controls['loginAs'].value === "Secondary User")
         {
-          alert("all working!! Secondary user");
+          //alert("all working!! Secondary user");
+          console.log("all working!! Secondary user");
           this.router.navigate(["/secUserHomepage",this.loginForm.controls['loginEmail'].value]);
       
         }

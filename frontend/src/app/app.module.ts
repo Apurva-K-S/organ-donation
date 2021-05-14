@@ -37,6 +37,8 @@ import { HospitalTwoResponseComponent } from './hospital-two-response/hospital-t
 import { HospitalThreeComponent } from './hospital-three/hospital-three.component';
 import { HospitalThreeRequestformComponent } from './hospital-three-requestform/hospital-three-requestform.component';
 import { HospitalThreeResponseComponent } from './hospital-three-response/hospital-three-response.component';
+import { HospitalOneNavBarComponent } from './hospital-one-nav-bar/hospital-one-nav-bar.component';
+import { HospitalThreeNavBarComponent } from './hospital-three-nav-bar/hospital-three-nav-bar.component';
 
 
 @NgModule({
@@ -70,7 +72,9 @@ import { HospitalThreeResponseComponent } from './hospital-three-response/hospit
     HospitalTwoResponseComponent,
     HospitalThreeComponent,
     HospitalThreeRequestformComponent,
-    HospitalThreeResponseComponent    
+    HospitalThreeResponseComponent,
+    HospitalOneNavBarComponent,
+    HospitalThreeNavBarComponent    
   ],
   imports: [
     BrowserModule,
